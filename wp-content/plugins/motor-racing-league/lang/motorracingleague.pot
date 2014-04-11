@@ -1,0 +1,1343 @@
+# Copyright (C) 2013 Motor Racing League
+# This file is distributed under the same license as the Motor Racing League package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Motor Racing League 1.9.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/motorracingleague\n"
+"POT-Creation-Date: 2013-09-15 09:29:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: ImportExport.class.php:164
+msgid "Motor Racing League Import"
+msgstr ""
+
+#: ImportExport.class.php:166
+msgid "Import summary results for past races."
+msgstr ""
+
+#: ImportExport.class.php:203
+msgid "Motor Racing League Export"
+msgstr ""
+
+#: f1fanatic.co.uk.php:32
+msgid "Number of predictions is not 4 !"
+msgstr ""
+
+#: motorracingleague.class.php:110
+msgid "Reminders cancelled"
+msgstr ""
+
+#: motorracingleague.class.php:110
+msgid "All future reminders for this Championship have been canceled."
+msgstr ""
+
+#: motorracingleague.class.php:211 motorracingleague.class.php:1121
+msgid "You must be logged in"
+msgstr ""
+
+#: motorracingleague.class.php:293
+msgid "No championship defined"
+msgstr ""
+
+#: motorracingleague.class.php:317
+msgid ""
+"Qualifying deadline has passed. Only changes to race predictions are allowed"
+msgstr ""
+
+#: motorracingleague.class.php:325 motorracingleagueadmin.class.php:743
+#: motorracingleagueadmin.class.php:3434
+msgid "Entry for"
+msgstr ""
+
+#: motorracingleague.class.php:343
+msgid "Next prediction deadline in"
+msgstr ""
+
+#: motorracingleague.class.php:344
+msgid "Too Late - Prediction deadline passed"
+msgstr ""
+
+#: motorracingleague.class.php:350
+msgid "No races available in this championship."
+msgstr ""
+
+#: motorracingleague.class.php:413
+msgid ""
+"Enter the Pole Lap Time in mm:ss.ccc format, e.g. 01:31.213 for 1m 31.213s"
+msgstr ""
+
+#: motorracingleague.class.php:414 motorracingleague.class.php:971
+#: motorracingleague.class.php:1014 motorracingleague.class.php:1839
+#: motorracingleague.class.php:2268 motorracingleague.class.php:2466
+#: motorracingleague.class.php:2518 motorracingleague.class.php:2758
+#: motorracingleague.class.php:2858 motorracingleague.class.php:2908
+#: motorracingleagueadmin.class.php:2718 motorracingleagueadmin.class.php:3148
+#: motorracingleagueadmin.class.php:3205
+msgid "Pole Time"
+msgstr ""
+
+#: motorracingleague.class.php:424 motorracingleague.class.php:977
+#: motorracingleague.class.php:1834 motorracingleague.class.php:2276
+#: motorracingleague.class.php:2472 motorracingleague.class.php:2764
+#: motorracingleague.class.php:2866 motorracingleagueadmin.class.php:442
+#: motorracingleagueadmin.class.php:768 motorracingleagueadmin.class.php:1438
+#: motorracingleagueadmin.class.php:1903 motorracingleagueadmin.class.php:2724
+#: motorracingleagueadmin.class.php:3154 motorracingleagueadmin.class.php:3460
+msgid "Pole"
+msgstr ""
+
+#: motorracingleague.class.php:428 motorracingleague.class.php:2767
+msgid "Position"
+msgstr ""
+
+#: motorracingleague.class.php:439
+msgid "Predict if this race will be rain affected"
+msgstr ""
+
+#: motorracingleague.class.php:440 motorracingleague.class.php:959
+#: motorracingleague.class.php:1002 motorracingleague.class.php:1835
+#: motorracingleague.class.php:1972 motorracingleague.class.php:2256
+#: motorracingleague.class.php:2454 motorracingleague.class.php:2506
+#: motorracingleague.class.php:2775 motorracingleague.class.php:2842
+#: motorracingleague.class.php:2896 motorracingleagueadmin.class.php:438
+#: motorracingleagueadmin.class.php:783 motorracingleagueadmin.class.php:1454
+#: motorracingleagueadmin.class.php:1941 motorracingleagueadmin.class.php:2709
+#: motorracingleagueadmin.class.php:3136 motorracingleagueadmin.class.php:3193
+#: motorracingleagueadmin.class.php:3476
+msgid "Rain"
+msgstr ""
+
+#: motorracingleague.class.php:446
+msgid "Predict if the Safety Car will be deployed"
+msgstr ""
+
+#: motorracingleague.class.php:447 motorracingleague.class.php:1005
+#: motorracingleague.class.php:1836 motorracingleague.class.php:1995
+#: motorracingleague.class.php:2509 motorracingleague.class.php:2778
+#: motorracingleague.class.php:2899 motorracingleagueadmin.class.php:790
+#: motorracingleagueadmin.class.php:1461 motorracingleagueadmin.class.php:1945
+#: motorracingleagueadmin.class.php:3196 motorracingleagueadmin.class.php:3483
+msgid "Safety Car"
+msgstr ""
+
+#: motorracingleague.class.php:453
+msgid "Predict the number of non finishers"
+msgstr ""
+
+#: motorracingleague.class.php:454 motorracingleague.class.php:965
+#: motorracingleague.class.php:1008 motorracingleague.class.php:1837
+#: motorracingleague.class.php:2018 motorracingleague.class.php:2264
+#: motorracingleague.class.php:2460 motorracingleague.class.php:2512
+#: motorracingleague.class.php:2781 motorracingleague.class.php:2850
+#: motorracingleague.class.php:2902 motorracingleagueadmin.class.php:440
+#: motorracingleagueadmin.class.php:797 motorracingleagueadmin.class.php:1468
+#: motorracingleagueadmin.class.php:1949 motorracingleagueadmin.class.php:2715
+#: motorracingleagueadmin.class.php:3142 motorracingleagueadmin.class.php:3199
+#: motorracingleagueadmin.class.php:3490
+msgid "DNF"
+msgstr ""
+
+#: motorracingleague.class.php:465
+msgid "Choose one race to gain double points"
+msgstr ""
+
+#: motorracingleague.class.php:466 motorracingleague.class.php:1011
+#: motorracingleague.class.php:1838 motorracingleague.class.php:2041
+#: motorracingleague.class.php:2515 motorracingleague.class.php:2784
+#: motorracingleague.class.php:2905 motorracingleagueadmin.class.php:809
+#: motorracingleagueadmin.class.php:3202 motorracingleagueadmin.class.php:3502
+msgid "Double Up"
+msgstr ""
+
+#: motorracingleague.class.php:486 motorracingleagueadmin.class.php:2213
+#: motorracingleagueadmin.class.php:2236 motorracingleagueadmin.class.php:3133
+msgid "Name"
+msgstr ""
+
+#: motorracingleague.class.php:487 motorracingleagueadmin.class.php:3134
+msgid "Email"
+msgstr ""
+
+#: motorracingleague.class.php:497 motorracingleague.class.php:1080
+#: motorracingleague.class.php:2650
+msgid "Update Prediction"
+msgstr ""
+
+#: motorracingleague.class.php:499 motorracingleague.class.php:1101
+#: motorracingleague.class.php:2632 motorracingleagueadmin.class.php:836
+msgid "Add Prediction"
+msgstr ""
+
+#: motorracingleague.class.php:505
+msgid "Show Predictions"
+msgstr ""
+
+#: motorracingleague.class.php:952
+msgid "Predictions for "
+msgstr ""
+
+#: motorracingleague.class.php:954
+msgid "Latest predictions for "
+msgstr ""
+
+#: motorracingleague.class.php:957 motorracingleague.class.php:1530
+#: motorracingleague.class.php:1663 motorracingleague.class.php:1672
+#: motorracingleague.class.php:2451
+msgid "Player"
+msgstr ""
+
+#: motorracingleague.class.php:962 motorracingleague.class.php:2260
+#: motorracingleague.class.php:2457 motorracingleague.class.php:2846
+#: motorracingleagueadmin.class.php:439 motorracingleagueadmin.class.php:2712
+#: motorracingleagueadmin.class.php:3139
+msgid "SC"
+msgstr ""
+
+#: motorracingleague.class.php:968 motorracingleague.class.php:2463
+#: motorracingleague.class.php:2854 motorracingleagueadmin.class.php:3145
+msgid "Double"
+msgstr ""
+
+#: motorracingleague.class.php:982 motorracingleagueadmin.class.php:3160
+msgid "When"
+msgstr ""
+
+#: motorracingleague.class.php:1029
+msgid "No predictions available."
+msgstr ""
+
+#: motorracingleague.class.php:1045
+msgid "Show Entry Form"
+msgstr ""
+
+#: motorracingleague.class.php:1051
+msgid "Show All Predictions"
+msgstr ""
+
+#: motorracingleague.class.php:1101 motorracingleagueadmin.class.php:3272
+msgid "Your entry has been saved"
+msgstr ""
+
+#: motorracingleague.class.php:1129 motorracingleagueadmin.class.php:3277
+#: motorracingleagueadmin.class.php:3357
+msgid "Please select all fields"
+msgstr ""
+
+#: motorracingleague.class.php:1134
+msgid "Not a valid email address"
+msgstr ""
+
+#: motorracingleague.class.php:1139 motorracingleagueadmin.class.php:2800
+#: motorracingleagueadmin.class.php:2877 motorracingleagueadmin.class.php:3287
+#: motorracingleagueadmin.class.php:3345
+msgid "Lap time must be MM:SS.ccc format"
+msgstr ""
+
+#: motorracingleague.class.php:1145
+msgid "DNF must be numeric"
+msgstr ""
+
+#: motorracingleague.class.php:1165 motorracingleague.class.php:1315
+msgid "Qualifying deadline passed. Your entry has not been saved."
+msgstr ""
+
+#: motorracingleague.class.php:1167
+msgid "Not all drivers selected."
+msgstr ""
+
+#: motorracingleague.class.php:1186
+msgid "You have already used your Double Up this season"
+msgstr ""
+
+#: motorracingleague.class.php:1216
+msgid "Email address does not match previous entry"
+msgstr ""
+
+#: motorracingleague.class.php:1231 motorracingleagueadmin.class.php:2811
+#: motorracingleagueadmin.class.php:2887 motorracingleagueadmin.class.php:3298
+#: motorracingleagueadmin.class.php:3365
+msgid "Duplicate drivers"
+msgstr ""
+
+#: motorracingleague.class.php:1242
+msgid "This entry has not been saved because it is too late"
+msgstr ""
+
+#: motorracingleague.class.php:1275 motorracingleague.class.php:1280
+#: motorracingleague.class.php:1338 motorracingleague.class.php:1344
+#: motorracingleagueadmin.class.php:3324 motorracingleagueadmin.class.php:3330
+#: motorracingleagueadmin.class.php:3385
+msgid "Your entry could not be saved to the database."
+msgstr ""
+
+#: motorracingleague.class.php:1531 motorracingleague.class.php:1664
+msgid "Rank"
+msgstr ""
+
+#: motorracingleague.class.php:1532 motorracingleague.class.php:1670
+#: motorracingleague.class.php:2924
+msgid "Total"
+msgstr ""
+
+#: motorracingleague.class.php:1771
+msgid "Players already doubled up"
+msgstr ""
+
+#: motorracingleague.class.php:1772 motorracingleague.class.php:2840
+msgid "Race"
+msgstr ""
+
+#: motorracingleague.class.php:1773
+msgid "Extra points awarded"
+msgstr ""
+
+#: motorracingleague.class.php:1840 motorracingleague.class.php:2495
+#: motorracingleague.class.php:2529 motorracingleague.class.php:2885
+#: motorracingleagueadmin.class.php:3178 motorracingleagueadmin.class.php:3215
+msgid "Bonus"
+msgstr ""
+
+#: motorracingleague.class.php:1874
+msgid "Prediction statistics for:"
+msgstr ""
+
+#: motorracingleague.class.php:1918 motorracingleague.class.php:1947
+msgid "Statistics not available"
+msgstr ""
+
+#: motorracingleague.class.php:1955
+msgid "Prediction Summary"
+msgstr ""
+
+#: motorracingleague.class.php:1955
+msgid "predictions"
+msgstr ""
+
+#: motorracingleague.class.php:2067
+msgid "Pole Position"
+msgstr ""
+
+#: motorracingleague.class.php:2117
+msgid "Race Win"
+msgstr ""
+
+#: motorracingleague.class.php:2151
+msgid "Pole Lap Time"
+msgstr ""
+
+#: motorracingleague.class.php:2151
+msgid "average"
+msgstr ""
+
+#: motorracingleague.class.php:2217
+msgid "Most frequent podium predictions"
+msgstr ""
+
+#: motorracingleague.class.php:2253
+msgid "Race result"
+msgstr ""
+
+#: motorracingleague.class.php:2285
+msgid "Race Results not yet available"
+msgstr ""
+
+#: motorracingleague.class.php:2422 motorracingleague.class.php:2446
+msgid "No results available"
+msgstr ""
+
+#: motorracingleague.class.php:2608
+msgid "Unknown race"
+msgstr ""
+
+#: motorracingleague.class.php:2614
+msgid "Unknown championship"
+msgstr ""
+
+#: motorracingleague.class.php:2725
+msgid "Laps"
+msgstr ""
+
+#: motorracingleague.class.php:2725
+msgid "Most Laps Led"
+msgstr ""
+
+#: motorracingleague.class.php:2727
+msgid "Fastest"
+msgstr ""
+
+#: motorracingleague.class.php:2727
+msgid "Fastest Lap"
+msgstr ""
+
+#: motorracingleague.class.php:2772
+msgid "Yes"
+msgstr ""
+
+#: motorracingleague.class.php:2773
+msgid "No"
+msgstr ""
+
+#. #-#-#-#-#  motorracingleague.pot (Motor Racing League 1.9.4)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: motorracingleagueadmin.class.php:198 mrl-widget.php:17
+msgid "Motor Racing League"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:205
+msgid "Prediction subject"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:206
+msgid "Your predictions<br>%%predictions%%"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:210 motorracingleagueadmin.class.php:342
+msgid "Predictions due for %%racename%%"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:211 motorracingleagueadmin.class.php:343
+msgid ""
+"Hello %%user%%<br>Predictions are due for %%racename%%<br>If you wish to "
+"stop receiving all future reminders click on this link %%optout%%"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:303
+msgid ""
+"<br/>Note: This updated version has changes to the shortcodes and scoring "
+"system.<br />Please read the help and release notes."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:371 motorracingleagueadmin.class.php:372
+msgid "Motor Racing"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:372 motorracingleagueadmin.class.php:1584
+msgid "Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:373
+msgid "Motor Racing Settings"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:373
+msgid "Settings"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:374
+msgid "Motor Racing Race Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:374
+msgid "Race Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:375
+msgid "Motor Racing Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:375
+msgid "Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:376
+msgid "Motor Racing Help"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:376
+msgid "Help"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:429
+msgid "Championships"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:434 motorracingleagueadmin.class.php:2114
+#: motorracingleagueadmin.class.php:2233
+msgid "Delete"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:435 motorracingleagueadmin.class.php:2115
+#: motorracingleagueadmin.class.php:2234
+msgid "ID"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:436 motorracingleagueadmin.class.php:490
+#: motorracingleagueadmin.class.php:1596
+msgid "Season"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:437
+msgid "Predict"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:441
+msgid "Dbl"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:443
+msgid "Time"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:445 motorracingleagueadmin.class.php:494
+#: motorracingleagueadmin.class.php:1600
+msgid "Description"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:446 motorracingleagueadmin.class.php:1608
+msgid "Calculator"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:456
+msgid "Create drivers and races for this championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:472 motorracingleagueadmin.class.php:1139
+#: motorracingleagueadmin.class.php:1496 motorracingleagueadmin.class.php:2135
+#: motorracingleagueadmin.class.php:2251
+msgid "Delete Selected"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:478 motorracingleagueadmin.class.php:506
+msgid "Add Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:479
+msgid ""
+"Create a new championship season. Once created click on the Season link "
+"above to enter Races, Drivers, etc."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:480
+msgid "Season is a short name for the championship, e.g. 2009 or Winter"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:481
+msgid ""
+"Description is the long name for the championship, e.g. Formula One World "
+"Drivers Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:482
+msgid ""
+"Number of Predictions is the number of places to predict. E.g. 3 would be "
+"the top three."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:483
+msgid ""
+"Calculator is an optional user specified points calculation function. Leave "
+"this blank to use the built-in Scoring system. See README for more details."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:498 motorracingleagueadmin.class.php:1604
+msgid "Number of Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:502
+msgid ""
+"PHP Filename of calculator function (Optional). Leave blank to use the built-"
+"in Scoring features."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:557
+msgid ""
+"Are you enjoying this plugin?  Please consider donating. If you can't donate "
+"please consider adding a link to %s Thank you."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:559
+msgid "Already donated"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:575
+msgid "Motor Racing League Options"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:584
+msgid "Max results in widget"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:588
+msgid "Display plugin link in footer"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:592
+msgid "Show display_name instead of login_name from profile (experimental)"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:596
+msgid "Ask users to Opt-in to mailing list"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:600
+msgid "Opt-in mailing list message"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:604
+msgid "Max statistical positions - zero is all"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:611
+msgid "Send prediction confirmation email"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:615
+msgid "Email confirmation subject"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:619
+msgid "Email confirmation body"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:620 motorracingleagueadmin.class.php:649
+msgid "You can use HTML in the email body and the following substitution codes"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:622 motorracingleagueadmin.class.php:651
+msgid "Players name"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:623 motorracingleagueadmin.class.php:652
+msgid "Race name"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:624
+msgid "HTML prediction list"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:625
+msgid "Date and time of prediction"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:635
+msgid "Send reminder email"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:639
+msgid "Send hours before the entry deadline"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:640
+msgid "Ensure this is before any optional qualifying deadline."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:644
+msgid "Reminder email subject"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:648
+msgid "Reminder email body"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:653
+msgid "Reminder opt-out link"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:666 motorracingleagueadmin.class.php:1776
+#: motorracingleagueadmin.class.php:1957
+msgid "Save Changes"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:739
+msgid "Create a player prediction entry."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:751 motorracingleagueadmin.class.php:3443
+#: mrl-widget.php:102
+msgid "Championship:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:755 motorracingleagueadmin.class.php:1422
+#: motorracingleagueadmin.class.php:3447 mrl-widget.php:110
+msgid "Race:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:760 motorracingleagueadmin.class.php:1428
+#: motorracingleagueadmin.class.php:3452
+msgid "Pole time:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:782 motorracingleagueadmin.class.php:1453
+#: motorracingleagueadmin.class.php:3475
+msgid "Rain affected ?"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:789 motorracingleagueadmin.class.php:1460
+#: motorracingleagueadmin.class.php:3482
+msgid "Safety Car deployed ?"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:796 motorracingleagueadmin.class.php:1467
+#: motorracingleagueadmin.class.php:3489
+msgid "Number of non finishers"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:808 motorracingleagueadmin.class.php:3501
+msgid "Double Up ?"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:818 motorracingleagueadmin.class.php:823
+#: motorracingleagueadmin.class.php:3511 motorracingleagueadmin.class.php:3516
+msgid "Player:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:827 motorracingleagueadmin.class.php:3520
+msgid "Email:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:832 motorracingleagueadmin.class.php:3525
+msgid "Entry Datetime:"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:837 motorracingleagueadmin.class.php:1487
+#: motorracingleagueadmin.class.php:1777 motorracingleagueadmin.class.php:1958
+#: motorracingleagueadmin.class.php:2100 motorracingleagueadmin.class.php:2224
+#: motorracingleagueadmin.class.php:3530
+msgid "Cancel"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1076
+msgid "Motor Racing League Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1081 motorracingleagueadmin.class.php:1380
+msgid "No championships defined. Use the Championship option to create some."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1090 motorracingleagueadmin.class.php:1389
+msgid "Select Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1100 motorracingleagueadmin.class.php:1398
+msgid "No races defined. Use the Championship option to create some."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1110
+msgid "Current points standing for player entries."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1115
+msgid "All Races "
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1117
+msgid "Select Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1118
+msgid "Create Prediction"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1120
+msgid "Opt-in List"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1172
+msgid "Mailing List"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1373
+msgid "Enter Race Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1375
+msgid ""
+"Once the race has finished enter the finishing positions to calculate the "
+"players points totals."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1376
+msgid ""
+"If you delete a race result then re-enter the details the prediction points "
+"will be re-calculated."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1402
+msgid "No drivers defined. Use the Championship option to create some."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1411 motorracingleagueadmin.class.php:1424
+#: motorracingleagueadmin.class.php:1875 motorracingleagueadmin.class.php:1904
+#: motorracingleagueadmin.class.php:1908 motorracingleagueadmin.class.php:1917
+#: motorracingleagueadmin.class.php:1932 motorracingleagueadmin.class.php:1942
+#: motorracingleagueadmin.class.php:1946 motorracingleagueadmin.class.php:1950
+msgid "Points"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1412
+msgid ""
+"Points for race results are optional, unless the Scoring option \"Use Race "
+"Points\" is checked."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1413
+msgid ""
+"When \"Use Race Points\" is checked, players are awarded race result points "
+"for each prediction that matches. For example, player predicts Driver1 in "
+"second place. If Driver1 finishes fifth, then the player gains points for "
+"the fifth place finish."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1481
+msgid "Save Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1486
+msgid "Modify Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1497
+msgid "Recalculate Points for Selected"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1519
+msgid "You must select a championship first"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1562
+msgid ""
+"Some options can not be changed whilst there are predictions or race results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1585
+msgid "Participants"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1586
+msgid "Races"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1587
+msgid "Options"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1588
+msgid "Scoring"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1614
+msgid "Update Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1615
+msgid "Copy drivers from "
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1616
+msgid "Go"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1676
+msgid "Additional Results and Delay must be numbers"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1694
+msgid "Updated options"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1705 motorracingleagueadmin.class.php:1727
+msgid "Additional race results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1706
+msgid ""
+"Add entries of extra finishing positions for a race result above the number "
+"of predictions defined."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1707
+msgid ""
+"This option allows you to assign points to players whose prediction did not "
+"match the drivers finishing position."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1708
+msgid ""
+"For example, if the number of predictions is 3, entering 5 here will allow "
+"the assignment of points\n"
+"to a player if the prediction was outside the top three finishers but within "
+"the top eight. See the Scoring tab for point assignments."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1712 motorracingleagueadmin.class.php:1763
+msgid "View predictions before predicting"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1713
+msgid ""
+"If checked players can see the predictions of other players before making "
+"their own."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1716 motorracingleagueadmin.class.php:1771
+msgid "Delay in seconds between predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1717
+msgid ""
+"Once a player has make a prediction, a cookie is created with a lifetime as "
+"the number of seconds entered."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1718
+msgid ""
+"The prediction entry form will not be displayed again until this time has "
+"expired. This is to prevent multiple entries by the same user,\n"
+"particuarly for those that are not required to login."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1720
+msgid ""
+"A delay of 500,000 seconds is approximately 6 days. For logged in users you "
+"may wish to set this number very low, e.g. -1 seconds, to allow users to "
+"modify their entry immediately."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1731
+msgid "Predict Pole"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1735
+msgid "Predict Pole Time"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1739
+msgid "Predict Fastest Lap/Most Laps Led"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1743
+msgid "Display \"Fastest Lap\" as \"Most Laps Led\""
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1747
+msgid "Predict if it will rain"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1751
+msgid "Predict if a Safety Car is used"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1755
+msgid "Predict number of DNFs"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1759
+msgid "Allow user to Double Up points for one race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1767
+msgid "Must be logged in"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1816
+msgid "Numbers please !"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1831
+msgid "Updated scoring"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1847
+msgid "Points calculation performed by"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1849
+msgid "Assign points for predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1852 motorracingleagueadmin.class.php:1873
+msgid "Pole time within"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1853
+msgid "Assign points based on the accuracy of the pole position time."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1854
+msgid ""
+"Add a percentage of 0% to assign points for an exact match. For a lap time "
+"of 1:30.000 a percentage of 0.25% gives a margin of error of 0.225 seconds "
+"either way."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1857 motorracingleagueadmin.class.php:1914
+msgid "Driver in correct position"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1858
+msgid ""
+"Players whose prediction is incorrect by one or more places can be assigned "
+"points depending on how close the prediction is."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1859
+msgid ""
+"In order to assign points for positions outside the allowed number of "
+"predictions you will need to alter the option - Additional Race Results."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1862 motorracingleagueadmin.class.php:1888
+msgid "Use race points"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1863
+msgid "If checked, points are assigned using the values from race results."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1864
+msgid ""
+"Predictions that match a finishing driver in the results are awarded those "
+"points."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1880
+msgid "Add more..."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1881
+msgid "Remove last..."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1929
+msgid "Bonus points for correct finishing order"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:1970
+msgid "of"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2055 motorracingleagueadmin.class.php:2116
+msgid "Circuit"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2057
+msgid ""
+"Circuit is the name of the race track, e.g. Indianapolis, or, Italian Grand "
+"Prix - Monza"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2060 motorracingleagueadmin.class.php:2117
+msgid "Race Start"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2062
+msgid ""
+"Race Start is the race start date and time based on <strong>server time</"
+"strong>."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2065 motorracingleagueadmin.class.php:2088
+#: motorracingleagueadmin.class.php:2118
+msgid "Entries By"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2067
+msgid ""
+"Entries By is the date and time, <strong>server time</strong>, before when a "
+"player must predict their finishing results."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2072
+msgid "Qualify By (optional)"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2074
+msgid ""
+"Qualify By is the date and time, <strong>server time</strong>, before when a "
+"player must predict their Pole Time and Pole driver. Only applies if users "
+"must be logged in to predict."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2082
+msgid ""
+"Entering a value for Qualify By allows logged in users to change their "
+"predictions for the race after qualifying has finished but before the start "
+"of the race (Entries By). Leave Qualify By blank to require that all "
+"predictions are entered before the Entries By deadline."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2083
+msgid "Time &hellip; &hellip; &hellip;"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2085
+msgid "Users can predict Pole, Pole Time and Race Results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2086 motorracingleagueadmin.class.php:2119
+msgid "Qualify By"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2087
+msgid "Users can modify Race Predictions (Pole and Pole Time is locked)"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2089
+msgid "Predictions not allowed"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2096
+msgid "Add Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2099
+msgid "Update Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2104
+msgid "The current server time is "
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2104
+msgid ""
+"If this is different from race local time then\n"
+"\t\tyou must make an adjustment for the difference. If you do not then "
+"players may be able to enter predictions after knowing the result of a "
+"race.\n"
+"\t\tDon't forget daylight savings times in other time zones."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2127
+msgid "Modify this race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2208
+msgid "Shortcode"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2210
+msgid "Shortcode is a short name for the driver, e.g. MSC"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2215
+msgid ""
+"Name is the driver's name, e.g. Michael Schumacher, or Schumacher, Michael"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2220
+msgid "Add Driver"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2223
+msgid "Update Driver"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2235
+msgid "Short Code"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2244
+msgid "Modify this driver"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2274 motorracingleagueadmin.class.php:2310
+#: motorracingleagueadmin.class.php:2373 motorracingleagueadmin.class.php:2397
+#: motorracingleagueadmin.class.php:2429 motorracingleagueadmin.class.php:2492
+#: motorracingleagueadmin.class.php:2553
+msgid "Please supply all fields"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2279
+msgid "Number of Predictions must be a number"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2290
+msgid "Added Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2323
+msgid "Updated Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2344
+msgid "Can not delete a Championship with Races or Participants"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2354
+msgid "Deleted Championship"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2384
+msgid "Added Championship Participant"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2409
+msgid "Copied drivers"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2441
+msgid "Updated Championship Participant"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2463
+msgid "Can not delete a Participant with Results or Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2472
+msgid "Deleted Participant"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2497 motorracingleagueadmin.class.php:2558
+msgid "Date/time must be YYYY-MM-DD HH:MM:SS"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2502 motorracingleagueadmin.class.php:2563
+msgid "Qualify By must be YYYY-MM-DD HH:MM:SS or leave blank"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2508 motorracingleagueadmin.class.php:2569
+msgid "Qualify By must be earlier than Entry By or left blank"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2531
+msgid "Added Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2590
+msgid "Updated Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2613
+msgid "Can not delete a Race with Results or Predictions"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2622
+msgid "Deleted Race"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2706
+msgid "Select"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2707 motorracingleagueadmin.class.php:3132
+msgid "Id"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2744
+msgid "Modify this race result"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2784 motorracingleagueadmin.class.php:2861
+msgid "Please select all options"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2790 motorracingleagueadmin.class.php:2795
+#: motorracingleagueadmin.class.php:2867 motorracingleagueadmin.class.php:2872
+msgid "Points must be numeric"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2819 motorracingleagueadmin.class.php:2895
+msgid "No race or championship selected"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2844
+msgid ""
+"Race results saved. Check 'predictions' option for player prediction results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2919
+msgid ""
+"Race results updated. Check 'predictions' option for player prediction "
+"results"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2940
+msgid "Deleted Result"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:2963
+msgid "Deleted Entry"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3059
+msgid "Prediction points updated"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3131
+msgid "Del"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3189
+msgid "Modify this prediction"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3282 motorracingleagueadmin.class.php:3350
+msgid "Double Up already used"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3303 motorracingleagueadmin.class.php:3371
+msgid "Your entry has been saved but may not be counted as it is too late"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3342
+msgid "Updated prediction"
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3430
+msgid "Modify a player prediction entry."
+msgstr ""
+
+#: motorracingleagueadmin.class.php:3529
+msgid "Modify Prediction"
+msgstr ""
+
+#: mrl-widget.php:16
+msgid "Display prediction results for the Motor Racing League"
+msgstr ""
+
+#: mrl-widget.php:98
+msgid ""
+"Display prediction result totals for a championship or an individual race."
+msgstr ""
+
+#: mrl-widget.php:99
+msgid "Title:"
+msgstr ""
+
+#: mrl-widget.php:112
+msgid "All races"
+msgstr ""
+
+#: mrl-widget.php:118
+msgid "Show predictions for race:"
+msgstr ""
+
+#: mrl-widget.php:121
+msgid "Maximum Results:"
+msgstr ""
+
+#: mrl-widget.php:124
+msgid "Full results page URL:"
+msgstr ""
+
+#: mrl-widget.php:127
+msgid "Full results link name:"
+msgstr ""
+
+#: new-f1fanatic.co.uk.php:50
+msgid "Number of predictions is not 5 + pole !"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.ianhaycox.com/f1/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin manages a Motor Racing League allowing users to enter "
+"predictions for events, e.g. Formula 1, NASCAR, Moto GP etc. Users "
+"predictions are scored and displayed in a results widget."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Ian Haycox"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.ianhaycox.com/"
+msgstr ""

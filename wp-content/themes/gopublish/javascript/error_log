@@ -1,0 +1,7 @@
+[08-Dec-2010 19:48:14] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 111
+[08-Dec-2010 19:50:07] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 111
+[08-Dec-2010 19:52:39] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 114
+[08-Dec-2010 19:57:04] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 107
+[08-Dec-2010 19:58:18] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 107
+[08-Dec-2010 20:35:09] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 85
+[08-Dec-2010 20:36:06] PHP Fatal error:  Call to undefined function  get_theme_mod() in /home1/schoolne/public_html/enterprisebuild/wp-content/themes/enterprise/javascript/coda.slider.js.php on line 86

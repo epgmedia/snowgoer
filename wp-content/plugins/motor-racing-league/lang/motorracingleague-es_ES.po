@@ -1,0 +1,474 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-16 15:27+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Sammy Valencia <sammyed@yahoo.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/f1fanatic.co.uk.php:32
+msgid "Number of predictions is not 4 !"
+msgstr "El Número de pronósticos no es 4!"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:57
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:58
+msgid "Motor Racing"
+msgstr "Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:58
+msgid "Championship"
+msgstr "Campeonato"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:59
+msgid "Motor Racing Settings"
+msgstr "Configuración de Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:59
+msgid "Settings"
+msgstr "Configuración"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:60
+msgid "Motor Racing Race Results"
+msgstr "Resultados de Carreras de Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:60
+msgid "Race Results"
+msgstr "Resultados de la Carrera"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:61
+msgid "Motor Racing Predications"
+msgstr "Pronósticos para Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:61
+msgid "Predications"
+msgstr "Pronósticos"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:62
+msgid "Motor Racing Import"
+msgstr "Importar Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:62
+msgid "Import"
+msgstr "Importar"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:63
+msgid "Motor Racing Export"
+msgstr "Exportar Deportes a Motor"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:63
+msgid "Export"
+msgstr "Exportar"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:137
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:649
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:701
+msgid "Delete"
+msgstr "Borrar"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:138
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:650
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:702
+msgid "ID"
+msgstr "ID"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:139
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:177
+msgid "Season"
+msgstr "Temporada"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:140
+msgid "Predictions"
+msgstr "Pronósticos"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:141
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:181
+msgid "Description"
+msgstr "Descripción"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:142
+msgid "Calculator"
+msgstr "Calculadora"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:159
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:389
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:549
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:666
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:719
+msgid "Delete Selected"
+msgstr "Borrar los Seleccionados"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:165
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:193
+msgid "Add Championship"
+msgstr "Agrega Campeonato"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:166
+msgid "Create a new championship season."
+msgstr "Crear nueva temporada para Campeonato"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:167
+msgid "Season is a short name for the championship, e.g. 2009 or Winter"
+msgstr "Temporada es un forma corta para campeonato, ej. 2009 o Invierno"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:168
+msgid "Description is the long name for the championship, e.g. Formula One World Drivers Championship"
+msgstr "Descripción es donde escribimos los detalles del campeonato, ej. Campeonato del Mundo Formula Uno"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:169
+msgid "Number of Precictions is the number of places, including qualifying pole, to predict. E.g. 4 would be Pole plus the top three."
+msgstr "El número de pronósticos es la cantidad de lugares, incluyendo la pole, a predecir. Ej. 4 sería la Pole más el top tres."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:170
+msgid "Calculator is a user specified points calculation function. See README for more details."
+msgstr "La Calculadora es una función específica para calcular los puntos. Leer README para mayores detalles."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:185
+msgid "Number of Predictions"
+msgstr "Número de Pronósticos"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:189
+msgid "PHP Filename of calculator function"
+msgstr "Nombre de archivo PHP para la función Calculadora"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:268
+msgid "Cookie Seconds"
+msgstr "Segundos de los Cookies"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:272
+msgid "Max results in widget"
+msgstr "Max cantidad de resultados en widget"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:279
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:336
+msgid "Motor Racing League Predictions"
+msgstr "Pronósticos Motor Racing League"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:338
+msgid "Display the current points standing for player entries."
+msgstr "Muestra la clasificación con puntos de los jugadores que juegan."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:343
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:514
+msgid "No chamionships defined. Use the Championship option to create some."
+msgstr "No existe un Campeonato definido. Use las opciones de Campeonato para crear algunos."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:352
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:523
+msgid "Select Championship"
+msgstr "Seleccione Campeonato"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:361
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:532
+msgid "No races defined. Use the Championship option to create some."
+msgstr "No existe una Carrera definida. Use las opciones de Campeonato para crear algunas."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:372
+msgid "All Races"
+msgstr "Todas las Carreras"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:374
+msgid "Select Race"
+msgstr "Selecciona Carrera"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:480
+msgid "Please select all options"
+msgstr "Por favor selecciona todas las opciones"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:487
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:798
+msgid "Duplicate drivers"
+msgstr "Piloto duplicado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:494
+msgid "No race or championship selected"
+msgstr "No se seleccionó carrera o campeonato"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:507
+msgid "Enter Race Results"
+msgstr "Ingrese los Resultados de la Carrera"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:509
+msgid "Once the race has finished enter the finishing positions to calculate the players points totals."
+msgstr "Una vez la carrera haya concluído ingrese las posiciones finales para calcular los puntos de los jugadores."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:510
+msgid "If you delete a race result then re-enter the details the predication points will be re-calculated."
+msgstr "Si usted borra los resultados de una carrera, entonces re-ingrese los detalles. Los puntos de los pronósticos serán re-calculados."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:536
+msgid "No drivers defined. Use the Championship option to create some."
+msgstr "No existe Piloto definido. Use las opciones de Campeonato para crear algunos."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:550
+msgid "Recalculate Points for Selected"
+msgstr "Recalcule los Puntos del Seleccionado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:560
+msgid "Race:"
+msgstr "Gran Premio de:"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:567
+msgid "Pole:"
+msgstr "Pole:"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:578
+msgid "Save Results"
+msgstr "Guarde los Resultados"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:600
+msgid "You must select a championship first"
+msgstr "Debes selecionar un campeonato primero"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:642
+msgid "Drivers and Races"
+msgstr "Pilotos y Carreras"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:643
+msgid "Create Drivers"
+msgstr "Crear Pilotos"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:644
+msgid "Create Races"
+msgstr "Crear Carreras"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:651
+msgid "Short Code"
+msgstr "Código Corto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:652
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:686
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1228
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:480
+msgid "Name"
+msgstr "Nombre"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:672
+msgid "Add Driver or Rider"
+msgstr "Agregue Piloto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:673
+msgid "Create a new driver."
+msgstr "Aguegue nuevo piloto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:674
+msgid "Shortcode is a short name for the driver, e.g. MSC"
+msgstr "Código corto es el nombre corto de un piloto, ej. MSC"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:675
+msgid "Name is the driver's name, e.g. Michael Schumacher, or Schumacher, Michael"
+msgstr "Nombre es el nombre completo de un piloto, ej, Michael Schumacher, o Schumacher, Michael"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:682
+msgid "Shortcode"
+msgstr "Código Corto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:691
+msgid "Add Driver"
+msgstr "Agregue Piloto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:703
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:739
+msgid "Circuit"
+msgstr "Circuito"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:704
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:743
+msgid "Race Start"
+msgstr "Carrera Comienza"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:705
+msgid "Entries By"
+msgstr "Pronósticos Hasta"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:725
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:752
+msgid "Add Race"
+msgstr "Agregue Carrera"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:726
+msgid "Create a new race for this championship season."
+msgstr "Agregue una nueva carrera para éste campeonato."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:727
+msgid "Circuit is the name of the race track, e.g. Indianapolis, or, Italian Grand Prix - Monza"
+msgstr "Circuito es el nombre de la pista, ej. Indianapolis, o, Gran Premio de Italia - Monza"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:728
+msgid "Race Start is the race start date and time based on <strong>server time</strong>."
+msgstr "Comienzo de Carrera es la fecha y hora cuando la carrera comienze basado en la <strong>hora del servidor</strong>."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:729
+msgid "Entries By is the date and time, <strong>server time</strong>, before when a player must predict their finishing results."
+msgstr "Pronósticos Hasta es la fecha y hora, <strong>según hora de su servidor</strong>, en que los jugadores pueden ingresar sus pronósticos."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:731
+msgid "The current server time is "
+msgstr "La hora actual del servidor es"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:731
+msgid ""
+"If this is different from race local time then\n"
+"\t\tyou must make an adjustment for the difference. If you do not then players may be able to enter predictions after knowing the result of a race.\n"
+"\t\tDon't forget daylight savings times in other time zones."
+msgstr "Si es diferente a la hora local de la carrera, entonces debes hacer los ajustes necesarios."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:747
+msgid "Entries Before"
+msgstr "Pronósticos antes de "
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:773
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:830
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:882
+msgid "Please supply all fields"
+msgstr "Por favor llena todos los espacios"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:778
+msgid "Number of Predictions must be a number"
+msgstr "El Número de Pronósticos debe ser un número"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:789
+msgid "Added Championship"
+msgstr "Campeonato Agregado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:811
+msgid "Deleted Championship"
+msgstr "Campeonato Borrado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:841
+msgid "Added Championship Participant"
+msgstr "Participante en el Campeonato Agregado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:862
+msgid "Deleted Participant"
+msgstr "Participante Borrado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:893
+msgid "Added Race"
+msgstr "Carrera Agregada"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:915
+msgid "Deleted Race"
+msgstr "Carrera Borrada"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:996
+msgid "Select"
+msgstr "Seleccione"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:999
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1232
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:465
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:715
+msgid "Pole"
+msgstr "Pole"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1051
+msgid "Saved results"
+msgstr "Resultados Guardados"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1058
+msgid "Race results saved. Check 'predications' option for player predication results"
+msgstr "Resultados de la Carrera Guardados. Chequea en las opciones de los 'Pronósticos' para ver los resultados de los jugadores"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1079
+msgid "Deleted Result"
+msgstr "Resultados Borrados"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1102
+msgid "Deleted Entry"
+msgstr "Pronóstico Borrado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1198
+msgid "Prediction points updated"
+msgstr "Puntos del Campeonato Actualizados"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1226
+msgid "Del"
+msgstr "Borrar"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1227
+msgid "Id"
+msgstr "Id"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1229
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:481
+msgid "Email"
+msgstr "Email"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleagueadmin.class.php:1238
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:720
+msgid "When"
+msgstr "Cuando"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:230
+msgid "Motor Racing League"
+msgstr "Motor Racing League"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:429
+msgid "Title:"
+msgstr "Titulo:"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:432
+msgid "Championship Id:"
+msgstr "Id de Campeonato:"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:451
+msgid "No championship defined"
+msgstr "No hay campeonato definido"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:457
+msgid "Entry for"
+msgstr "Ingrese aquí los pronósticos para "
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:467
+msgid "Position "
+msgstr "P"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:485
+msgid "Add Entry"
+msgstr "Agregue Pronóstico"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:711
+msgid "Recent predictions"
+msgstr "Pronósticos Recientes"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:712
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:954
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:1018
+msgid "Player"
+msgstr "Piloto"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:756
+msgid "Your entry could not be displayed."
+msgstr "Tu pronóstico no se pudo desplegar"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:770
+msgid "Your entry has been saved"
+msgstr "Tu pronóstico ha sido guardado"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:783
+msgid "Please select all fields"
+msgstr "Por Favor Seleciona todos los Espacios"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:788
+msgid "Not a valid email address"
+msgstr "Esta dirección de Email no es Válida"
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:833
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:839
+msgid "Your entry could not be saved to the database."
+msgstr "Tu pronóstico no pudo ser guardada en la base de datos."
+
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:955
+#: workspace/wp/wp-content/plugins/motorracingleague/motorracingleague.class.php:1025
+msgid "Total"
+msgstr "Puntos"
+

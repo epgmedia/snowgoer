@@ -1,0 +1,3 @@
+[18-Nov-2013 20:57:49 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/snowgoer/public_html/wp-content/plugins/contact-form-7/includes/controller.php on line 3
+[23-Feb-2014 23:02:17 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/snowgoer/public_html/wp-content/plugins/contact-form-7/includes/controller.php on line 3
+[23-Feb-2014 23:02:38 UTC] PHP Fatal error:  Call to undefined function add_filter() in /home/snowgoer/public_html/wp-content/plugins/contact-form-7/includes/capabilities.php on line 3
