@@ -2,11 +2,10 @@
 /*
 Template Name: Email Subscription - Snow Goer
 */
+
+get_header();
+
 ?>
-            
-       <?php get_header(); ?>
-
-
 
 <table align="center" border="0" cellpadding="20"><tr><td>&nbsp;</td><tr><td>
 	<h1>Subscribe to Enews</h1></td></tr><tr><td>&nbsp;</td><tr><tr><td>

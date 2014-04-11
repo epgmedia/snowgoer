@@ -2,54 +2,49 @@
 /*
 Template Name: snowmobile-racing-challenge
 */
+
+get_header();
+
+get_sidebar();
+
 ?>
-<?php get_header(); get_sidebar(); ?>
 
 <div id="content">
 
-	<div id="contentleft">
+    <div id="contentleft">
 	
-		<div class="postarea">
+        <div class="postarea">
 	
-<div class="breadcrumb">
-<a href="/" title="Go to Home.">Home</a>
-&gt;
-<a href="" title="Reload the current page.">Snow Goer Racing Challenge</a>
-</div>
-			
+            <div class="breadcrumb">
 
+                <a href="/" title="Go to Home.">Home</a> &gt;
+                <a href="" title="Reload the current page.">Snow Goer Racing Challenge</a>
 
-<h1>Snow Goer 2013 Racing Challenge</h1>
+            </div>
 
-<p>It's like a showcase showcase, woah.</p>
-            
-            
- 
-<?php //start widgetized-page code  ?>
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("racing-challenge-ads") ) : ?>
-<?php endif; ?>
-<?php //end widgetized-page code  ?>  
+            <h1>Snow Goer 2013 Racing Challenge</h1>
 
+            <p>
+                It's like a showcase showcase, woah.
+            </p>
 
-gggggggggggggg
+            <?php
+            //start widgetized-page code
 
+            if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("racing-challenge-ads") ) :
 
+            endif;
 
-            
-            
-            
-            
-				<?php edit_post_link('(Edit This Page)', '<p>', '</p>'); ?>
-		
+            //end widgetized-page code
+            ?>
 
-			
+            gggggggggggggg
 
-						
-		</div>
-		
-	</div>
-	
+            <?php edit_post_link('(Edit This Page)', '<p>', '</p>'); ?>
 
+        </div>
+
+    </div>
 
 </div>
 

@@ -2,15 +2,10 @@
 
 <div id="racing-sidebar">
 
-	
-	<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar("racing-challenge-preview") ) : else : ?>
+    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar("racing-challenge-preview") ) : else :
 
-		
-	<?php endif; ?>
+    endif; ?>
 
-
-
-		
 </div>
 
 <!-- end sidebar -->

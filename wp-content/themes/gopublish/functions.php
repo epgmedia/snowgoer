@@ -1,5 +1,14 @@
 <?php
 include(TEMPLATEPATH."/tools/theme-options.php");
+include(TEMPLATEPATH."/tools/enews.php");
+include(TEMPLATEPATH."/tools/snotext.php");
+include(TEMPLATEPATH."/tools/audio.php");
+include(TEMPLATEPATH."/tools/video.php");
+include(TEMPLATEPATH."/tools/videoembed.php");
+include(TEMPLATEPATH."/tools/advertisement.php");
+include(TEMPLATEPATH."/tools/categorywidget.php");
+include(TEMPLATEPATH."/tools/productshowcase.php");
+include(TEMPLATEPATH."/tools/pagewidget.php");
 
 add_option("home_left_column", '280', '', 'yes');
 add_option("home_center_column", '280', '', 'yes');
@@ -39,12 +48,17 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 	if ( is_single() ) { 
 		$photolink = wp_get_attachment_image_src( get_post_thumbnail_id(), full ); 
   		$html = '<a id="single_image" href="' . $photolink[0] . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
-  	return $html;
-  	}
-	if ($customlink) { $photolink = $customlink . $click; $target = 'target="_blank" '; } else { $photolink = get_permalink ($post_id); $target = '';} 
-  $html = '<a '. $target.'href="' . $photolink . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
-  return $html;
 
+        return $html;
+  	}
+	if ($customlink) {
+        $photolink = $customlink . $click; $target = 'target="_blank" ';
+    } else {
+        $photolink = get_permalink ($post_id); $target = '';
+    }
+    $html = '<a '. $target.'href="' . $photolink . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+
+    return $html;
 }
 
 if ((get_theme_mod('sno-layout') == "Option 3") || (get_theme_mod('sno-layout') == "Option 6")) { 
@@ -90,9 +104,7 @@ if ((get_theme_mod('sno-layout') == "Option 3") || (get_theme_mod('sno-layout') 
 	'before_title' => '</div><div class="titlewrap160"><h2>',
 	'after_title' => '</h2></div><div class="widgetbody">',
 	));
-	}
-
-else { 
+} else {
 	if ( function_exists('register_sidebars') )
 	register_sidebar(array('name'=>'Non-Home Sidebar',
 	'before_widget' => '<div style="clear:both"></div><div class="widgetwrap"><div>',
@@ -135,77 +147,68 @@ else {
 	'before_title' => '</div><div class="titlewrap160"><h2>',
 	'after_title' => '</h2></div><div class="widgetbody">',
 	));
-	}
-
-
+}
 
 //start widgetized-page code added by Nick 9/21/12
 
-if ( function_exists('register_sidebars') )
-{
+if ( function_exists('register_sidebars') ) {
 	
-register_sidebars( 1,
-	array(
-		'name' => 'showcases',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-	)
-);
+    register_sidebars( 1,
+        array(
+            'name' => 'showcases',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+        )
+    );
 
-register_sidebars( 1,
-	array(
-		'name' => 'racing-challenge-ads',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-	)
-);
+    register_sidebars( 1,
+        array(
+            'name' => 'racing-challenge-ads',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+        )
+    );
 
-register_sidebars( 1,
-	array(
-		'name' => 'racing-challenge-preview',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-	)
-);
+    register_sidebars( 1,
+        array(
+            'name' => 'racing-challenge-preview',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+        )
+    );
 
 }
 //end widgetized-page code added by Nick
 
-
-
-
-
 // turns a category ID to a Name
 function cat_id_to_name($id) {
 	foreach((array)(get_categories()) as $category) {
-    	if ($id == $category->cat_ID) { return $category->cat_name; break; }
+    	if ($id == $category->cat_ID) {
+
+            return $category->cat_name;
+            break;
+        }
 	}
 }
 // turns a category ID to a Slug
 function cat_id_to_slug($id) {
-	$slug = get_category_link( $id ); return $slug; 
+	$slug = get_category_link( $id );
+
+    return $slug;
 }
 // turns a page ID to a Name
 function page_id_to_name($id) {
-    	if ($id == $page->page_ID) { return $page->page_name; break; }
+    if ($id == $page->page_ID) {
+        return $page->page_name;
+        break;
+    }
 }
-
-	include(TEMPLATEPATH."/tools/enews.php");
-	include(TEMPLATEPATH."/tools/snotext.php");
-	include(TEMPLATEPATH."/tools/audio.php");
-	include(TEMPLATEPATH."/tools/video.php");
-	include(TEMPLATEPATH."/tools/videoembed.php");
-	include(TEMPLATEPATH."/tools/advertisement.php");
-	include(TEMPLATEPATH."/tools/categorywidget.php");
-	include(TEMPLATEPATH."/tools/productshowcase.php");
-	include(TEMPLATEPATH."/tools/pagewidget.php"); 
-
 
 add_theme_support( 'nav-menus' );
 
@@ -216,11 +219,10 @@ function the_content_limit($max_char, $more_link_text = '(more...)', $striptease
     $content = strip_tags($content);
 
    if (strlen($_GET['p']) > 0) {
-      echo "<p>";
-      echo $content;
-      echo "</p>";
-   }
-   else if ((strlen($content)>$max_char) && ($espacio = strpos($content, " ", $max_char ))) {
+        echo "<p>";
+        echo $content;
+        echo "</p>";
+   } else if ((strlen($content)>$max_char) && ($espacio = strpos($content, " ", $max_char ))) {
         $content = substr($content, 0, $espacio);
         $content = $content;
         echo "<p>";
@@ -230,40 +232,46 @@ function the_content_limit($max_char, $more_link_text = '(more...)', $striptease
         the_permalink();
         echo "'>".$more_link_text."</a>";
         echo "</p>";
-   }
-   else {
-      echo "<p>";
-      echo $content;
-      echo "</p>";
+   } else {
+        echo "<p>";
+        echo $content;
+        echo "</p>";
    }
 }
+
 function snowriter() {
    	global $post;
-	$writer = get_post_meta($post->ID, writer, true); $jobtitle = get_post_meta($post->ID, jobtitle, true);
+	$writer = get_post_meta($post->ID, writer, true);
+    $jobtitle = get_post_meta($post->ID, jobtitle, true);
 	if ($writer !="") {
-	$args = array( 'meta_key' => 'name', 'meta_value' => $writer, 'numberposts' => 1 );
-	$queried_posts = get_posts( $args );
+	    $args = array( 'meta_key' => 'name', 'meta_value' => $writer, 'numberposts' => 1 );
+	    $queried_posts = get_posts( $args );
 
 		if ($queried_posts) {
 			foreach ($queried_posts as $queried_post) {
 				$thePostID = $queried_post->ID;
 				$link = get_permalink($thePostID);
-				echo '<a href="'.$link.'">'.$writer.'</a>'; if ($jobtitle) echo ', '.$jobtitle; echo '<br />';
+				echo '<a href="'.$link.'">'.$writer.'</a>';
+                if ($jobtitle) echo ', '.$jobtitle;
+                echo '<br />';
 			}
 		} else {
-		echo $writer; if ($jobtitle) echo ', '.$jobtitle; echo '<br />';
+		    echo $writer;
+            if ($jobtitle) echo ', '.$jobtitle;
+            echo '<br />';
 		}
 	}
-} 
+}
+
 function remove_admin_bar_links() {
 	global $wp_admin_bar;
-	$wp_admin_bar->remove_menu('my-account-with-avatar');
 	$wp_admin_bar->remove_menu('new-content');
 	$wp_admin_bar->remove_menu('updates');
-	$wp_admin_bar->remove_menu('comments');
 	$wp_admin_bar->remove_menu('appearance');
 }
+
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
 function my_admin_bar_menu() {
 	global $wp_admin_bar;
 	if ( !is_user_logged_in() || !is_admin_bar_showing() )
@@ -302,7 +310,6 @@ function my_admin_bar_menu() {
 	'title' => __( 'Logout'),
 	'href' => wp_logout_url( home_url() ) ) );
 }
-add_action('admin_bar_menu', 'my_admin_bar_menu');
 
 function sno_dashboard_widget() {
 	// Display whatever it is you want to show
@@ -310,31 +317,29 @@ function sno_dashboard_widget() {
 	include_once(ABSPATH.WPINC.'/rss.php'); // path to include script
 	$feed = fetch_rss('http://sww.zendesk.com/forums/202259-announcements'); // specify feed url
 	$items = array_slice($feed->items, 0, 2); // specify first and last item
-		if (!empty($items)) :
-		foreach ($items as $item) :
-			echo '<a style="font-size:15px;line-height:22px;" href="'.$item["link"].'">'.$item["title"].'</a><span style="margin-left:5px;font-size:10px;color:#666666;">'.date("F j, Y", strtotime($item["pubdate"])).'</span>';
-			$content = $item['description']; $content = apply_filters('the_content', $content); $content = str_replace(']]>', ']]&gt;', $content); $content = strip_tags($content);
-			if ((strlen($content)>350) && ($espacio = strpos($content, " ", 350 ))) {
-        		$content = substr($content, 0, $espacio); $content = $content;
-       					echo "<p style='margin-top:3px;font-size:12px;line-height:18px'>".$content."...&nbsp;<a href='".$item['link']."'>Read More</a>"."</p>";
-   				} else {
-      					echo "<p>".$content."</p>";
-   				} 
-		endforeach;
-		endif; ?>
-		<br />
-		<p style="font-size:16px;margin:0px;">About This Site</p>
-		<p style="margin-top:3px"><?php
-		    $theme_data = get_theme_data(ABSPATH . 'wp-content/themes/gopublish/style.css');
-    		echo $theme_data['Author']; ?> <?php
-    		echo $theme_data['Name']; ?> Version <?php
-    		echo $theme_data['Version']; ?>
-		<br />Powered by WordPress Version <?php bloginfo('version'); ?></p>
-		<p style="font-size:16px;margin:0px;"><a target="_blank" href="http://sww.zendesk.com/">Submit a Support Request</a></p>
-		<?php
-} 
-
-add_action('wp_dashboard_setup', 'sno_add_dashboard_widgets' );
+    if (!empty($items)) :
+        foreach ($items as $item) :
+            echo '<a style="font-size:15px;line-height:22px;" href="'.$item["link"].'">'.$item["title"].'</a><span style="margin-left:5px;font-size:10px;color:#666666;">'.date("F j, Y", strtotime($item["pubdate"])).'</span>';
+            $content = $item['description']; $content = apply_filters('the_content', $content); $content = str_replace(']]>', ']]&gt;', $content); $content = strip_tags($content);
+            if ((strlen($content)>350) && ($espacio = strpos($content, " ", 350 ))) {
+                $content = substr($content, 0, $espacio); $content = $content;
+                    echo "<p style='margin-top:3px;font-size:12px;line-height:18px'>".$content."...&nbsp;<a href='".$item['link']."'>Read More</a>"."</p>";
+                } else {
+                    echo "<p>".$content."</p>";
+                }
+        endforeach;
+    endif; ?>
+    <br />
+    <p style="font-size:16px;margin:0px;">About This Site</p>
+    <p style="margin-top:3px"><?php
+        $theme_data = get_theme_data(ABSPATH . 'wp-content/themes/gopublish/style.css');
+        echo $theme_data['Author']; ?> <?php
+        echo $theme_data['Name']; ?> Version <?php
+        echo $theme_data['Version']; ?>
+    <br />Powered by WordPress Version <?php bloginfo('version'); ?></p>
+    <p style="font-size:16px;margin:0px;"><a target="_blank" href="http://sww.zendesk.com/">Submit a Support Request</a></p>
+    <?php
+}
 
 function sno_add_dashboard_widgets() {
 	wp_add_dashboard_widget('sno_announcements', 'News & Announcements from School Webworks', 'sno_dashboard_widget');
@@ -346,6 +351,8 @@ function sno_add_dashboard_widgets() {
 	$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
 }
 
+//add_action('admin_bar_menu', 'my_admin_bar_menu');
+//add_action('wp_dashboard_setup', 'sno_add_dashboard_widgets' );
 
 function sno_css() {
 	$favicon = get_theme_mod('favicon');
