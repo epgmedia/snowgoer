@@ -1,0 +1,23 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+.htaccess
+dev/
+wp-config.php
+wp-content/gallery/
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+sitemap.xml
+*.log
+wp-content/cache/
+wp-content/backups/
+sitemap.xml
+soitemap.xml.gz
+.DS_Store
