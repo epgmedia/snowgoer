@@ -1,3 +1,7 @@
+1.9.5 - 25th Jan 2014
+		Updated Zazilian language
+		Fixed bug with scoring when 'Use Race Points' was checked.  Only award points if the predicted and actual finishing positions match.
+		
 1.9.4 - 13th Sep 2013
 		Bug fix for tooltips showing incorrect driver on `[motorracingleague results=x]`
 		Performance improvements for `[motorracingleague results=x]`

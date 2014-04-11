@@ -3,8 +3,8 @@ Contributors: ianhaycox, Ian Haycox
 Donate link: http://www.ianhaycox.com/donate.php
 Tags: prediction, fantasy f1, competition, motor, racing, sport, sport league, sidebar, widget, post
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: 1.9.4
+Tested up to: 3.8
+Stable tag: 1.9.5
 
 Plugin to manage and present prediction (fantasy) competitions for motor sport events. 
 
@@ -36,6 +36,10 @@ and any other comments welcome to make this plugin better. [Contact](http://www.
 * email prediction reminders
 
 **New Features**
+
+Version 1.9.5
+
+* Fixed bug with scoring when 'Use Race Points' was checked.  Only award points if the predicted and actual finishing positions match.
 
 Version 1.9.4
 

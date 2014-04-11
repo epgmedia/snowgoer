@@ -6,7 +6,7 @@ class Cart66PayPalSubscription extends Cart66Product {
     parent::__construct($id);
   }
   
-  public function validate() {
+  public function validate($override_nonce=false) {
     
     // Verify that the item number is present
     if(empty($this->item_number)) {

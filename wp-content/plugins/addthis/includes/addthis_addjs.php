@@ -100,6 +100,7 @@ Class AddThis_addjs{
         } else {        	
         	 $this->addAfterToJs();
         	 echo $this->jsToAdd;
+             $this->jsToAdd = false;
         }
     }
 
@@ -163,12 +164,21 @@ Class AddThis_addjs{
     }
 
     function addWidgetToJs(){
-        $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'"></script>';
+        $addthis_settings_options = get_option('addthis_settings');
+        $addthis_asynchronous_loading = $addthis_settings_options['addthis_asynchronous_loading'];
+        if(isset($addthis_asynchronous_loading) && $addthis_asynchronous_loading) {
+            $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'&async=1"></script>';
+            $this->jsToAdd .= '<script type="text/javascript">jQuery(document).ready(function($) { addthis.init(); }); </script>';
+        } else {
+            $this->jsToAdd .= '<script type="text/javascript" src="//s7.addthis.com/js/'.$this->atversion.'/addthis_widget.js#pubid='. urlencode( $this->pubid ).'"></script>';
+        }
     }
 
     function addAfterToJs(){
-        if (! empty($this->jsAfterAdd))
+        if (! empty($this->jsAfterAdd)) {
             $this->jsToAdd .= '<script type="text/javascript">' . $this->jsAfterAdd . '</script>';
+            $this->jsAfterAdd = NULL;
+        }
     }
 
 

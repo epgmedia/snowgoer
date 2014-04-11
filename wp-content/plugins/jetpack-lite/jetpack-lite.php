@@ -1,67 +1,64 @@
 <?php
-
 /*
  * Plugin Name: Jetpack Lite
  * Plugin URI: http://wordpress.org/extend/plugins/jetpack-lite/
- * Description: A fork of Jetpack by WordPress.com containing only Stats and WP.me Shortlinks modules. All other modules removed (files and code).
+ * Description: Disables all Jetpack modules except for Stats and WP.me Shortlinks modules. Jetpack is required!
  * Author: Samuel Aguilera
- * Version: 2.3.4
+ * Version: 3.0.2
  * Author URI: http://www.samuelaguilera.com
  * License: GPL2+
- * Text Domain: jetpack
- * Domain Path: /languages/
  */
 
-defined( 'JETPACK__API_BASE' ) or define( 'JETPACK__API_BASE', 'https://jetpack.wordpress.com/jetpack.' );
-define( 'JETPACK__API_VERSION', 1 );
-define( 'JETPACK__MINIMUM_WP_VERSION', '3.5' );
-defined( 'JETPACK_CLIENT__AUTH_LOCATION' ) or define( 'JETPACK_CLIENT__AUTH_LOCATION', 'header' );
-defined( 'JETPACK_CLIENT__HTTPS' ) or define( 'JETPACK_CLIENT__HTTPS', 'AUTO' );
-define( 'JETPACK__VERSION', '2.3.4' );
-define( 'JETPACK__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-defined( 'JETPACK__GLOTPRESS_LOCALES_PATH' ) or define( 'JETPACK__GLOTPRESS_LOCALES_PATH', JETPACK__PLUGIN_DIR . 'locales.php' );
-
-define( 'JETPACK_MASTER_USER', true );
-
-// Constants for expressing human-readable intervals
-// in their respective number of seconds.
-// Introduced in WordPress 3.5, specified here for backward compatability.
-defined( 'MINUTE_IN_SECONDS' ) or define( 'MINUTE_IN_SECONDS', 60 );
-defined( 'HOUR_IN_SECONDS' )   or define( 'HOUR_IN_SECONDS',   60 * MINUTE_IN_SECONDS );
-defined( 'DAY_IN_SECONDS' )    or define( 'DAY_IN_SECONDS',    24 * HOUR_IN_SECONDS   );
-defined( 'WEEK_IN_SECONDS' )   or define( 'WEEK_IN_SECONDS',    7 * DAY_IN_SECONDS    );
-defined( 'YEAR_IN_SECONDS' )   or define( 'YEAR_IN_SECONDS',  365 * DAY_IN_SECONDS    );
-
-// @todo: Abstract out the admin functions, and only include them if is_admin()
-// @todo: Only include things like class.jetpack-sync.php if we're connected.
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack.php'               );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-client.php'        );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-data.php'          );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-client-server.php' );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-sync.php'          );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-options.php'       );
-// SAR: Removed call to class.jetpack-user-agent.php (used for mobile stuff)
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-post-images.php'   ); // SAR: Dont remove it! needed for stats widget
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-error.php'         );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-debugger.php'      );
-require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-heartbeat.php'     );
-// SAR: Removed call to class.photon.php
-// SAR: Removed call to functions.photon.php
-require_once( JETPACK__PLUGIN_DIR . 'functions.compat.php'            );
-// SAR: Removed call to functions.gallery.php
-
-register_activation_hook( __FILE__, array( 'Jetpack', 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( 'Jetpack', 'plugin_deactivation' ) );
-
-add_action( 'init', array( 'Jetpack', 'init' ) );
-add_action( 'plugins_loaded', array( 'Jetpack', 'load_modules' ), 100 );
-add_filter( 'jetpack_static_url', array( 'Jetpack', 'staticize_subdomain' ) );
-
 /*
-if ( is_admin() && ! Jetpack::check_identity_crisis() ) {
-	Jetpack_Sync::sync_options( __FILE__, 'db_version', 'jetpack_active_modules', 'active_plugins' );
-}
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2 as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+function Jetpack_Lite_Init() {
 
-// SAR: Removed sync_optios for widget_twitter
+	if (class_exists('Jetpack', false )) {
+
+			function Leave_only_JetpackLite_modules ( $modules ) {
+			    $return = array();
+			    $return['stats'] = $modules['stats'];
+			    $return['shortlinks'] = $modules['shortlinks'];
+			    return $return;
+			}
+
+			add_filter( 'jetpack_get_available_modules', 'Leave_only_JetpackLite_modules' );
+
+			function Activate_only_JetpackLite_modules() {
+			    return array( 'stats', 'shortlinks' );
+			}
+
+			add_filter( 'jetpack_get_default_modules', 'Activate_only_JetpackLite_modules' );
+
+	} else {
+
+
+			function No_Jetpack_Found() { //TODO: i8n support for this little warning?
+			    ?>
+			    <div class="error">
+			        <p><?php _e( '<b>This version of Jetpack Lite requires <a href="http://wordpress.org/plugins/jetpack/" title="Jetpack">Jetpack</a> to work!</b> Please <b>install and activate Jetpack</b> to keep using WordPress.com stats.', 'jetpack-lite' ); ?></p>
+			        <p><?php _e( 'Your previous settings will be used by Jetpack. Simply install and activate Jetpack and Jetpack Lite will automatically trim down modules to leave only stats and shorlinks.', 'jetpack-lite' ); ?></p>
+			    </div>
+			    <?php
+			}
+			add_action( 'admin_notices', 'No_Jetpack_Found' );
+
+	}
+
+}
+
+add_action( 'plugins_loaded', 'Jetpack_Lite_init' );
+
+?>

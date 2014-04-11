@@ -1413,7 +1413,7 @@ if ( !class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 		
 		/** Return post counts using wp_count_posts(). **/
 		function get_all_post_counts( $args ) {
-			$post_counts = null;
+			$post_counts = Array();
 			$status = 'inherit';
 			if ( !empty( $args['post_status'] ) ) $status = $args['post_status'];
 			if ( !empty( $args ) && !empty( $args['post_type'] ) )
@@ -1421,7 +1421,7 @@ if ( !class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 					if ( is_array( $args['post_type'] ) )
 						$args['post_type'] = array_shift( $args['post_type'] );
 					$count = (Array)wp_count_posts( $args['post_type'] );
-					$post_counts = $count[$status];
+					$post_counts[$args['post_type']] = $count[$status];
 				} else
 					foreach( $args['post_type'] as $post_type ) {
 						$count = (Array)wp_count_posts( $post_type );
@@ -1444,7 +1444,7 @@ if ( !class_exists( 'All_in_One_SEO_Pack_Sitemap' ) ) {
 				'cache_results' => false,
 				'no_found_rows' => true
 			);
-			if ( defined( 'WPML_TM_VERSION' ) ) $defaults['suppress_filters'] = false;
+			if ( defined( 'ICL_SITEPRESS_VERSION' ) ) $defaults['suppress_filters'] = false;
 			$args = wp_parse_args( $args, $defaults );
 			if ( empty( $args['post_type'] ) )
 				return apply_filters( $this->prefix . 'post_filter', Array(), $args );

@@ -452,6 +452,13 @@ $tab = 'gateway-gateway_settings';
                 <input type="text" name="stripe_test_api_key" id="stripe_test_api_key" class="regular-text" value="<?php echo Cart66Setting::getValue('stripe_test_api_key'); ?>" />
               </td>
             </tr>
+            <tr valign="top" class="stripe_row">
+              <th scope="row"><?php _e('Stripe Currency Code', 'cart66'); ?></th>
+              <td>
+                <input type="text" name="stripe_currency_code" id="stripe_currency_code" class="small-text" maxlength="3" value="<?php echo (Cart66Setting::getValue('stripe_currency_code')) ? Cart66Setting::getValue('stripe_currency_code') : Cart66Setting::getValue('currency_code'); ?>" /> <em><?php _e('Three-letter ISO currency code representing the currency in which the charge was made.', 'cart66'); ?></em>
+                <p class="description"><?php _e('View Stripe\'s supported gateways here:', 'cart66'); ?> <a href="https://support.stripe.com/questions/which-currencies-does-stripe-support" target="_blank">Which currencies does Stripe support?</a></p>
+              </td>
+            </tr>
           </tbody>
         </table>
       <?php else: ?>

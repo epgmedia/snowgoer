@@ -1,5 +1,7 @@
 ﻿<?php
+//$this->log_me($this);die();
     $Config = new SatelliteConfigHelper;
+    $Form = new SatelliteFormHelper;
     $waterOptions = $Config -> displayOption('watermark', 'Watermark');
     $preloadOptions = $Config -> displayOption('preloader', 'Preloader');
 ?>
@@ -7,9 +9,9 @@
     <tbody>
         <?php 
         if ($this->canPremiumDoThis('watermark')) {
-          SatelliteFormHelper::display($waterOptions, 'Watermark'); 
+            $Form->display($waterOptions, 'Watermark');
         }
-        SatelliteFormHelper::display($preloadOptions, 'Preloader'); 
+        $Form->display($preloadOptions, 'Preloader');
         ?>
         <tr>
             <th><label for="keyboard"><?php _e('Keyboard Recognition', SATL_PLUGIN_NAME); ?></label></th>

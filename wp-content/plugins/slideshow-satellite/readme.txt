@@ -3,8 +3,8 @@ Contributors: C- Pres
 Donate link: http://c-pr.es/satellite
 Tags: responsive slideshow, photography, watermark, satellite, orbit, responsive, slideshow, infinite scroll, lazy load, flipbook 
 Requires at least: 3.1
-Tested up to: 3.6
-Stable tag: 2.1.3
+Tested up to: 3.8.1
+Stable tag: 2.2.4
 License: GPLv2 or later
 
 So Responsive! So Customizable! So Modern! Build Slideshows, Flipbooks, and do Infinite Scrolls with Slideshow Satellite. 
@@ -93,6 +93,26 @@ See slideshows in action on our Examples Site: http://c-pr.es/satellite
 See the manual and videos and more: http://c-pr.es/satellite
 
 == Changelog ==
+= 2.2.4 =
+* Ordering slides fixes incl. ajax update
+* Fixing slide saving
+* Adding Alt Text
+
+= 2.2.3 =
+* Fixing Save Gallery Bug
+* Fixing Extendability Bug
+
+= 2.2.2 =
+= 2.2 =
+* The Extendable Release - Support for Twenty Fourteen Theme
+* Allows for other plugins to add functionality to Satellite
+* Everyone can have multiple slideshows now
+* [satellite play=off]
+* Slideshows stop when you leave the browser window
+* Fixing many bugs
+* Config/Admin fixes and updates
+
+
 = 2.1.3 =
 * WP 3.6 Release - Support for Twenty Thirteen Theme
 * Reuse existing images in your slideshows

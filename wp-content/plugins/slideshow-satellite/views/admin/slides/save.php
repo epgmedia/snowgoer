@@ -10,7 +10,9 @@ $single = ($_GET['single']) ? $_GET['single'] : null;
 $shortname = "satl";
 $ptypes1 = get_post_types(array('public' => true),'names','and');
 $ptypes = array_push($ptypes1, 'resume');
-$slide = $this -> Slide -> data;
+$slide = $this -> Slide -> getData();
+//echo (empty($this -> Slide -> data)) ?  "empty " : "not empty";
+//print_r($this -> Slide );die();
 
 $slideOptions = $this -> Config -> displayOption('slide', $this -> Slide);
 
@@ -25,27 +27,28 @@ array(  "name"      => "More Image",
         "desc"      => "From here you can select an image if you have a Gallery with the title 'More'",
         "id"        => "more",
         "type"      => "select",
-        "value"     => $slide -> more,    
+        "value"     => (empty($slide)) ? $slide -> more : null,
         "std"       => "Select an Image",
         "options"   => $this -> Slide -> getGalleryImages("More"))
-);	
+);
 ?>  <div class="wrap satl-settings">
 	<h2><?php _e('Save a Slide', SATL_PLUGIN_NAME); ?></h2>
-	
-	<form action="<?php echo $this -> url; ?>&amp;method=save&amp;single=<?php echo( $single );?>" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="Slide[id]" value="<?php echo $slide -> id; ?>" />
-		<input type="hidden" name="Slide[slide_order]" value="<?php echo $slide -> slide_order; ?>" />
-		<table class="form-table">
+
+	<form action="<?php echo $this -> url; ?>&amp;method=save&amp;single=<?php echo( $single );?>" method="post" enctype="multipart/form-data" class="satl_table">
+		<input type="hidden" name="Slide[id]" value="<?php echo ($slide -> id) ? $slide->id : null; ?>" />
+		<input type="hidden" name="Slide[slide_order]" value="<?php echo ($slide -> slide_order) ? $slide -> slide_order : 0; ?>" />
+		<table id="satl_table">
                     <tbody>
                         <?php if ($slide->image) : ?>
                         <tr><td></td>
-                            <td><a href="<?php echo $this -> Html -> image_url($slide -> image); ?>" 
+                            <td><a href="<?php echo $this -> Html -> image_url($slide -> image); ?>"
                                    title="<?php echo $slide -> title; ?>" class="thickbox">
                                     <img src="<?php echo $this->Html->image_url($this->Html->thumbname($slide->image)); ?>" alt="<?php echo $this -> Html -> sanitize($slide -> title); ?>" />
                                 </a>
                             </td>
                         </tr>
                         <?php endif;?>
+<!--                        --><?php //$this->log_me($this);die();?>
                         <?php $this -> Form -> display($slideOptions, 'Slide'); ?>
                         <tr>
                             <th><label for="Slide.type.file"><?php _e('Image Type', SATL_PLUGIN_NAME); ?></label></th>
@@ -59,9 +62,9 @@ array(  "name"      => "More Image",
                         </tr>
                     </tbody>
                 </table>
-        
+
         <div id="typediv_file" style="display:<?php echo (empty($slide -> type) || $slide -> type == "file") ? 'block' : 'none'; ?>;">
-        	<table class="form-table">
+        	<table id="satl_table" class="form-table">
             	<tbody>
                 	<tr>
                     	<th><label for="Slide.image_file"><?php _e('Choose Image', SATL_PLUGIN_NAME); ?></label></th>
@@ -78,9 +81,9 @@ array(  "name"      => "More Image",
                 </tbody>
             </table>
         </div>
-        
+
         <div id="typediv_url" style="display:<?php echo ($this -> Slide -> data -> type == "url") ? 'block' : 'none'; ?>;">
-            <table class="form-table">
+            <table class="satl_table">
                 <tbody>
                     <tr>
                         <th><label for="Slide.image_url"><?php _e('Image URL', SATL_PLUGIN_NAME); ?></label></th>
@@ -93,10 +96,10 @@ array(  "name"      => "More Image",
                     </tr>
                 </tbody>
             </table>
-        </div>    
-                
+        </div>
+
         <div id="typediv_existing" style="display:<?php echo ($this -> Slide -> data -> type == "existing") ? 'block' : 'none'; ?>;">
-            <table class="form-table">
+            <table class="satl_table">
                 <tbody>
                     <tr>
                         <th><label for="Slide.image_existing"><?php _e('Choose an Image', SATL_PLUGIN_NAME); ?></label></th>
@@ -116,9 +119,9 @@ array(  "name"      => "More Image",
                     </tr>
                 </tbody>
             </table>
-        </div>    
+        </div>
 
-    <table class="form-table">
+    <table>
         <tbody>
                     <tr>
                         <th><label for="Slide_userlink_N"><?php _e('Use Link', SATL_PLUGIN_NAME); ?></label></th>
@@ -130,15 +133,15 @@ array(  "name"      => "More Image",
                     </tr>
                 </tbody>
         </table>
-		
+
         <div id="Slide_uselink_div" style="display:<?php echo ($this -> Slide -> data -> uselink == "Y") ? 'block' : 'none'; ?>;">
-            <table class="form-table">
+            <table class="">
                     <tbody>
                 <?php $this -> Form -> display($useLinkOptions, 'Slide'); ?>
                     </tbody>
             </table>
         </div>
-		
+
         <p class="submit">
                 <input class="button-primary" type="submit" name="submit" value="<?php _e('Save Slide', SATL_PLUGIN_NAME); ?>" />
         </p>

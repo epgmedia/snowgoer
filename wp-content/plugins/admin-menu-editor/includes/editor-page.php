@@ -24,8 +24,8 @@ if ( !apply_filters('admin_menu_editor_is_pro', false) ){
 	<script type="text/javascript">
 	(function($){
 		$('#screen-meta-links').append(
-			'<div id="ws-pro-version-notice">' +
-				'<a href="http://adminmenueditor.com/upgrade-to-pro/?utm_source=Admin%2BMenu%2BEditor%2Bfree&utm_medium=text_link&utm_content=top_upgrade_link&utm_campaign=Plugins" id="ws-pro-version-notice-link" class="show-settings" target="_blank" title="View Pro version details">Upgrade to Pro</a>' +
+			'<div id="ws-pro-version-notice" class="custom-screen-meta-link-wrap">' +
+				'<a href="http://adminmenueditor.com/upgrade-to-pro/?utm_source=Admin%2BMenu%2BEditor%2Bfree&utm_medium=text_link&utm_content=top_upgrade_link&utm_campaign=Plugins" id="ws-pro-version-notice-link" class="show-settings custom-screen-meta-link" target="_blank" title="View Pro version details">Upgrade to Pro</a>' +
 			'</div>'
 		);
 	})(jQuery);
@@ -82,7 +82,12 @@ if ( $show_whats_new ):
 endif;
 ?>
 
-<?php include dirname(__FILE__) . '/access-editor-dialog.php'; ?>
+<?php
+include dirname(__FILE__) . '/access-editor-dialog.php';
+if ( apply_filters('admin_menu_editor_is_pro', false) ) {
+	include dirname(__FILE__) . '/../extras/menu-color-dialog.php';
+}
+?>
 
 <div id='ws_menu_editor'>
     <div id="ws_actor_selector_container">
@@ -104,7 +109,11 @@ endif;
 				<div class="ws_separator">&nbsp;</div>
 
 				<a id='ws_new_menu' class='ws_button' href='javascript:void(0)' title='New menu'><img src='<?php echo $icons['new']; ?>' alt="New menu" /></a>
-				<a id='ws_hide_menu' class='ws_button' href='javascript:void(0)' title='Show/Hide'><img src='<?php echo $icons['hide']; ?>' alt="Show/Hide" /></a>
+
+				<?php if ( $editor_data['show_deprecated_hide_button'] ): ?>
+					<a id='ws_hide_menu' class='ws_button' href='javascript:void(0)' title='Show/Hide'><img src='<?php echo $icons['hide']; ?>' alt="Show/Hide" /></a>
+				<?php endif; ?>
+
 				<a id='ws_delete_menu' class='ws_button' href='javascript:void(0)' title='Delete menu'><img src='<?php echo $icons['delete']; ?>' alt="Delete menu" /></a>
 
 				<div class="ws_separator">&nbsp;</div>
@@ -136,7 +145,9 @@ endif;
 				<div class="ws_separator">&nbsp;</div>
 
 				<a id='ws_new_item' class='ws_button' href='javascript:void(0)' title='New menu item'><img src='<?php echo $icons['new']; ?>' alt="New menu item" /></a>
-				<a id='ws_hide_item' class='ws_button' href='javascript:void(0)' title='Show/Hide'><img src='<?php echo $icons['hide']; ?>' alt="Show/Hide" /></a>
+				<?php if ( $editor_data['show_deprecated_hide_button'] ): ?>
+					<a id='ws_hide_item' class='ws_button' href='javascript:void(0)' title='Show/Hide'><img src='<?php echo $icons['hide']; ?>' alt="Show/Hide" /></a>
+				<?php endif; ?>
 				<a id='ws_delete_item' class='ws_button' href='javascript:void(0)' title='Delete menu item'><img src='<?php echo $icons['delete']; ?>' alt="Delete menu item" /></a>
 
 				<div class="ws_separator">&nbsp;</div>
@@ -258,7 +269,8 @@ endif;
 ?>
 
 <!-- Menu icon selector widget -->
-<div id="ws_icon_selector" style="display: none;">
+<?php $iconSelectorClass = $editor_data['show_extra_icons'] ? 'ws_with_more_icons' : ''; ?>
+<div id="ws_icon_selector" class="<?php echo $iconSelectorClass; ?>" style="display: none;">
 	<?php
 	//Let the user select a custom icon via the media uploader.
 	//We only support the new WP 3.5+ media API. Hence the function_exists() check.
@@ -274,18 +286,78 @@ endif;
 	?>
 
 	<?php
-	$defaultWpIcons = array(
-		'generic', 'dashboard', 'post', 'media', 'links', 'page', 'comments',
-		'appearance', 'plugins', 'users', 'tools', 'settings', 'site',
-	);
-	foreach($defaultWpIcons as $icon) {
-		printf(
-			'<div class="ws_icon_option" title="%1$s" data-icon-class="menu-icon-%2$s">
-				<div class="ws_icon_image icon16 icon-%2$s"><br></div>
-			</div>',
-			esc_attr(ucwords($icon)),
-			$icon
+	//The old "menu-icon-something" icons are only available in WP 3.8.x and below. Newer versions use Dashicons.
+	//Plugins can change $wp_version to something useless for security, so lets check if Dashicons are available
+	//before we throw away the old icons.
+	$oldMenuIconsAvailable = ( !$editor_data['dashicons_available'] )
+		|| version_compare($GLOBALS['wp_version'], '3.9-beta', '<');
+
+	if ($oldMenuIconsAvailable) {
+		$defaultWpIcons = array(
+			'generic', 'dashboard', 'post', 'media', 'links', 'page', 'comments',
+			'appearance', 'plugins', 'users', 'tools', 'settings', 'site',
 		);
+		foreach($defaultWpIcons as $icon) {
+			printf(
+				'<div class="ws_icon_option" title="%1$s" data-icon-class="menu-icon-%2$s">
+					<div class="ws_icon_image icon16 icon-%2$s"><br></div>
+				</div>',
+				esc_attr(ucwords($icon)),
+				$icon
+			);
+		}
+	}
+
+	//These dashicons are used in the default admin menu.
+	$defaultDashicons = array(
+		'admin-generic', 'dashboard', 'admin-post', 'admin-media', 'admin-links', 'admin-page', 'admin-comments',
+		'admin-appearance', 'admin-plugins', 'admin-users', 'admin-tools', 'admin-settings', 'admin-network',
+	);
+
+	//The rest of Dashicons. Some icons were manually removed as they wouldn't look good as menu icons.
+	$dashicons = array(
+		'admin-site', 'admin-home',
+		'align-center', 'align-left', 'align-none', 'align-right', 'analytics', 'art', 'awards', 'backup',
+		'book', 'book-alt', 'businessman', 'calendar', 'camera', 'cart', 'category', 'chart-area', 'chart-bar',
+		'chart-line', 'chart-pie', 'clock', 'cloud', 'desktop', 'dismiss', 'download', 'edit', 'editor-customchar',
+		'editor-distractionfree', 'editor-help', 'editor-insertmore',
+		'editor-justify', 'editor-kitchensink', 'editor-ol', 'editor-paste-text',
+		'editor-paste-word', 'editor-quote', 'editor-removeformatting', 'editor-rtl', 'editor-spellcheck',
+		'editor-ul', 'editor-unlink', 'editor-video',
+		'email', 'email-alt', 'exerpt-view', 'facebook', 'facebook-alt', 'feedback', 'flag', 'format-aside',
+		'format-audio', 'format-chat', 'format-gallery', 'format-image', 'format-quote', 'format-status',
+		'format-video', 'forms', 'googleplus', 'groups', 'hammer', 'id', 'id-alt', 'image-crop',
+		'image-flip-horizontal', 'image-flip-vertical', 'image-rotate-left', 'image-rotate-right', 'images-alt',
+		'images-alt2', 'info', 'leftright', 'lightbulb', 'list-view', 'location', 'location-alt', 'lock', 'marker',
+		'menu', 'migrate', 'minus', 'networking', 'no', 'no-alt', 'performance', 'plus', 'portfolio', 'post-status',
+		'pressthis', 'products', 'redo', 'rss', 'screenoptions', 'search', 'share', 'share-alt',
+		'share-alt2', 'share1', 'shield', 'shield-alt', 'slides', 'smartphone', 'smiley', 'sort', 'sos', 'star-empty',
+		'star-filled', 'star-half', 'tablet', 'tag', 'testimonial', 'translation', 'twitter', 'undo',
+		'update', 'upload', 'vault', 'video-alt', 'video-alt2', 'video-alt3', 'visibility', 'welcome-add-page',
+		'welcome-comments', 'welcome-learn-more', 'welcome-view-site', 'welcome-widgets-menus', 'welcome-write-blog',
+		'wordpress', 'wordpress-alt', 'yes'
+	);
+
+	if ($editor_data['dashicons_available']) {
+		function ws_ame_print_dashicon_option($icon, $isExtraIcon = false) {
+			printf(
+				'<div class="ws_icon_option%3$s" title="%1$s" data-icon-url="dashicons-%2$s">
+					<div class="ws_icon_image icon16 dashicons dashicons-%2$s"><br></div>
+				</div>',
+				esc_attr(ucwords(str_replace('-', ' ', $icon))),
+				$icon,
+				$isExtraIcon ? ' ws_icon_extra' : ''
+			);
+		}
+
+		if ( !$oldMenuIconsAvailable ) {
+			foreach($defaultDashicons as $icon) {
+				ws_ame_print_dashicon_option($icon);
+			}
+		}
+		foreach($dashicons as $icon) {
+			ws_ame_print_dashicon_option($icon, true);
+		}
 	}
 
 	$defaultIconImages = array(
@@ -299,22 +371,76 @@ endif;
 			esc_attr($icon)
 		);
 	}
+
 	?>
 	<div class="ws_icon_option ws_custom_image_icon" title="Custom image" style="display: none;">
 		<img src="<?php echo esc_attr(admin_url('images/loading.gif')); ?>">
 	</div>
+
+
+	<?php if ($editor_data['dashicons_available']): ?>
+		<!-- Only show this button on recent WP versions where Dashicons are included. -->
+		<input type="button" class="button"
+		   id="ws_show_more_icons"
+		   title="Toggle additional icons"
+		   value="<?php echo esc_attr($editor_data['show_extra_icons'] ? 'Less &#x25B2;' : 'More &#x25BC;'); ?>">
+	<?php endif; ?>
+
 	<div class="clear"></div>
 </div>
 
 <span id="ws-ame-screen-meta-contents" style="display:none;">
-<label for="ws-hide-advanced-settings">
-	<input type="checkbox" id="ws-hide-advanced-settings"<?php
-		if ( $this->options['hide_advanced_settings'] ){
+	<label for="ws-hide-advanced-settings">
+		<input type="checkbox" id="ws-hide-advanced-settings"<?php
+			if ( $this->options['hide_advanced_settings'] ){
+				echo ' checked="checked"';
+			}
+		?> /> Hide advanced options
+	</label><br>
+
+	<label for="ws-show-extra-icons">
+		<input type="checkbox" id="ws-show-extra-icons"<?php
+		if ( $this->options['show_extra_icons'] ){
 			echo ' checked="checked"';
 		}
-	?> /> Hide advanced options
-</label>
+		?> /> Show extra menu icons
+	</label>
 </span>
+
+
+<!-- Confirmation dialog when hiding "Dashboard -> Home" -->
+<div id="ws-ame-dashboard-hide-confirmation" style="display: none;">
+	<span>
+		Hiding <em>Dashboard -> Home</em> may prevent users with the selected role from logging in!
+		Are you sure you want to do it?
+	</span>
+
+	<h4>Explanation</h4>
+	<p>
+		WordPress automatically redirects users to the <em>Dashboard -> Home</em> page upon successful login.
+		If you hide this page, users will get an "insufficient permissions" error when they log in
+		due to being redirected to a hidden page. As a result, it will look like their login failed.
+	</p>
+
+	<h4>Recommendations</h4>
+	<p>
+		You can use a plugin like <a href="http://wordpress.org/plugins/peters-login-redirect/">Peter's Login Redirect</a>
+		to redirect specific roles to different pages.
+	</p>
+
+	<div class="ws_dialog_buttons">
+		<?php
+		submit_button('Hide the menu', 'primary', 'ws_confirm_menu_hiding', false);
+		submit_button('Leave it visible', 'secondary', 'ws_cancel_menu_hiding', false);
+		?>
+	</div>
+
+	<label class="ws_dont_show_again">
+		<input type="checkbox" id="ws-ame-disable-dashboard-hide-confirmation">
+		Don't show this message again
+	</label>
+</div>
+
 
 <script type='text/javascript'>
 var defaultMenu = <?php echo $editor_data['default_menu_js']; ?>;

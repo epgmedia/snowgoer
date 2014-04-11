@@ -2,9 +2,9 @@
 Contributors: whiteshadow
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A6P9S6CE3SRSW
 Tags: admin, dashboard, menu, security, wpmu
-Requires at least: 3.2
-Tested up to: 3.6.1
-Stable tag: 1.3
+Requires at least: 3.5
+Tested up to: 3.9-RC1
+Stable tag: 1.3.2
 
 Lets you edit the WordPress admin menu. You can re-order, hide or rename menus, add custom menus and more. 
 
@@ -19,7 +19,7 @@ Admin Menu Editor lets you manually edit the Dashboard menu. You can reorder the
 * Move a menu item to a different submenu. 
 * Create custom menus that point to any part of the Dashboard or an external URL.
 
-The [Pro version](http://w-shadow.com/AdminMenuEditor/) lets you set per-role menu permissions, hide a menu from everyone except a specific user, export your admin menu, drag items between menu levels, make menus open in a new window and more. [Try live demo](http://amedemo.com/wpdemo/demo.php).
+The [Pro version](http://w-shadow.com/AdminMenuEditor/) lets you set per-role menu permissions, hide a menu from everyone except a specific user, export your admin menu, drag items between menu levels, make menus open in a new window and more. [Try online demo](http://amedemo.com/wpdemo/demo.php).
 
 **Notes**
 
@@ -62,6 +62,25 @@ Plugins installed in the `mu-plugins` directory are treated as "always on", so y
 3. Re-ordering menu items via drag and drop
 
 == Changelog ==
+
+= 1.3.2 =
+* Added a large number of menu icons based on the Dashicons icon font. 
+* Fixed default menu icons not showing up in WP 3.9. 
+* Fixed a rare "$link.attr(...) is undefined" JavaScript error.
+* Fixed a bug where a hidden submenu page with a URL like "options-general.php?page=something" would still be accessible via "admin.php?page=something".
+* Fixed several other minor bugs.
+* Tested up to WordPress 3.9-RC1. Minimum requirements increased to WP 3.5.
+
+= 1.3.1 =
+* Tested with WordPress 3.8.
+* Fixed several minor UI/layout issues related to the new 3.8 admin style.
+* Fixed a bug where moving an item to a plugin menu and then deactivating that plugin would cause the moved item to disappear.
+* Fixed deleted submenus not being restored if their original parent menu is no longer available.
+* Fixed a rare glitch where submenu separators added by certain other plugins would sometimes disappear.
+* Fixed a conflict with Shopp 1.2.9.
+* Made the plugin treat "users.php" and "profile.php" as the same parent menu. This fixes situations where it would be impossible to hide a "Users" submenu item from roles that don't have access to the "Users" menu and instead get a "Profile" menu.
+* Added extra logging for situations where a menu item is hidden because a higher-priority item with the same URL is also hidden. 
+* Minor performance improvements.
 
 = 1.3 =
 * Added a new settings page that lets you choose whether admin menu settings are per-site or network-wide, as well as specify who can access the plugin. To access this page, go to "Settings -> Menu Editor Pro" and click the small "Settings" link next to the page title.

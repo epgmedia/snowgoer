@@ -121,7 +121,7 @@ class SatelliteDbHelper extends SatellitePlugin {
 	
 	function save($data = null, $validate = true, $model = null) {
 		global $wpdb;
-    $this->log_me($data);
+
 		$defaults = (method_exists($this, 'defaults')) ? $this -> defaults() : false;
                /* if ($model != null) {
                     $this -> model = $model;
@@ -299,10 +299,11 @@ class SatelliteDbHelper extends SatellitePlugin {
 				
 				foreach (array_keys($this -> fields) as $field) {
 					//if (!empty($this -> data -> {$field}) || $this -> data -> {$field} == "0") {
+                    if (isset($this -> data -> {$field})) {
 						if (is_array($this -> data -> {$field}) || is_object($this -> data -> {$field})) {
 							$value = serialize($this -> data -> {$field});
 						} else {
-							$value = mysql_escape_string($this -> data -> {$field});
+                            $value = mysql_real_escape_string($this -> data -> {$field});
 						}
 					
 						$query .= "`" . $field . "` = '" . $value . "'";
@@ -310,6 +311,7 @@ class SatelliteDbHelper extends SatellitePlugin {
 						if ($c < count($this -> fields)) {
 							$query .= ", ";
 						}
+                    }
 					//}
 					
 					$c++;

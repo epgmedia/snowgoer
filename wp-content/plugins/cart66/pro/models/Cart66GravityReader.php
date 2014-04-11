@@ -23,12 +23,26 @@ class Cart66GravityReader {
     $metaTable = Cart66Common::getTableName('rg_form_meta', '');
     $sql = "select display_meta from $metaTable where form_id = $formId";
     $meta = unserialize($wpdb->get_var($sql));
-    if(count($meta['fields'])) {
-      $this->_fields = $meta['fields'];
+    
+    if(class_exists('GFAPI')){
+      // enable support for GF 1.8 API 
+      $form = GFAPI::get_form($formId);
+      if($form && count($form['fields'])){
+        $this->_fields = $form['fields'];
+      }
+      else {
+        throw new Cart66Exception("Unable to load Gravity Form: $formId");            
+      }
     }
-    else {
-      throw new Cart66Exception("Unable to load Gravity Form: $formId");
+    else{
+      if(count($meta['fields'])) {
+        $this->_fields = $meta['fields'];
+      }
+      else {
+        throw new Cart66Exception("Unable to load Gravity Form: $formId");            
+      }
     }
+    
   }
   
   /**

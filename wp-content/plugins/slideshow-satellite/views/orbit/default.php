@@ -1,6 +1,7 @@
 
 <?php
 global $satellite_init_ok;
+global $post;
 if (!empty($slides)) :
 
     $style = $this->get_option('styles');
@@ -11,6 +12,8 @@ if (!empty($slides)) :
     $responsive = $this->get_option('responsive');
     $respExtra = (isset($respExtra)) ? $respExtra : 0;
     $align = $this->get_option('align');
+    $pID = $post->ID;
+
     if (!$frompost) {
         $this->Gallery->loadData($slides[0]->section);
         $sidetext = $this -> Gallery -> capLocation($this->Gallery->data->capposition,$slides[0]->section);
@@ -25,7 +28,7 @@ if (!empty($slides)) :
         ======================================= -->
         <div class="orbit-default
                 <?php echo($this->get_option('thumbnails_temp') == 'Y') ? ' default-thumbs' : ''; ?>
-                <?php echo($align) ? ' satl-align-' . $align : ''; ?>
+                <?php echo(isset($align[$pID])) ? ' satl-align-' . $align[$pID] : ''; ?>
                 <?php echo($responsive) ? ' resp' : ''; ?>
              ">
             <div id="featured<?php echo $satellite_init_ok; ?>"> 
@@ -38,7 +41,7 @@ if (!empty($slides)) :
                     echo "<div class='sorbit-wide ".$class."'  
                             data-caption='#post-{$slider->ID}' 
                             data-thumb='{$thumbnail_link[0]}'>";
-                            
+
                     $this->render('display-image', 
                       array('frompost'  =>  true,
                             'slider'    => $slider), true, 'orbit');?>
@@ -60,12 +63,12 @@ if (!empty($slides)) :
         <?php $this -> render('jsinit', array('gallery'=>false,'frompost' => true,'respExtra' => 0), true, 'orbit');?>
 
         <!--  CUSTOM GALLERY -->
-    <?php else : ?>  
+    <?php else : ?>
         <div class="orbit-default
         <?php echo($this->get_option('thumbnails_temp') == 'Y') ? ' default-thumbs' : ''; ?>
-                <?php echo($sidetext) ? ' text-' . $sidetext : ''; ?>
-                <?php echo($align) ? ' satl-align-' . $align : ''; ?>
-                <?php echo($responsive) ? ' resp' : ''; ?>
+                <?php echo(isset($sidetext)) ? ' text-' . $sidetext : ''; ?>
+                <?php echo(isset($align[$pID])) ? ' satl-align-' . $align[$pID] : ''; ?>
+                <?php echo(isset($responsive)) ? ' resp' : ''; ?>
              ">
             <div id="featured<?php echo $satellite_init_ok; ?>"> 
                 <?php $i = 0; ?>

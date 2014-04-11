@@ -203,7 +203,7 @@ $data['accounts'] = $account->getModels('where id>0', 'order by last_name', '1')
         <?php endif; ?>
         
         $('#plan-lifetime').click(function() {
-          if($('#plan-lifetime').attr('checked') == true) {
+          if($('#plan-lifetime').is(':checked')) {
             $('#plan-active_until').val('');
           }
         });

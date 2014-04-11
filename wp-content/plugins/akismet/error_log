@@ -1,2 +1,0 @@
-[17-Dec-2013 15:40:00 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/snowgoer/public_html/wp-content/plugins/akismet/legacy.php on line 356
-[17-Dec-2013 15:40:00 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/snowgoer/public_html/wp-content/plugins/akismet/legacy.php on line 356

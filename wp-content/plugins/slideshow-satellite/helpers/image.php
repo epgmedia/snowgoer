@@ -117,18 +117,33 @@ class SatelliteImageHelper extends SatellitePlugin {
       $styles = $this->get_option('styles');
       $width=$this->get_option('width_temp');
       $height=$this->get_option('height_temp');
-      $s_w = ($wt = intval($width[$id])) ? $wt : $styles['width'];
-      $s_h = ($ht = intval($height[$id])) ? $ht : $styles['height'];
-      $i_r = intval($i_w)/intval($i_h);
-      $s_r = $s_w/$s_h;
-      $notclose = (abs($i_r - $s_r) > .7) ? true : false;
-      //$this->log_me("sw $s_w / sh $s_h  = sr: $s_r and iw $i_w / ih $i_h = ir: $i_r");
-      $crop = ($crop) ? "stretchCrop absoluteCenter" : false;
-      $crop = ($notclose && $crop) ? "stretchCenter absoluteCenter" : $crop;
-      if ($i_r <= $s_r) {
-        return "tall $crop";
-      } else {
-        return "wide $crop";
+      $s_w = (isset($width[$id])) ? intval($width[$id]) : $styles['width'];
+      $s_h = (isset($height[$id])) ? intval($height[$id]) : $styles['height'];
+      return $this->imageStretchStyles($i_w, $i_h, $s_w, $s_h, $crop);
+    }
+    /**
+     *
+     * @param int $i_w - width of image
+     * @param int $i_h - height of image
+     * @param int $s_w - width of image container
+     * @param int $s_h - height of image container
+     * @param bool $crop - are we visually cropping the image or not?
+     * @return string
+     */
+    function imageStretchStyles($i_w, $i_h, $s_w, $s_h, $crop) {
+      if ($i_h && $s_h) {
+          $i_r = intval($i_w)/intval($i_h);
+          $s_r = $s_w/$s_h;
+          $notclose = (abs($i_r - $s_r) > .7) ? true : false;
+//          $this->log_me("sw $s_w / sh $s_h  = sr: $s_r and iw $i_w / ih $i_h = ir: $i_r");
+          $crop = ($crop) ? "stretchCrop absoluteCenter" : false;
+          $crop = ($notclose && $crop) ? "stretchCenter absoluteCenter" : $crop;
+          if ($i_r <= $s_r) {
+              return "tall $crop";
+          } else {
+              return "wide $crop";
+          }
+          return false;
       }
     }
     /*
@@ -137,7 +152,6 @@ class SatelliteImageHelper extends SatellitePlugin {
     function applyWatermark($image, $galId) {
       if (!SATL_PRO) { return; }
       $Gallery = new SatelliteGallery;
-      error_log( "gallery id is ". $galId);
       if ($Gallery -> isSpecialGallery($galId)) {
         return;
       }
@@ -146,7 +160,8 @@ class SatelliteImageHelper extends SatellitePlugin {
         error_log("Watermarking is not enabled");
         return;
       }
-      SatellitePremiumHelper::doWatermark($image, $watermark);
+      $Premium = new SatellitePremiumHelper;
+      $Premium->doWatermark($image, $watermark);
     }
     /**
      *

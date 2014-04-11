@@ -103,8 +103,10 @@ function MotorRacingLeagueCalculatePoints($options, $drivers, $predictions) {
 						if ($guess == $drivers[$i]['id']) {
 							
 							if ($use_race_points) {
-								$points += $drivers[$i]['points'];
-								$all_points[$entry_id][$key] = $drivers[$i]['points'];
+								if ($i == $key) {
+									$points += $drivers[$i]['points'];
+									$all_points[$entry_id][$key] = $drivers[$i]['points'];
+								}
 							} else {
 								/*
 								 * Players guess matches a finishing position, so assign

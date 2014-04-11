@@ -1,12 +1,9 @@
 <?php
 
-class SatelliteFormHelper extends SatellitePlugin {
+    class SatelliteFormHelper extends SatellitePlugin {
+
     public function display($newfields, $model) {
 
-        // when called from the Configuration page the class isn't set
-        if (!class_exists('SatelliteFormHelper')) {
-            $form = new SatelliteFormHelper;
-        } else { $form = $this; }
         foreach ($newfields as $value) {
             $valId = (isset($value['id'])) ? $value['id'] : null;
             switch ( $value['type'] ) {
@@ -14,13 +11,13 @@ class SatelliteFormHelper extends SatellitePlugin {
                     echo $this -> open();
                     break;
                 case 'checkbox':
-                    echo SatelliteFormHelper::checkbox($model.'.'.$valId, $value);
+                    echo $this->checkbox($model.'.'.$valId, $value);
                     break;
                 case 'close':
                     echo $this -> close();
                     break;
                 case 'select':
-                    echo SatelliteFormHelper::select($model.'.'.$valId, $value);
+                    echo $this -> select($model.'.'.$valId, $value);
                     break;
                 case 'text':
                     echo $this -> text($model.'.'.$valId, $value);
@@ -37,7 +34,7 @@ class SatelliteFormHelper extends SatellitePlugin {
         }
         
     }
-    
+
     function hidden($name = '', $args = array()) {
         global $wpcoHtml;
         $defaults = array(
@@ -73,17 +70,16 @@ class SatelliteFormHelper extends SatellitePlugin {
         $r = wp_parse_args($args, $defaults);
         extract($r, EXTR_SKIP);
 
-        $this->debug($this);
-
         ob_start();
+
         ?>
-        <?php echo $Html->field_value($name); ?>
+        <?php //echo $Html->field_value($name); ?>
             <tr>
                 <th class="verttop"><label><strong><?php echo $r['name']; ?></strong></label></th>
                 <td>
-                    <input style="width:400px;" class="<?php echo $r['class']; ?>"name="<?php echo $Html->field_name($name); ?>" id="<?php echo $r['id']; ?>" type="<?php echo $r['type']; ?>" value="<?php echo ($r['value']); ?>" />
+                    <input style="width:400px;" class="<?php echo $r['class']; ?>"name="<?php echo $Html->field_name($name); ?>" id="<?php echo $r['id']; ?>" type="<?php echo $r['type']; ?>" value="<?php echo ($r['value']) ? $r['value'] : $r['std']; ?>" />
                     <?php echo ($error == true) ? '<div style="color:red;">' . $Html->field_error($name) . '</div>' : ''; ?>
-                    <span class="howto"><?php echo($r['desc']); ?></span>
+                    <span class="howto"><?php echo(isset($r['desc']) ? $r['desc'] : '') ; ?></span>
                 </td>
             </tr>
         
@@ -94,7 +90,7 @@ class SatelliteFormHelper extends SatellitePlugin {
     }
     
     function open() { ?>
-        <table width="100%" border="0"id="satl_table" style="">
+        <table width="100%" border="0" id="satl_table" style="">
     <?php 
     }
     
@@ -120,8 +116,6 @@ class SatelliteFormHelper extends SatellitePlugin {
         $r = wp_parse_args($args, $defaults);
         extract($r, EXTR_SKIP);
 
-        $this->debug($this);
-
         ob_start();
         ?>
         	<tr>
@@ -146,9 +140,8 @@ class SatelliteFormHelper extends SatellitePlugin {
      * end form
      */
     
-    function close() { ?>
-        </table><br />
-        <?php
+    function close() {
+        echo "</table><br />";
     }
     
     /**
@@ -266,7 +259,7 @@ class SatelliteFormHelper extends SatellitePlugin {
             <label>Upload and Order Images</label>
             <input type="hidden" name="<?php echo $id; ?>" id="<?php echo $id; ?>" value="<?php echo $svalue; ?>" />
             <div class="plupload-upload-uic hide-if-no-js <?php if ($multiple): ?>plupload-upload-uic-multiple<?php endif; ?>" id="<?php echo $id; ?>plupload-upload-ui">
-                <input id="<?php echo $id; ?>plupload-browse-button" type="button" value="<?php esc_attr_e('Select Files'); ?>" class="button" />
+                <input id="<?php echo $id; ?>plupload-browse-button" type="button" value="<?php esc_attr_e('Select Files'); ?>" class="btn btn-primary" />
                 <span class="ajaxnonceplu" id="ajaxnonceplu<?php echo wp_create_nonce($id . 'pluploadan'); ?>"></span>
                 <?php if ($width && $height): ?>
                         <span class="plupload-resize"></span><span class="plupload-width" id="plupload-width<?php echo $width; ?>"></span>
@@ -276,7 +269,7 @@ class SatelliteFormHelper extends SatellitePlugin {
             </div>
             <div class="plupload-thumbs <?php if ($multiple): ?>plupload-thumbs-multiple<?php endif; ?>" id="<?php echo $id; ?>plupload-thumbs">
             </div>
-            <span class="howto"><?php echo($r['desc']); ?></span>
+            <span class="howto clear"><?php echo($r['desc']); ?></span>
             <div class="clear"></div>
 
         </td>
@@ -294,12 +287,13 @@ class SatelliteFormHelper extends SatellitePlugin {
      * @return type $field
      */
     function submit($name = '', $args = array()) {
+        $Html = new SatelliteHtmlHelper;
         $defaults = array('class' => "button-primary");
         $r = wp_parse_args($args, $defaults);
         extract($r, EXTR_SKIP);
 
         ob_start();
-        ?><input class="<?php echo $class; ?>" type="submit" name="<?php echo $this->Html->sanitize($name); ?>" value="<?php echo $name; ?>" /><?php
+        ?><input class="<?php echo $class; ?>" type="submit" name="<?php echo $Html->sanitize($name); ?>" value="<?php echo $name; ?>" /><?php
         $submit = ob_get_clean();
         return $submit;
     }

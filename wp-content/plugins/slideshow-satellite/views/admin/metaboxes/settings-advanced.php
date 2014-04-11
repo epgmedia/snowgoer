@@ -51,16 +51,5 @@
             	<span class="howto"><?php _e('Load the CSS and Javascript on every page, not just when using this plugin.', SATL_PLUGIN_NAME); ?></span>
             </td>
         </tr>
-        <tr>
-            <th><label for="ggljquery"><?php _e('Run Jquery Through Google? ', SATL_PLUGIN_NAME); ?></label></th>
-            <td>
-                <select name="ggljquery" class="satellite_trans">
-                    <option <?php echo ($this->get_option('ggljquery') == "Y") ? 'selected' : ''; ?> value="Y"><?php _e('Yes, Google', SATL_PLUGIN_NAME); ?></option> 
-                    <option <?php echo ($this->get_option('ggljquery') == "N") ? 'selected' : ''; ?> value="N"><?php _e('No, Wordpress', SATL_PLUGIN_NAME); ?></option> 
-                </select>
-
-            	<span class="howto"><?php _e('Running jQuery through Googles CDN takes burden off of your servers.', SATL_PLUGIN_NAME); ?></span>
-            </td>
-        </tr>
     </tbody>
 </table>

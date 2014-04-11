@@ -25,10 +25,10 @@ if (!empty($_GET['quickedit'])) {
 
     <h2><?php _e('Manage Slides', SATL_PLUGIN_NAME); ?> <?php echo $this -> Html -> link(__('Add New'), 
                     $this -> url . '&amp;method=save&single='.$single, 
-                    array('class' => "button add-new-h2")); ?></h2>
+                    array('class' => "btn btn-primary")); ?></h2>
 	<?php if (!empty($slides)) : ?>	
                 <div class="alignright">
-                    <form action="<?php echo $this -> url; ?>&amp;method=single" method="POST">
+                    <form id="display-gallery" action="<?php echo $this -> url; ?>&amp;method=single" method="POST">
                         <select name="section">
                             <option value="All">All</option>
                             <?php $single = ($_GET['single']) ? $_GET['single'] : null;?>
@@ -43,7 +43,7 @@ if (!empty($_GET['quickedit'])) {
                                         <option <?php echo ((int) $this -> Slide -> data -> section == '1') ? 'selected="selected"' : ''; ?> value="1">Gallery 1</option>
                                 <?php endif; ?>
                         </select>
-                        <input type="submit" name="View" value="View"/>
+                        <input type="submit" name="View" value="View" class="hidden"/>
                     </form>
                 </div>
                 <span class="alignright viewonly" style="padding-top:5px">View Only : </span>
@@ -52,30 +52,30 @@ if (!empty($_GET['quickedit'])) {
         
 	
 	<?php if (!empty($slides)) :  ?>
-    <h5>Slides Count: <?php echo(count($slides));?></h5>
+    <h5>Slide Count: <?php echo(count($slides));?></h5>
     <?php if ($single): ?>
     <div id="gallery-slide-switch">
       <?php _e('Switch Your View:', SATL_PLUGIN_NAME); ?> <a class="btn btn-primary" href="<?php echo(admin_url()."admin.php?page=satellite-galleries&method=save&id=".$single) ?>">Gallery View</a>
     </div>
     <?php endif; ?>
       
-		<form onsubmit="if (!confirm('<?php _e('Are you sure you wish to execute this action on the selected slides?', SATL_PLUGIN_NAME); ?>')) { return false; }" action="<?php echo $this -> url; ?>&amp;method=mass&amp;single=<?php echo($single);?>" method="post">
+		<form onsubmit="if (!confirm('<?php _e('Are you sure you wish to execute this action on the selected slides?', SATL_PLUGIN_NAME); ?>')) { return false; }" action="<?php echo $this -> url; ?>&amp;method=mass&amp;single=<?php echo($single);?>" method="post" class="satl_table">
 			<div class="tablenav">
 				<div class="alignleft actions">
-					<a href="<?php echo $this -> url; ?>&amp;method=order&single=<?php echo $_GET['single']; ?>" title="<?php _e('Order all your slides', SATL_PLUGIN_NAME); ?>" class="button clearfix alignright" style="margin-left:7px;"><?php _e('Order Slides', SATL_PLUGIN_NAME); ?></a>
+					<a href="<?php echo $this -> url; ?>&amp;method=order&single=<?php echo (isset($_GET['single'])) ? $_GET['single'] : ''; ?>" title="<?php _e('Order all your slides', SATL_PLUGIN_NAME); ?>" class="btn btn-info clearfix alignright" style="margin-left:7px;"><?php _e('Order Slides', SATL_PLUGIN_NAME); ?></a>
 				
 					<select id="satl_bulkaction" name="action" class="action alignleft">
 						<option value="">- <?php _e('Bulk Actions', SATL_PLUGIN_NAME); ?> -</option>
 						<option value="delete"><?php _e('Delete', SATL_PLUGIN_NAME); ?></option>
             <option value="quickedit" <?php echo ($quickedit) ? "selected=selected" : null ?>><?php _e('Quick Edit', SATL_PLUGIN_NAME); ?></option>
-            <?php if ($images[resize]):?>
+            <?php if (isset($images[resize])):?>
               <option value="resize"><?php _e('Resize to ', SATL_PLUGIN_NAME); echo($images['resize'].'px'); ?></option>
             <?php endif;?>
 						<?php if ($this->canPremiumDoThis('watermark')) :?>
               <option value="watermark"><?php _e('Watermark', SATL_PLUGIN_NAME); ?></option>
             <?php endif; ?>
 					</select>
-					<input type="submit" class="button alignleft" value="<?php _e('Apply', SATL_PLUGIN_NAME); ?>" name="execute" />
+					<input type="submit" class="btn btn-primary alignleft" value="<?php _e('Apply', SATL_PLUGIN_NAME); ?>" name="execute" />
 				</div>
 			</div>
 		
@@ -97,7 +97,7 @@ if (!empty($_GET['quickedit'])) {
               if ($quickedit) {
                 $this -> render('slides/display-quickedit', array(), true, 'admin');
               } else {
-                $this -> render('slides/display-standard', array(), true, 'admin'); 
+                $this -> render('slides/display-standard', array('single'=>$single), true, 'admin');
               }
              ?>
           </div>
@@ -122,3 +122,4 @@ if (!empty($_GET['quickedit'])) {
       </div>
     </form>
     <?php _e('Pssst, scrolling loads more images.', SATL_PLUGIN_NAME); ?>
+    <img src="<?php echo(SATL_PLUGIN_URL.'/images/Satellite-Logo-sm.png');?>" style="height:100px" class="alignright"/>

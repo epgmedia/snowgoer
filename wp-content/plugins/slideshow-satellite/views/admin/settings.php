@@ -23,19 +23,7 @@ wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false);
 	<form action="<?php echo $this -> url; ?>" name="post" id="post" method="post">
 		<div id="poststuff" class="metabox-holder has-right-sidebar">
                         
-              <div id="side-info-column" class="inner-sidebar">	
-                  <div id="submitdiv" class="postbox">
-                      <h3 class="hndle">Like the plugin?</h3>
-                      <div class="inside">
-                          <div id="misc-publishing-actions" class="preminfo">
-                          <h4><?php _e('Will Code for Ratings!', SATL_PLUGIN_NAME); ?></h4>
-                          <a href="http://wordpress.org/extend/plugins/slideshow-satellite/" class="star-rating" target="_blank"></a>
-                          <h4><a href="http://wordpress.org/extend/plugins/slideshow-satellite/" target="_blank"><?php _e('Help our ratings now!', SATL_PLUGIN_NAME); ?></a></h4>
-                          <?php _e('Thank you for your time in rating my plugin. Your positive ratings help make this plugin a success! :)', SATL_PLUGIN_NAME); ?>
-                          </div>
-                      </div>
-                  </div>
-
+              <div id="side-info-column" class="inner-sidebar">
                       <?php do_action('submitpage_box'); ?>	
                       <?php do_meta_boxes($this -> menus['satellite'], 'side', $post); ?>
                       <?php do_action('submitpage_box'); ?>
@@ -51,7 +39,6 @@ wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false);
                   <div id="minor-publishing">
                       <div id="misc-publishing-actions" class="preminfo">
                           <h4>What's different on the Premium Edition?</h4>
-                          <p>Display multiple slideshows in a page</p>
                           <p>Watermark your images</p>
                           <p>Customize height and width per use</p>
                           <p>Have multiple arrow options</p>
@@ -63,7 +50,7 @@ wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false);
                   </div>
                   <div id="major-publishing-actions">
                       <div id="publishing-action">
-                          <a href="http://c-pr.es/projects/satellite" class="button-primary" target="_blank"><?php echo($satellitebtn); ?></a>
+                          <a href="http://c-pr.es/satellite" class="button-primary" target="_blank"><?php echo($satellitebtn); ?></a>
                       </div>
                       <br class="clear" />
                   </div>

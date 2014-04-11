@@ -4,10 +4,10 @@ Plugin Name: Motor Racing League
 Plugin URI: http://www.ianhaycox.com/f1/
 Author URI: http://www.ianhaycox.com/
 Description: This plugin manages a Motor Racing League allowing users to enter predictions for events, e.g. Formula 1, NASCAR, Moto GP etc. Users predictions are scored and displayed in a results widget.
-Version: 1.9.4
+Version: 1.9.5
 Author: Ian Haycox
 
-Copyright 2009-2013  Ian Haycox  (email : ian.haycox@gmail.com)
+Copyright 2009-2014  Ian Haycox  (email : ian.haycox@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // Sets up plugin configuration and routing based on names of plugin folder and files.
 
-$plugin_version = '1.9.4';
+$plugin_version = '1.9.5';
 
 $plugin_name = 'motorracingleague';
 $plugin_file = $plugin_name.'.php';

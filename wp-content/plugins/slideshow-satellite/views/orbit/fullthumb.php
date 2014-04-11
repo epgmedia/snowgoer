@@ -8,7 +8,7 @@ if (!empty($slides)) :
     $imagesbox = $images['imagesbox'];
     $pagelink = $images['pagelink'];
     $responsive = false;//$this->get_option('responsive');
-    $respExtra = ($respExtra) ? $respExtra : $style['thumbarea'];
+    $respExtra = (isset($respExtra)) ? $respExtra : $style['thumbarea'];
     
     $textloc = $this->get_option('textlocation');
     if (!$frompost) {

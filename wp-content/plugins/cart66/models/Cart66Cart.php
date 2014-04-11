@@ -148,7 +148,28 @@ class Cart66Cart {
         if($formEntryId > 0) {
           $newItem->addFormEntryId($formEntryId);
           $newItem->setQuantity($qty);
-          $this->_items[] = $newItem;
+          
+          $actualQty = Cart66Product::checkInventoryLevelForProduct($product->id, $optionInfo->options);
+          $confirmInventory = Cart66Product::confirmInventory($product->id, $optionInfo->options, $qty);
+          if($actualQty !== NULL && $actualQty < $qty && !$confirmInventory){
+            if($actualQty > 0) {
+              $message = '<div class="alert-message alert-error Cart66Unavailable"><p>' . __('We are not able to fulfill your order for', 'cart66') . ' <strong>' .  $qty . '</strong> ' . $newItem->getFullDisplayName() . " " . __('because we only have', 'cart66') .  " <strong>$actualQty " . __('in stock.', 'cart66') . "</strong></p>" .
+                         "<p>" . __('Your cart has been updated based on our available inventory.', 'cart66') . "</p>" .
+                         '</div>';
+            }
+            else{
+              $soldOutLabel = Cart66Setting::getValue('label_out_of_stock') ? strtolower(Cart66Setting::getValue('label_out_of_stock')) : __('out of stock', 'cart66');
+              $message = '<div class="alert-message alert-error Cart66Unavailable"><p>' . __('We are not able to fulfill your order for', 'cart66') . ' <strong>' .  $qty . '</strong> ' . $newItem->getFullDisplayName() . " " . __('because it is', 'cart66') . " <strong>" . $soldOutLabel . ".</strong></p>";
+              $message .= '</div>';
+            }
+            if(!empty($message)) {              
+              Cart66Session::set('Cart66InventoryWarning', $message);              
+            }
+          }
+          else{
+            $this->_items[] = $newItem;
+          }
+                              
         }
       }
       else {

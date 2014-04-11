@@ -41,7 +41,7 @@ class UploaderNggAdmin extends nggAdmin {
 			return;
 		}
 		// Read Image List
-		$dirlist = $this->scandir( WINABSPATH . $gallerypath );
+		$dirlist = $this->scandir( ABSPATH . $gallerypath );
 		foreach( $_FILES as $key => $value ) {
 			if ( $_FILES[$key]['error'] == 0 ) {
 				$entropy = '';
@@ -65,17 +65,17 @@ class UploaderNggAdmin extends nggAdmin {
 				while ( in_array( $filename, $dirlist ) ) {
 					$filename = sanitize_title( $filepart['filename'] ) . '_' . $i++ . '.' . $filepart['extension'];
 				}
-				$dest_file = WINABSPATH . $gallerypath . '/' . $filename;
+				$dest_file = ABSPATH . $gallerypath . '/' . $filename;
 				// Check Folder Permissions
-				if ( !is_writeable( WINABSPATH . $gallerypath ) ) {
-					$message = sprintf( __( 'Unable to write to directory %s. Is this directory writable by the server?', 'nextgen-public-uploader' ), WINABSPATH . $gallerypath );
+				if ( !is_writeable( ABSPATH . $gallerypath ) ) {
+					$message = sprintf( __( 'Unable to write to directory %s. Is this directory writable by the server?', 'nextgen-public-uploader' ), ABSPATH . $gallerypath );
 					self::show_error( $message );
 					return;
 				}
 				// Save Temporary File
 				if ( !@move_uploaded_file( $_FILES[$key]['tmp_name'], $dest_file ) ) {
 					self::show_error( __( 'Error, the file could not moved to: ', 'nextgen-public-uploader' ) . $dest_file );
-					$this->check_safemode( WINABSPATH.$gallerypath );
+					$this->check_safemode( ABSPATH.$gallerypath );
 					continue;
 				}
 				if ( ! $this->chmod( $dest_file ) ) {
@@ -130,7 +130,7 @@ class UploaderNggAdmin extends nggAdmin {
 			return;
 		}
 		// Read Image List
-		$dirlist = $this->scandir( WINABSPATH . $gallerypath );
+		$dirlist = $this->scandir( ABSPATH . $gallerypath );
 		foreach( $_FILES as $key => $value ) {
 			if ( $_FILES[$key]['error'] == 0 ) {
 				$temp_file = $_FILES[$key]['tmp_name'];
@@ -149,17 +149,17 @@ class UploaderNggAdmin extends nggAdmin {
 				while ( in_array( $filename, $dirlist ) ) {
 					$filename = sanitize_title( $filepart['filename'] ) . '_' . $i++ . '.' . $filepart['extension'];
 				}
-				$dest_file = WINABSPATH . $gallerypath . '/' . $filename;
+				$dest_file = ABSPATH . $gallerypath . '/' . $filename;
 				// Check Folder Permissions
-				if ( !is_writeable( WINABSPATH . $gallerypath ) ) {
-					$message = sprintf( __( 'Unable to write to directory %s. Is this directory writable by the server?', 'nextgen-public-uploader' ), WINABSPATH . $gallerypath );
+				if ( !is_writeable( ABSPATH . $gallerypath ) ) {
+					$message = sprintf( __( 'Unable to write to directory %s. Is this directory writable by the server?', 'nextgen-public-uploader' ), ABSPATH . $gallerypath );
 					self::show_error( $message );
 					return;
 				}
 				// Save Temporary File
 				if ( ! @move_uploaded_file( $_FILES[$key]['tmp_name'], $dest_file ) ) {
 					self::show_error( __( 'Error, the file could not moved to: ', 'nextgen-public-uploader' ) . $dest_file );
-					$this->check_safemode( WINABSPATH . $gallerypath );
+					$this->check_safemode( ABSPATH . $gallerypath );
 					continue;
 				}
 				if ( ! $this->chmod( $dest_file ) ) {

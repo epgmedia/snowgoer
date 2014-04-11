@@ -198,6 +198,15 @@ class Cart66ProCommon {
       'USPS Priority Mail 1-Day' => 'Priority Mail 1-Day',
       'USPS Priority Mail 2-Day' => 'Priority Mail 2-Day',
       'USPS Priority Mail 3-Day' => 'Priority Mail 3-Day',
+      'Priority Mail 1-Day Small Flat Rate Box' => 'Priority Mail 1-Day Small Flat Rate Box',
+      'Priority Mail 1-Day Medium Flat Rate Box' => 'Priority Mail 1-Day Medium Flat Rate Box',
+      'Priority Mail 1-Day Large Flat Rate Box' => 'Priority Mail 1-Day Large Flat Rate Box',
+      'Priority Mail 2-Day Small Flat Rate Box' => 'Priority Mail 2-Day Small Flat Rate Box',
+      'Priority Mail 2-Day Medium Flat Rate Box' => 'Priority Mail 2-Day Medium Flat Rate Box',
+      'Priority Mail 2-Day Large Flat Rate Box' => 'Priority Mail 2-Day Large Flat Rate Box',
+      'Priority Mail 3-Day Small Flat Rate Box' => 'Priority Mail 3-Day Small Flat Rate Box',
+      'Priority Mail 3-Day Medium Flat Rate Box' => 'Priority Mail 3-Day Medium Flat Rate Box',
+      'Priority Mail 3-Day Large Flat Rate Box' => 'Priority Mail 3-Day Large Flat Rate Box',
       'USPS Priority Mail Military' => 'Priority Mail Military',
       'USPS Standard Post' => 'Standard Post',
       'USPS Media Mail' => 'Media Mail',
@@ -205,9 +214,9 @@ class Cart66ProCommon {
       'USPS Priority Mail Express International' => 'Priority Mail Express International',
       'USPS Priority Mail International' => 'Priority Mail International',
       'USPS First-Class Mail International' => 'First-Class Package International Service',
-      'USPS Priority Mail Small Flat Rate Box' => 'Priority Mail International Small Flat Rate Box',
-      'USPS Priority Mail Medium Flat Rate Box' => 'Priority Mail International Medium Flat Rate Box',
-      'USPS Priority Mail Large Flat Rate Box' => 'Priority Mail International Large Flat Rate Box'
+      'USPS Priority Mail International Small Flat Rate Box' => 'Priority Mail International Small Flat Rate Box',
+      'USPS Priority Mail International Medium Flat Rate Box' => 'Priority Mail International Medium Flat Rate Box',
+      'USPS Priority Mail International Large Flat Rate Box' => 'Priority Mail International Large Flat Rate Box',    
     );
     
     return $usaServices;

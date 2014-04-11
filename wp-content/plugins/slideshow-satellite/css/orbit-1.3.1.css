@@ -236,16 +236,31 @@ span.pause.active {
     z-index: 50;
     color: #FFF;
     text-align: center;
-    font-size: 13px;
+    font-size: 100%;
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100%; }
-@media \0screen {
-   .satl-wrapper .orbit-caption { background:transparent !important; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000050,endColorstr=#99000050);zoom: 1;   }
-}
 
 
+/* Media queries */
+
+  @media \0screen {
+    .satl-wrapper .orbit-caption { background:transparent !important; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000050,endColorstr=#99000050);zoom: 1;   }
+  }
+	
+	@media only screen and (min-width: 1100px) {
+		.satl-wrapper .orbit-caption { font-size:100%;}
+	}  
+	       
+	@media only screen and (max-width: 800px) {
+		.satl-wrapper .orbit-caption { font-size:90%;}
+	}   
+	
+	@media only screen and (max-width: 400px) {
+		.satl-wrapper .orbit-caption { font-size:80%;}
+	}
+  
 .satl-wrapper .orbit-caption h5 {
     color:#FFF; 
     padding:4px 8px 3px; 
@@ -671,7 +686,7 @@ ul.orbit-thumbnails {
     border-bottom: 2px solid;
     border-left: 1px solid;
     border-top: 1px solid;
-    font-size: 16px;
+    font-size: 110%;
     margin-bottom: -1px;
     padding: 3px 0 3px 5px;
     color:#EEE;

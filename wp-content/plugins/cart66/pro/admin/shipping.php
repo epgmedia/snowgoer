@@ -126,6 +126,13 @@
   	<div class="sh3 pane">
   	  <h3 style="clear: both;"><?php _e( 'FedEx Shipping Account Information' , 'cart66' ); ?></h3>
       <p><?php _e( "If you intend to use FedEx real-time shipping quotes please provide your FedEx account information. This feature requires a <strong>production FedEx</strong> account. A test account will not work." , 'cart66' ); ?></p>
+
+      <?php if(!class_exists('SoapClient')): ?>
+          <div class="alert-message alert-error">
+            Warning: The SoapClient class does not exist. Please ensure your PHP configuration has enabled the SoapClient. If you are having trouble, please consult your host or visit <a href="http://stackoverflow.com/questions/11391442/fatal-error-class-soapclient-not-found" target="_blank">this page</a> for assistance. The FedEX live rate API will not work without the SoapClient installed.
+          </div>
+      <?php endif; ?>
+      
       <form action="" method='post'>
         <input type='hidden' name='cart66-action' value='save fedex account info' />
         <ul>

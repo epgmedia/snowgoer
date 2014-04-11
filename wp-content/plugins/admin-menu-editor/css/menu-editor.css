@@ -102,7 +102,7 @@
 	clear: both;
 	display: block;
 	margin: 4px;
-	width: 120px;
+	width: 130px;
 }
 
 #ws_menu_editor #ws_save_menu {
@@ -225,8 +225,8 @@
 }
 
 .ws_edit_field {
-	margin-bottom: 8px;
-	height: 42.2px;
+	margin-bottom: 6px;
+	height: 45px;
 }
 
 .ws_edit_field-custom {
@@ -254,7 +254,9 @@
 	background-image: url("../images/pencil_delete.png");
 }
 
-.ws_input_default input, .ws_input_default select {
+.ws_input_default input,
+.ws_input_default select,
+.ws_input_default .ws_color_scheme_display {
 	color: gray;
 }
 
@@ -289,7 +291,7 @@
 #ws_menu_access_editor .ws_dropdown_button
 {
 	width: 20px;
-	height: 20px;
+	height: 23px;
 	
 	margin: 1px 1px 1px 0;
 	padding: 0;
@@ -496,10 +498,23 @@ select.ws_dropdown optgroup option {
 	border: 1px solid silver;
 	border-radius: 3px;
 	background-color: white;
-	width: 144px;
+	width: 216px;
 	padding: 2px;
     position: absolute;
 }
+
+#ws_icon_selector.ws_with_more_icons {
+    width: 504px;
+}
+
+#ws_icon_selector .ws_icon_extra {
+    display: none;
+}
+
+#ws_icon_selector.ws_with_more_icons .ws_icon_extra {
+    display: inline-block;
+}
+
 
 #ws_icon_selector .ws_icon_option {
 	float: left;
@@ -561,6 +576,9 @@ select.ws_dropdown optgroup option {
 	margin: 0;
 	padding: 0;
 	position: relative;
+
+    box-sizing: border-box;
+    height: 25px;
 }
 
 /* Current icon node (CSS class version, for the built-in WP icon sprites) */
@@ -601,6 +619,80 @@ select.ws_dropdown optgroup option {
 	margin: 2px;
 }
 
+#ws_show_more_icons {
+    margin: 2px;
+    height: 30px;
+    width: 68px;
+}
+
+
+/************************************
+           Menu color picker
+*************************************/
+
+#ws-ame-menu-color-settings {
+    background: white;
+    display: none;
+}
+
+#ame-menu-color-list {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.ame-menu-color-column {
+    min-width: 460px;
+}
+
+.ame-menu-color-name {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2px;
+
+    line-height: 1.3;
+    font-size: 14px;
+    font-weight: 600;
+
+    min-width: 180px;
+}
+
+.ame-color-option {
+    padding: 10px 0;
+}
+
+.ame-advanced-menu-color {
+    display: none;
+}
+
+/* Color scheme display in the editor widget. */
+
+.ws_color_scheme_display {
+    display: inline-block;
+    height: 20px;
+    width: 190px;
+
+    margin-right: 5px;
+    padding: 2px 2px 2px 3px;
+
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.ws_color_display_item {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.ws_color_display_item:last-child {
+    margin-right: 0;
+}
+
 /************************************
            Export and import
 *************************************/
@@ -611,12 +703,19 @@ select.ws_dropdown optgroup option {
 
 .ui-widget-overlay {
 	background-color: black;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	opacity: 0.70;
 	-moz-opacity: 0.70;
-	filter: alpha(opacity=70); 
+	filter: alpha(opacity=70);
+
+    width: 100%;
+    height: 100%;
+}
+
+.ui-front {
+    z-index: 100;
 }
 
 .ui-dialog {
@@ -686,9 +785,11 @@ select.ws_dropdown optgroup option {
 }
 
 .ws_dialog_buttons {
-	height: 23px;
+	/*height: 30px;*/
 	text-align: right;
 	margin-top: 20px;
+    margin-bottom: 1px;
+    clear: both;
 }
 
 .ws_dialog_buttons .button-primary {
@@ -716,6 +817,11 @@ select.ws_dropdown optgroup option {
 	text-align: center;
 	font-size: large;
 	padding-top: 25px;
+}
+
+.ws_dont_show_again {
+    display: inline-block;
+    margin-top: 1em;
 }
 
 /************************************
@@ -886,6 +992,8 @@ select.ws_dropdown optgroup option {
 }
 
 #ws_sidebar_pro_ad {
+    min-width: 225px;
+
 	margin-top: 5px;
 	margin-left: 3px;
 
@@ -893,57 +1001,4 @@ select.ws_dropdown optgroup option {
 	right: 20px;
 	bottom: 40px;
 	z-index: 100;
-}
-
-/************************************
-        Screen meta buttons
-*************************************/
-
-/* All buttons */
-#ws-pro-version-notice {
-	float: right;
-	height: 22px;
-	padding: 0;
-	margin: 0 0 0 6px;
-	font-family: sans-serif;
-
-	-moz-border-radius-bottomleft: 3px;
-	-moz-border-radius-bottomright: 3px;
-	-webkit-border-bottom-left-radius: 3px;
-	-webkit-border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
-
-	background: #e3e3e3;
-
-	border-right: 1px solid transparent;
-	border-left: 1px solid transparent;
-	border-bottom: 1px solid transparent;
-	background-image: -ms-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* IE10 */
-	background-image: -moz-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* Firefox */
-	background-image: -o-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* Opera */
-	background-image: -webkit-gradient(linear, left bottom, left top, from(#dfdfdf), to(#f1f1f1)); /* old Webkit */
-	background-image: -webkit-linear-gradient(bottom, #dfdfdf, #f1f1f1); /* new Webkit */
-	background-image: linear-gradient(bottom, #dfdfdf, #f1f1f1); /* proposed W3C Markup */
-}
-
-#ws-pro-version-notice a.show-settings {
-	background-image: none;
-	padding:0 6px 0 6px;
-}
-
-/* "Upgrade to Pro" */
-#ws-pro-version-notice {
-	background: #00C31F none;
-}
-
-
-#ws-pro-version-notice a.show-settings {
-	font-weight: bold;
-	color: #DEFFD8;
-	text-shadow: none;
-}
-
-#ws-pro-version-notice a.show-settings:hover {
-	color: white;
 }

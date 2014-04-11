@@ -161,13 +161,18 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			"google_verify" 		=> __( "Enter your verification code here to verify your site with Google Webmaster Tools.<br /><a href='http://semperplugins.com/documentation/google-webmaster-tools-verification/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"bing_verify" 			=> __( "Enter your verification code here to verify your site with Bing Webmaster Tools.<br /><a href='http://semperplugins.com/documentation/bing-webmaster-verification/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"pinterest_verify" 		=> __( "Enter your verification code here to verify your site with Pinterest.<br /><a href='http://semperplugins.com/documentation/pinterest-site-verification/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
-			"google_publisher"		=> __( "Enter your Google Plus Profile URL here to link your site to your Google Plus account for authorship.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"google_publisher"		=> __( "Enter your Google+ Profile URL here to add the rel=“author” tag to your site for Google authorship. It is recommended that the URL you enter here should be your personal Google+ profile.  Use the Advanced Authorship Options below if you want greater control over the use of authorship.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"google_disable_profile"=> __( "Check this to remove the Google Plus field from the user profile screen.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"google_author_advanced"=> __( "Enable this to display advanced options for controlling Google Plus authorship information on your website.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"google_author_location"=> __( "This option allows you to control which types of pages you want to display rel=\"author\" on for Google authorship. The options include the Front Page (the homepage of your site), Posts, Pages, and any Custom Post Types. The Everywhere Else option includes 404, search, categories, tags, custom taxonomies, date archives, author archives and any other page template.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"google_enable_publisher"=> __( "This option allows you to control whether rel=\"publisher\" is displayed on the homepage of your site. Google recommends using this if the site is a business website.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"google_specify_publisher"=> __( "The Google+ profile you enter here will appear on your homepage only as the rel=\"publisher\" tag. It is recommended that the URL you enter here should be the Google+ profile for your business.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"google_connect"		=> __( "Press the connect button to connect with Google Analytics; or if already connected, press the disconnect button to disable and remove any stored analytics credentials.", 'all_in_one_seo_pack' ),
 			"google_analytics_id"	=> __( "Enter your Google Analytics ID here to track visitor behavior on your site using Google Analytics.<br /><a href='http://semperplugins.com/documentation/google-analytics/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"ga_use_universal_analytics" => __( "Use the new Universal Analytics tracking code for Google Analytics; do this for new analytics accounts.", 'all_in_one_seo_pack' ),
 			"ga_domain"				=> __( "Enter your domain name if you have enabled tracking of Subdomains in Google Analytics.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"ga_multi_domain"		=> __( "Check this if you have enabled tracking of Multiple top-level domains in Google Analytics.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
+			"ga_display_advertising"=> __( "Support for Doubleclick Display Advertising tracking with legacy ga.js tracking method (not required for Universal Analytics).", 'all_in_one_seo_pack' ),
 			"ga_exclude_users"		=> __( "Exclude logged-in users from Google Analytics tracking by role.", 'all_in_one_seo_pack' ),
 			"ga_track_outbound_links"=> __( "Check this if you want to track outbound links with Google Analytics.<br /><a href='http://semperplugins.com/documentation/google-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
 			"cpostnoindex" 			=> __( "Set the default NOINDEX setting for each Post Type.<br /><a href='http://semperplugins.com/documentation/noindex-settings/' target='_blank'>Click here for documentation on this setting</a>", 'all_in_one_seo_pack' ),
@@ -351,6 +356,28 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			"google_disable_profile"=> Array(
 				'name' => __( 'Disable Google Plus Profile:', 'all_in_one_seo_pack' ), 'default' => 0, 'type' => 'checkbox'
 				),
+			"google_author_advanced" => Array(
+					'name' => __( 'Advanced Authorship Options:', 'all_in_one_seo_pack' ), 
+					'default' => 0, 'type' => 'radio',
+					'initial_options' => Array( 'on' => __( 'Enabled', 'all_in_one_seo_pack' ),
+												0 => __( 'Disabled', 'all_in_one_seo_pack' ) ),
+					'label' => null
+					),
+			"google_author_location"=> Array(
+				'name' => __( 'Display Google Authorship:', 'all_in_one_seo_pack' ), 'default' => array( 'all' ), 'type' => 'multicheckbox',
+				'condshow' => Array( 'aiosp_google_author_advanced' => 'on' )
+				),
+			"google_enable_publisher" => Array(
+				'name' => __( 'Display Publisher Meta on Front Page:', 'all_in_one_seo_pack' ), 
+				'default' => 'on', 'type' => 'radio',
+				'initial_options' => Array( 'on' => __( 'Enabled', 'all_in_one_seo_pack' ),
+											0 => __( 'Disabled', 'all_in_one_seo_pack' ) ),
+				'condshow' => Array( 'aiosp_google_author_advanced' => 'on' )
+				),
+			"google_specify_publisher" => Array(
+					'name' => __( 'Specify Publisher URL:', 'all_in_one_seo_pack' ), 'type' => 'text',
+					'condshow' => Array( 'aiosp_google_author_advanced' => 'on', 'aiosp_google_enable_publisher' => 'on' )
+				),
 			"google_connect"=>Array( 'name' => __( 'Connect With Google Analytics', 'all_in_one_seo_pack' ), 
 				),
 			"google_analytics_id"=> Array(
@@ -368,6 +395,11 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'name' => __( 'Track Multiple Domains:', 'all_in_one_seo_pack' ),
 				'default' => 0,
 				'condshow' => Array( 'aiosp_google_analytics_id' => Array( 'lhs' => 'aiosp_google_analytics_id', 'op' => '!=', 'rhs' => '' ) ) ),
+			"ga_display_advertising"=> Array(
+				'name' => __( '"Display Advertising" Tracking:', 'all_in_one_seo_pack' ),
+				'type' => 'checkbox',
+				'condshow' => Array( 'aiosp_google_analytics_id' => Array( 'lhs' => 'aiosp_google_analytics_id', 'op' => '!=', 'rhs' => '' ),
+									 'aiosp_ga_use_universal_analytics' => Array( 'lhs' => 'aiosp_ga_use_universal_analytics', 'op' => '!=', 'rhs' => 'on' ) ) ),				
 			"ga_exclude_users"=> Array(
 				'name' => __( 'Exclude Users From Tracking:', 'all_in_one_seo_pack' ),
 				'type' => 'multicheckbox',
@@ -519,7 +551,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				'google' => Array(
 						'name' => __( 'Google Settings', 'all_in_one_seo_pack' ),
 						'help_link' => 'http://semperplugins.com/documentation/google-settings/',
-						'options' => Array( "google_publisher", "google_disable_profile", "google_connect", "google_analytics_id", "ga_use_universal_analytics", "ga_domain", "ga_multi_domain", "ga_exclude_users", "ga_track_outbound_links" )
+						'options' => Array( "google_publisher", "google_disable_profile", "google_author_advanced", "google_author_location", "google_enable_publisher" , "google_specify_publisher",						
+											"google_connect", "google_analytics_id", "ga_use_universal_analytics", "ga_domain", "ga_multi_domain", "ga_display_advertising", "ga_exclude_users", "ga_track_outbound_links" )
 					),
 				'noindex' => Array(
 						'name' => __( 'Noindex Settings', 'all_in_one_seo_pack' ),
@@ -603,7 +636,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		?>
 	    <style>
 	        #toplevel_page_all-in-one-seo-pack-aioseop_class .wp-menu-image {
-	            background: url(<?php echo AIOSEOP_PLUGIN_IMAGES_URL; ?>shield-sprite-16.png) no-repeat 6px 6px !important;
+	            background: url(<?php echo AIOSEOP_PLUGIN_IMAGES_URL; ?>shield-sprite-16.png) no-repeat 8px 6px !important;
 	        }
 			#toplevel_page_all-in-one-seo-pack-aioseop_class .wp-menu-image:before {
 				content: '' !important;
@@ -612,7 +645,7 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	            display: none;
 	        }
 	        #toplevel_page_all-in-one-seo-pack-aioseop_class:hover .wp-menu-image, #toplevel_page_all-in-one-seo-pack-aioseop_class.wp-has-current-submenu .wp-menu-image {
-	            background-position: 6px -26px !important;
+	            background-position: 8px -26px !important;
 	        }
 	        #icon-aioseop.icon32 {
 	            background: url(<?php echo AIOSEOP_PLUGIN_IMAGES_URL; ?>shield32.png) no-repeat left top !important;
@@ -721,6 +754,10 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 		$this->default_options["cpostactive"]['initial_options'] = $post_types;
 		$this->default_options["cpostnoindex"]['initial_options'] = $post_types;
 		$this->default_options["cpostnofollow"]['initial_options'] = $post_types;
+		$this->default_options["google_author_location"]['initial_options'] = $post_types;
+		$this->default_options['google_author_location' ]['initial_options'] = array_merge( Array( 'front' => __( 'Front Page', 'all_in_one_seo_pack' ) ), $post_types, Array( 'all' => __( 'Everywhere Else', 'all_in_one_seo_pack' ) ) );
+		$this->default_options["google_author_location"]['default'] = array_keys( $this->default_options["google_author_location"]['initial_options'] );
+		
 		foreach ( $post_types as $p => $pt ) {
 			$field = $p . "_title_format";
 			$name = $post_objs[$p]->labels->singular_name;
@@ -760,16 +797,16 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 	
 	function add_admin_pointers() {
-		$this->pointers['aioseop_menu_210'] = Array( 'pointer_target' => '#toplevel_page_all-in-one-seo-pack-aioseop_class',
+		$this->pointers['aioseop_menu_211'] = Array( 'pointer_target' => '#toplevel_page_all-in-one-seo-pack-aioseop_class',
 												 'pointer_text' => 	'<h3>' . sprintf( __( 'Welcome to Version %s!', 'all_in_one_seo_pack' ), AIOSEOP_VERSION )
 													. '</h3><p>' . __( 'Thank you for running the latest and greatest All in One SEO Pack ever! Please review your settings, as we\'re always adding new features for you!', 'all_in_one_seo_pack' ) . '</p>',
 												 'pointer_edge' => 'top',
 												 'pointer_align' => 'left',
 												 'pointer_scope' => 'global'
 											);
-		$this->pointers['aioseop_welcome_210'] = Array( 'pointer_target' => '#aioseop_top_button',
+		$this->pointers['aioseop_welcome_211'] = Array( 'pointer_target' => '#aioseop_top_button',
 													'pointer_text' => '<h3>' . sprintf( __( 'Review Your Settings', 'all_in_one_seo_pack' ), AIOSEOP_VERSION )
-													. '</h3><p>' . __( 'Thank you for running the latest and greatest All in One SEO Pack ever! NEW: Manage how your site appears on Facebook, Google+, and Twitter with our Social Meta module.  Enable it from the Feature Manager.  Remember to review your settings, we have added some new ones!', 'all_in_one_seo_pack' ) . '</p>',
+													. '</h3><p>' . __( 'Thank you for running the latest and greatest All in One SEO Pack ever! New since 2.1: Manage how your site appears on Facebook, Google+, and Twitter with our Social Meta module.  Enable it from the Feature Manager.  Remember to review your settings, we have added some new ones!', 'all_in_one_seo_pack' ) . '</p>',
 													 'pointer_edge' => 'bottom',
 													 'pointer_align' => 'left',
 													 'pointer_scope' => 'local'
@@ -835,6 +872,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			foreach ( Array( 'seopostcol', 'seocustptcol', 'debug_info', 'max_words_excerpt' ) as $opt )
 				unset( $settings["{$prefix}$opt"] );
 			
+			if ( !class_exists( 'DOMDocument' ) ) {
+				unset( $settings["{prefix}google_connect"] );
+			}
 		} elseif ( $location == 'aiosp' ) {
 			global $post, $aioseop_sitemap;
 			$prefix = $this->get_prefix( $location ) . $location . '_';
@@ -893,6 +933,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				$options["{$prefix}enablecpost"] = 0;
 			if ( ( isset( $options["{$prefix}use_original_title"] ) ) && ( $options["{$prefix}use_original_title"] === '' ) )
 				$options["{$prefix}use_original_title"] = 0;
+			//if ( is_array( $options["{$prefix}google_author_location"] ) && in_array( 'all', $options["{$prefix}google_author_location"] ) && is_array( $this->default_options["google_author_location"]['initial_options'] ) )
+			//	$options["{$prefix}google_author_location"] = array_keys( $this->default_options["google_author_location"]['initial_options'] );
 		}
 		return $options;
 	}
@@ -957,12 +999,6 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				</div>
 		        <?php
 		        break;
-			case "aioseop-hosting":
-	        ?><div class="aioseop_metabox_text">
-	        	<p><a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=aioseo&page=http://www.hostgator.com/apps/wordpress-hosting.shtml" target="_blank"><img src="<?php echo AIOSEOP_PLUGIN_URL; ?>images/Hostgator--AN-9-8-2013-445x220.gif" alt="HostGator.com WordPress Hosting | Use Coupon WPPlugin | Only $3.47/Month"></p>
-			</div>
-	        <?php
-				break;
 		}
 		echo "</div>";
 	}
@@ -1170,6 +1206,8 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			else if ( is_single() || is_page() || is_home() || $this->is_static_posts_page() )
 				$description = $this->get_aioseop_description( $post );
 			
+			$description = $this->trim_excerpt_without_filters( $description );
+			
 			$description = apply_filters( 'aioseop_description', $description );
 			
 			/*
@@ -1299,8 +1337,19 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 			if ( empty( $googleplus ) && !empty( $aioseop_options['aiosp_google_publisher'] ) )
 				$googleplus = $aioseop_options['aiosp_google_publisher'];
 
-			if ( $is_front_page && !empty( $aioseop_options['aiosp_google_publisher'] ) )
-				$publisher = $aioseop_options['aiosp_google_publisher'];
+
+			if ( $is_front_page ) {
+				if ( !empty( $aioseop_options['aiosp_google_publisher'] ) )
+					$publisher = $aioseop_options['aiosp_google_publisher'];
+
+				if ( !empty( $aioseop_options["aiosp_google_author_advanced"] ) ) {
+					if ( empty( $aioseop_options["aiosp_google_enable_publisher"] ) ) {
+						$publisher = '';
+					} elseif ( !empty( $aioseop_options["aiosp_google_specify_publisher"] ) ) {
+						$publisher = $aioseop_options["aiosp_google_specify_publisher"];
+					}
+				}				
+			}
 			
 			$publisher = apply_filters( 'aioseop_google_publisher', $publisher );
 			
@@ -1311,6 +1360,20 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 				$author = $googleplus;
 			else if ( !empty( $aioseop_options['aiosp_google_publisher'] ) )
 				$author = $aioseop_options['aiosp_google_publisher'];
+				
+			if ( !empty( $aioseop_options['aiosp_google_author_advanced'] ) && isset( $aioseop_options['aiosp_google_author_location'] ) ) {
+				if ( $is_front_page && !in_array( 'front', $aioseop_options['aiosp_google_author_location'] ) ) {
+					unset( $author );
+				} else {
+					if ( in_array( 'all', $aioseop_options['aiosp_google_author_location'] ) ) {
+						if ( is_singular() && !is_singular( $aioseop_options['aiosp_google_author_location'] ) )
+								unset( $author );
+					} else {
+						if ( !is_singular( $aioseop_options['aiosp_google_author_location'] ) )
+							unset( $author );
+					}
+				}
+			}
 			
 			$author = apply_filters( 'aioseop_google_author', $author );
 			
@@ -1400,8 +1463,9 @@ class All_in_One_SEO_Pack extends All_in_One_SEO_Pack_Module {
 	}
 	
 	function override_options( $options, $location, $settings ) {
-		$opts = Array();
-		$options['aiosp_google_connect'] = $settings['aiosp_google_connect']['default'];
+		if ( class_exists( 'DOMDocument' ) ) {
+			$options['aiosp_google_connect'] = $settings['aiosp_google_connect']['default'];			
+		}
 		return $options;
 	}
 
@@ -1704,8 +1768,15 @@ function aiosp_google_analytics() {
 ?>		  _gaq.push(['_trackPageview']);
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+<?php
+		if (!empty( $aioseop_options['aiosp_ga_display_advertising'] ) ) {
+?>			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+<?php
+		} else {
+?>			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+<?php
+		}
+?>		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 		</script>
 <?php
@@ -1714,7 +1785,7 @@ function aiosp_google_analytics() {
 		<script type="text/javascript">
 		function recordOutboundLink(link, category, action) {
 		<?php if ( !empty( $aioseop_options['aiosp_ga_use_universal_analytics'] ) ) { ?>
-			ga(category, action);
+			ga('send', 'event', category, action);
 		<?php }
 		 	  if ( empty( $aioseop_options['aiosp_ga_use_universal_analytics'] ) ) {	?>
 			_gat._getTrackerByName()._trackEvent(category, action);
@@ -1776,6 +1847,7 @@ function aiosp_google_analytics() {
 		if ( $query->is_404 || $query->is_search )
 			return false;
 		
+		$link = '';
 		$haspost = count( $query->posts ) > 0;
 
 		if ( get_query_var( 'm' ) ) {
@@ -1823,12 +1895,14 @@ function aiosp_google_analytics() {
 		} elseif ( $query->is_tax && $haspost ) {
 			$taxonomy = get_query_var( 'taxonomy' );
 			$term = get_query_var( 'term' );
-			$link = get_term_link( $term, $taxonomy );
+			if ( !empty( $term ) )
+				$link = get_term_link( $term, $taxonomy );
         } elseif ( $query->is_archive && function_exists( 'get_post_type_archive_link' ) && ( $post_type = get_query_var( 'post_type' ) ) ) {
             $link = get_post_type_archive_link( $post_type );
 	    } else {
 	        return false;
 	    }
+		if ( empty( $link ) || !is_string( $link ) ) return false;
 		return $this->yoast_get_paged( $link );
 	}
 	
@@ -2700,11 +2774,10 @@ function aiosp_google_analytics() {
 					// postboxes setup
 					if ( typeof postboxes !== 'undefined' )
 						postboxes.add_postbox_toggles('<?php echo $this->pagehook; ?>');
-					$('.meta-box-sortables').removeClass('meta-box-sortables');
+					// $('.meta-box-sortables').removeClass('meta-box-sortables');
 				});
 				//]]>
 			</script>
-		<a href="http://open.ecwid.com/l8dt" target="_blank" style="margin-bottom: 15px;display: block;"><img src="<?php echo AIOSEOP_PLUGIN_IMAGES_URL; ?>ecwid_banner.png"></a>
 		<!-- Headway Themes-->
 		<div class="aioseop_advert">
 					<div>

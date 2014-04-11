@@ -1,4 +1,7 @@
-﻿<?php $styles = $this -> get_option('styles'); ?>
+﻿<?php
+//$this->log_me($this);die();
+$styles = $this -> get_option('styles');
+?>
 <table class="form-table">
 	<tbody>
 		<tr class="navbuttons">

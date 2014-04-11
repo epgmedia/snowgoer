@@ -124,7 +124,10 @@ class Cart66LiveRates {
         $tweakedRate = $rate + $tweakFactor;
       }
       if($tweakedRate < 0) { $tweakedRate = 0; }
-      $tweakedRate = number_format($tweakedRate, 2, '.', '');
+      if(!Cart66Session::get('cart66_shipping_zip')){
+        $tweakedRate = $rate;
+      }
+      $tweakedRate = number_format($tweakedRate, 2, '.', '');            
     }
     Cart66Common::log('[' . basename(__FILE__) . ' - line ' . __LINE__ . "] RATE TWEAKER RESULT: Rate: $rate ==> Tweaked Rate: $tweakedRate");
     return $tweakedRate;

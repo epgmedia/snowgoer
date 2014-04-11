@@ -1,70 +1,80 @@
 === Jetpack Lite ===
 Contributors: samuelaguilera
-Tags: WordPress.com, statistics, stats, views, shortlinks, wp.me
-Requires at least: 3.1
-Tested up to: 3.6
-Stable tag: 2.3.4
+Tags: Jetpack, WordPress.com, statistics, stats, views, shortlinks, wp.me
+Requires at least: 3.6
+Tested up to: 3.8.1
+Stable tag: 3.0.2
+License: GPL2
 
-A NOT official "lite" fork of Jetpack plugin containing only Stats and WP.me Shortlinks modules. All other modules removed (files and code).
+Completely removes all Jetpack modules except for Stats and WP.me Shortlinks modules. Jetpack is required!
 
 == Description ==
 
-**IMPORTANT: This plugin IS NOT official Jetpack by WordPress.com - If you're looking for the official plugin go to [Jetpack](http://jetpack.me/)**
+A lot of people, like me, miss the [WordPress.com Stats](http://wordpress.org/extend/plugins/stats/) standalone plugin and only wants this part of Jetpack.
 
+This plugins completely **removes all modules from Jetpack except for Stats and WP.me Shortlinks modules, this means that all other modules are not loaded by Jetpack in any way, saving memory and resources** in your WordPress and leaving Jetpack only with the same features of [WordPress.com Stats](http://wordpress.org/extend/plugins/stats/) plugin that sadly was discontinued long time ago and replaced by Jetpack by WordPress.com
 
-**Jetpack Lite is a NOT official fork** of [Jetpack](http://jetpack.me/). Original Jetpack seems to me like a "bloated" plugin, because all modules are activated by default (in previous versions) and even with the choice of deactivating modules (one by one), installing
-this plugin in dozens of WordPress installations and deactivate modules per each of them can be a nightmare.
+**Support rules:**
+1. Before asking for support read completely readme file, FAQ, changelogs and previous resolved threads **or your support thread will be ignored**.
+2. Keep in mind that **you're then only one responsible of your WordPress installation**, no one forces you to use this plugin. You're the responsible of having a backup of your site or a way to roll back if needed after installing/upgrading this plugin. If it doesn't suit your needs, don't use it. **I'm not responsible in any way of how the plugin runs on your site or the issues you can have using it. This plugin is provided "AS IS" WITHOUT ANY WARRANTY**.
+3. Don't use any thread marked as resolved or created for a different issue for asking support.
+4. **Be kind and respectful when asking for support or you'll be ignored**.
 
-So I made **this fork that only contains Stats and WP.me Shortlinks modules**. The same features of [WordPress.com Stats](http://wordpress.org/extend/plugins/stats/) plugin that sadly have been discontinued replaced by Jetpack by WordPress.com
+= Features =
 
-All other modules have been removed, also access to site stats was moved to dashboard menu and Jetpack Lite settings moved under WordPress settings menu. And some cometic changes to make more clear that this's not the official Jetpack. **No other modifications have been done**.
+* Automatically stops Jetpack from use system resources for modules that you don't want to use, because simply Jetpack don't know they exists!
+* Only Stats and Shortlinks modules will be available for Jetpack
 
-Features include:
+= Requirements =
 
-* Simple, concise stats with no additional load on your server.  Previously provided by [WordPress.com Stats](http://wordpress.org/extend/plugins/stats/).
-* The [WP.me URL shortener](http://wp.me/sf2B5-shorten).
-*  and *nothing* more to come!
-
-And if you don't feel confortable using it or need a great support, it's better to install original and official from here: [Jetpack](http://jetpack.me/).
-
-Note: The stats portion of Jetpack uses Quantcast to enhance its data. If you have any question regarding this, please ask to [Jetpack Support](http://wordpress.org/support/plugin/jetpack) not to me.
+* Jetpack.
+* WordPress version required by Jetpack.
 
 == Installation ==
 
-1. If you have Jetpack by WordPress.com previously installed and activated, first deactivate it (and delete it if you want, you'll not need it anymore).
-2. Install Jetpack Lite either via the WordPress.org plugin directory, or by uploading the files to your server
-3. After activating Jetpack Lite, you will be asked to connect to WordPress.com to enable the Jetpack features.
-4. Click the connect button and log in to a WordPress.com account to authorize the Jetpack connection.
-5. If you don't yet have a WordPress.com account, you can quickly create one after clicking the connect button.
-6. That's it.  You're ready to go!
+1. Install and activate Jetpack Lite (if you're upgrading from 2.x, upgrade Jetpack Lite **before** activating Jetpack in the next steps).
+2. If you don't have it already, install [Jetpack](http://wordpress.org/plugins/jetpack/), activate and connect it to WordPress.com if you're prompted to do it.
+3. That's it. You're ready to go!
 
 == Frequently Asked Questions ==
 
 = Is this plugin an official release from Automattic or WordPress.com? =
 
-NO. Jepack Lite **IS NOT an official** plugin by Automattic or WordPress.com, it's only a fork made by an user and shared for people who wants to use WP stats and WP.me shortener without nothing more.
+NO. Jepack Lite **IS NOT an official** plugin by Automattic or WordPress.com
 
-If you're looking for the official plugin go to [Jetpack](http://jetpack.me/)
+= Why Jetpack Lite 3.x needs Jetpack to be installed? =
 
-= I already have a WordPress account, but it's not working, what's going on? =
+When I created Jetpack Lite years ago, I did it as fork of Jetpack **only because no other method to do was available at that moment**.
 
-Jetpack Lite requires a connection to [WordPress.com](http://wordpress.com/) to enable all features. This is a different account than the one you use to log into your self-hosted WordPress. If you can log into http://wordpress.com, then you already have a WordPress.com account. If you can't, then you can easily create one as part of the installation of Jetpack Lite.
+Fortunately, since some time Jetpack can be trimmed down without the need of making a fork. That's why I changed the way Jetpack Lite do the work. In fact, now, Jetpack Lite doesn't use any resource, it simply says to Jetpack to only load the Stats and Shorlinks modules, so the other modules won't load or consume any resource in your WordPress.
 
-= How do I view my stats? =
+This way is much better, because now you don't need to wait for me to update a whole new plugin when a new Jetpack gets published.
 
-Once you've installed Jetpack Lite, your stats will be available via the "Site Stats" menu which appears under the dashboard menu. And you can access to Jetpack settings under settings menu.
+So now when Jetpack core or Stats and Shortlink modules are improved by Automattic, you'll get that just by upgrading Jetpack while keeping the reduction of Jetpack resources usage.
 
-= What update policy will this plugin follow? =
-
-I'll only update this plugin when Stats or WP.me shortlinks can be affected by a new released of the official Jetpack by WordPress.com
-
-Remember, if you don't feel confortable using this unofficial fork or need a great support, it's better to install the official [Jetpack](http://jetpack.me/).
+Believe me, this way is much better than before, and maybe I'll add some other improvements in the future. But you're free to use Jetpack Lite 2.x if you don't like the new way Jetpack Lite works.
 
 == Screenshots ==
 
-1. Stats chart.
+1. Jetpack modules screen after activating Jetpack Lite 3.x
 
 == Changelog ==
+
+= 3.0.2 =
+
+* Added admin notice if Jetpack is not present, to make even more clear that from now on you must install Jetpack too.
+
+= 3.0.1 =
+
+* Disabled check for active Jetpack due to seems that some people have issues with this (with no logical explain for the moment...)
+
+= 3.0 =
+
+* Totally changed the plugin code philosophy. Now this's a Jetpack addon and not a standalone plugin. Now you must install Jetpack to use Jetpack Lite.
+
+= 2.3.4.1 =
+
+* Fixed PHP Fatal error caused by class.jetpack-heartbeat.php described here: http://plugins.trac.wordpress.org/changeset/753642
 
 = 2.3.4 =
 
@@ -96,8 +106,22 @@ Remember, if you don't feel confortable using this unofficial fork or need a gre
 
 == Upgrade Notice ==
 
+= 2.3.4.1 =
+
+* Fixed PHP Fatal error caused by class.jetpack-heartbeat.php
+
 = 2.3.4 =
 Recommended upgrade. It's a major upgrade from previous one, including improvements of stats module, connection, and other fixes.
 
 = 2.1.2 =
 Recommended upgrade. Upgrading to this version allows to view stats from native mobile apps.
+
+= 3.0 =
+WARNING! This version requires Jetpack installed and activated to work. Jetpack Lite is not a standalone plugin anymore.
+
+= 3.0.1 =
+WARNING! Since 3.x version, this plugin requires Jetpack installed and activated to work. Jetpack Lite is not a standalone plugin anymore.
+
+= 3.0.2 =
+Added admin notice if Jetpack is not present, to make even more clear that from now on you must install Jetpack too.
+

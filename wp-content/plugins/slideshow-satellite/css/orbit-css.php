@@ -36,7 +36,7 @@ IF ($styles['infomin'] == "Y") {
     .orbit-caption h5, .orbit-caption p { margin:0 !important; }
 <?php } ?>
     
-#featured, #featured1, #featured2, #featured3, #featured4, #featured5, #featured6, #featured7 {
+#featured, #featured1, #featured2, #featured3, #featured4, #featured5, #featured6, #featured7, #featured8, #featured9, #featured10 {
     width: <?php echo $width ?>;
     height: <?php echo $height ?>;
     background:<?php echo($loadbg)?> no-repeat center center;

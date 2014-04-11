@@ -8,7 +8,7 @@
 	</div>
 	<div id="major-publishing-actions">
 		<div id="publishing-action">
-			<input class="button-primary" type="submit" name="save" value="<?php _e('Save Configuration', SATL_PLUGIN_NAME); ?>" />
+			<input class="btn btn-primary" type="submit" name="save" value="<?php _e('Save Configuration', SATL_PLUGIN_NAME); ?>" />
 		</div>
 		<br class="clear" />
 	</div>
