@@ -268,6 +268,7 @@ function remove_admin_bar_links() {
 	$wp_admin_bar->remove_menu('new-content');
 	$wp_admin_bar->remove_menu('updates');
 	$wp_admin_bar->remove_menu('appearance');
+    $wp_admin_bar->remove_menu('wp-logo');
 }
 
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
@@ -411,17 +412,6 @@ function sno_thickbox_script() {
   wp_enqueue_script( 'thickbox' );
 }
 
-
-
-/**
- * Remove some unneeded menu bar items
- */
-function remove_admin_bar_links() {
-    global $wp_admin_bar;
-    $wp_admin_bar->remove_menu('wp-logo');
-}
-// Get rid of crappy menu bar links
-add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 function add_admin_bar_link($wp_admin_bar) {
     $class = 'epg-media-link';
     $wp_admin_bar->add_menu( array(
