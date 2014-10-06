@@ -2818,7 +2818,7 @@ button.rightarrow {
 .newsticker-jcarouselliteps1 li,
 .newsticker-jcarouselliteps2 li,
 .newsticker-jcarouselliteps3 li {
-    height: 230px;
+    min-height: 230px;
 }
 
 .productteaser {
