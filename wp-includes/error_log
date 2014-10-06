@@ -1,8 +1,0 @@
-[16-Jul-2013 16:50:49 UTC] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/snowgoer/public_html/wp-includes/registration-functions.php on line 7
-[22-Nov-2013 17:54:41 UTC] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/snowgoer/public_html/wp-includes/rss-functions.php on line 8
-[15-Jan-2014 00:22:54 UTC] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/snowgoer/public_html/wp-includes/rss-functions.php on line 8
-[15-Jan-2014 00:25:03 UTC] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/snowgoer/public_html/wp-includes/rss-functions.php on line 8
-[15-Jan-2014 01:53:03 UTC] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/snowgoer/public_html/wp-includes/rss-functions.php on line 8
-[06-Jun-2014 08:37:25 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/snowgoer/public_html/wp-includes/admin-bar.php on line 48
-[15-Sep-2014 03:42:15 UTC] PHP Fatal error:  Class 'Walker' not found in /home/snowgoer/public_html/wp-includes/post-template.php on line 1232
-[15-Sep-2014 03:42:16 UTC] PHP Fatal error:  Class 'Walker' not found in /home/snowgoer/public_html/wp-includes/post-template.php on line 1232
