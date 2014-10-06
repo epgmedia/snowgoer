@@ -2774,7 +2774,6 @@ img.sliderimage {
 
 .homefeatured {
     width: 160px;
-    height: 263px;
     border-right: 1px solid #aaaaaa;
     float: left;
     margin-right: 10px;
@@ -2784,7 +2783,6 @@ img.sliderimage {
 
 .homefeaturedright {
     width: 160px;
-    height: 263px;
     float: left;
     padding-right: 10px;
     padding-left: 10px;
@@ -2815,6 +2813,12 @@ button.rightarrow {
     position: relative;
     bottom: 0;
     right: 0;
+}
+
+.newsticker-jcarouselliteps1 li,
+.newsticker-jcarouselliteps2 li,
+.newsticker-jcarouselliteps3 li {
+    height: 230px;
 }
 
 .productteaser {

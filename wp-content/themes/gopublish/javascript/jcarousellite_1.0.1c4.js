@@ -278,7 +278,7 @@ $.fn.jCarouselLite = function(o) {
 
         function vis() {
             return li.slice(curr).slice(0,v);
-        };
+        }
 
         function go(to) {
             if(!running) {
@@ -324,18 +324,18 @@ $.fn.jCarouselLite = function(o) {
 
             }
             return false;
-        };
+        }
     });
 };
 
 function css(el, prop) {
     return parseInt($.css(el[0], prop)) || 0;
-};
+}
 function width(el) {
     return  el[0].offsetWidth + css(el, 'marginLeft') + css(el, 'marginRight');
-};
+}
 function height(el) {
     return el[0].offsetHeight + css(el, 'marginTop') + css(el, 'marginBottom');
-};
+}
 
 })(jQuery);
