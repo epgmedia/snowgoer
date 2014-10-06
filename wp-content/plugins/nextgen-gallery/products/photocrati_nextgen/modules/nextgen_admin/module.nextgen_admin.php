@@ -29,11 +29,16 @@ class M_NextGen_Admin extends C_Base_Module
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Admin_Installer');
 
 		include_once('class.nextgen_admin_option_handler.php');
-		C_NextGen_Settings::add_option_handler('C_NextGen_Admin_Option_Handler', array(
+		C_NextGen_Settings::get_instance()->add_option_handler('C_NextGen_Admin_Option_Handler', array(
 			'jquery_ui_theme',
 			'jquery_ui_theme_version',
 			'jquery_ui_theme_url'
 		));
+        if (is_multisite()) C_NextGen_Global_Settings::get_instance()->add_option_handler('C_NextGen_Admin_Option_Handler', array(
+            'jquery_ui_theme',
+            'jquery_ui_theme_version',
+            'jquery_ui_theme_url'
+        ));
 	}
 
 	/**
@@ -107,6 +112,11 @@ class M_NextGen_Admin extends C_Base_Module
         wp_register_style('ngg_progressbar', $router->get_static_url('photocrati-nextgen_admin#ngg_progressbar.css'), array('gritter'));
         wp_register_style('select2', $router->get_static_url('photocrati-nextgen_admin#select2/select2.css'));
         wp_register_script('select2', $router->get_static_url('photocrati-nextgen_admin#select2/select2.modded.js'));
+        wp_register_script(
+            'jquery.nextgen_radio_toggle',
+            $router->get_static_url('photocrati-nextgen_admin#jquery.nextgen_radio_toggle.js'),
+            array('jquery')
+        );
 
         if (preg_match("#/wp-admin/post(-new)?.php#", $_SERVER['REQUEST_URI']))
         {

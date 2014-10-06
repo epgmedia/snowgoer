@@ -17,6 +17,7 @@ class C_NextGen_Settings_Installer
 			'wpmuRoles'   => FALSE,
 			'wpmuImportFolder' => FALSE,
 			'wpmuZipUpload'    => FALSE,
+            'wpmuQuotaCheck'   => FALSE,
 			'datamapper_driver'     => 'custom_table_datamapper',
 			'gallerystorage_driver' => 'ngglegacy_gallery_storage',
 			'maximum_entity_count'  => 500,
@@ -32,13 +33,14 @@ class C_NextGen_Settings_Installer
 			'graphicLibrary' => 'gd',              // default graphic library
 			'imageMagickDir' => '/usr/local/bin/', // default path to ImageMagick
 			'useMediaRSS'    => False,             // activate the global Media RSS file
+            'galleries_in_feeds' => FALSE,         // enables rendered gallery output in rss/atom feeds
 			'usePicLens'     => False,             // activate the PicLens Link for galleries
 
 			// Tags / categories
 			'activateTags' => 0,  // append related images
 			'appendType'   => 'tags', // look for category or tags
 			'maxImages'    => 7,      // number of images toshow
-			'relatedHeading'   => __('<h3>Related Images:</h3>', 'nggallery'), // subheading for related images
+			'relatedHeading'   => '<h3>' . __('Related Images', 'nggallery') . ':</h3>', // subheading for related images
 
 			// Thumbnail Settings
 			'thumbwidth'   => 120,  // Thumb Width

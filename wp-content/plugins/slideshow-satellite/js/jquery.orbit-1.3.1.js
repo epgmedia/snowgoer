@@ -688,14 +688,12 @@
 
           //no transition
           if (this.options.animation == "none") {
-            //this.options.animationSpeed = 0;
-            //this.options.captionAnimation = "none";
-            //this.options.animation = "fade-empty";
             this.$slides
               .eq(this.prevActiveSlide)
               .animate({"opacity" : 0}, 3);
             this.$slides
               .eq(this.activeSlide)
+              .css({"z-index" : 3})
               .animate({"opacity" : 1}, 3, this.resetAndUnlock);
           }
           //fade empty

@@ -3,3 +3,8 @@
 [22-Nov-2013 17:54:55 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/index.php on line 1
 [15-Jan-2014 00:23:01 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/index.php on line 1
 [15-Jan-2014 01:53:16 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/index.php on line 1
+[25-Jun-2014 18:59:40 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/index.php on line 1
+[15-Sep-2014 03:42:07 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/404.php on line 1
+[15-Sep-2014 03:42:07 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/404.php on line 1
+[15-Sep-2014 03:42:07 UTC] PHP Fatal error:  Call to undefined function get_theme_mod() in /home/snowgoer/public_html/wp-content/themes/gopublish/footer.php on line 76
+[29-Sep-2014 17:16:07 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/snowgoer/public_html/wp-content/themes/gopublish/index.php on line 1

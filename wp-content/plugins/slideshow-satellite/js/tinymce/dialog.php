@@ -17,7 +17,7 @@ for ($i = 0; $i < 6; $i++) $root = dirname($root);
 	
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>	
 	
-	<title><?php _e('Insert a slideshow', SATL_PLUGIN_NAME); ?></title>	
+	<title><?php _e('Insert a Satellite slideshow', SATL_PLUGIN_NAME); ?></title>	
 	<script language="javascript" type="text/javascript" src="<?php bloginfo('wpurl'); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>	
 	<script language="javascript" type="text/javascript" src="<?php bloginfo('wpurl'); ?>/wp-includes/js/tinymce/utils/mctabs.js"></script>	
 	<script language="javascript" type="text/javascript" src="<?php bloginfo('wpurl'); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>	
@@ -53,7 +53,7 @@ function insertTag() {
 		
     }
     if (window.tinyMCE) {
-        window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tag);
+        window.tinyMCE.execCommand('mceInsertContent', false, tag);
         tinyMCEPopup.editor.execCommand('mceRepaint');
         tinyMCEPopup.close();
     }

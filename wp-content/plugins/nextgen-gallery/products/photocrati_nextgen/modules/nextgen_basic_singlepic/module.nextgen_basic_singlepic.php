@@ -17,7 +17,7 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             NGG_BASIC_SINGLEPIC,
             'NextGen Basic Singlepic',
             'Provides a singlepic gallery for NextGEN Gallery',
-            '0.7',
+            '0.9',
             'http://www.photocrati.com',
             'Photocrati Media',
             'http://www.photocrati.com'
@@ -43,7 +43,8 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
 			'A_NextGen_Basic_Singlepic_Mapper'
 		);
 
-        if (is_admin()) {
+        if (M_Attach_To_Post::is_atp_url() || is_admin())
+        {
             // Provides the display settings form for the SinglePic display type
             $this->get_registry()->add_adapter(
                 'I_Form',

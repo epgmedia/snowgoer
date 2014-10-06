@@ -612,7 +612,7 @@ jQuery(function($){
 				width: 500
 			});
 
-            this.$el.html('<tr><td><label>Sources</label></td><td id="source_column"></td></tr>');
+            this.$el.html('<tr><td><label><?php _e('Sources', 'nggallery'); ?></label></td><td id="source_column"></td></tr>');
             this.$el.find('#source_column').append(chosen.render().el);
 
             var selected = this.sources.selected();
@@ -646,7 +646,7 @@ jQuery(function($){
                 type: 'text',
                 name: 'slug',
                 value: this.slug,
-                placeholder: '(optional)',
+                placeholder: '<?php _e('(optional)', 'nggallery'); ?>',
                 id: 'field_slug'
             });
 
@@ -654,8 +654,8 @@ jQuery(function($){
                 self.displayed_gallery.set('slug', $(this).val());
             });
 
-            var tooltip = 'Sets an SEO-friendly name to this gallery for URLs. Currently only in use by the Pro Lightbox.';
-            this.$el.append('<tr><td id="slug_label"><label for="field_slug" class="tooltip" title="' + tooltip + '">Slug</label></td><td id="slug_column"></td></tr>');
+            var tooltip = '<?php _e('Sets an SEO-friendly name to this gallery for URLs. Currently only in use by the Pro Lightbox.', 'nggallery'); ?>';
+            this.$el.append('<tr><td id="slug_label"><label for="field_slug" class="tooltip" title="' + tooltip + '"><?php _e('Slug', 'nggallery'); ?></label></td><td id="slug_column"></td></tr>');
             this.$el.find('#slug_column').append(input);
 
             return this;
@@ -765,8 +765,23 @@ jQuery(function($){
 			render: function() {
 				// Create all elements
 				var image_container = $('<div/>').addClass('image_container');
+
+                // 2.0.66 did not support plugins_url, 2.0.66.3+ does
+                var installed_at_version = this.model.get('installed_at_version');
+                var baseurl = photocrati_ajax.wp_plugins_url;
+                var preview_image_relpath = this.model.get('preview_image_relpath');
+                if (typeof installed_at_version == 'undefined') {
+                    baseurl = photocrati_ajax.wp_site_url;
+                    // those who installed 2.0.66.3 lack the 'installed_at_version' setting but have a
+                    // plugin-relative path
+                    if (preview_image_relpath.indexOf('/nextgen-gallery') == 0) {
+                        baseurl = photocrati_ajax.wp_plugins_url;
+                    }
+                }
+
+
 				var img = $('<img/>').attr({
-					src: photocrati_ajax.wp_site_static_url + '/' + this.model.get('preview_image_relpath'),
+					src: baseurl + '/' + preview_image_relpath,
 					title: this.model.get('title'),
 					alt: this.model.get('alt')
 				});
@@ -860,7 +875,7 @@ jQuery(function($){
 
 		render_no_images_notice: function(){
 			this.$el.empty();
-			this.$el.append("<p class='no_entities'>No entities to display for this source.</p>");
+			this.$el.append("<p class='no_entities'><?php _e('No entities to display for this source.', 'nggallery'); ?></p>");
 		},
 
 		render: function(){
@@ -1271,11 +1286,11 @@ jQuery(function($){
 		render: function(){
 			var select = new Ngg.Views.Chosen({
 				collection: this.galleries,
-				placeholder: 'Select a gallery',
+				placeholder: '<?php _e('Select a gallery', 'nggallery'); ?>',
 				multiple: true,
 				width: 500
 			});
-			var html = $('<tr><td><label>Galleries</label></td><td class="galleries_column"></td></tr>');
+			var html = $('<tr><td><label><?php _e('Galleries', 'nggallery'); ?></label></td><td class="galleries_column"></td></tr>');
 			this.$el.empty();
 			this.$el.append(html);
 			this.$el.find('.galleries_column').append(select.render().el);
@@ -1299,7 +1314,7 @@ jQuery(function($){
 				width: 500
 			});
 			this.$el.empty();
-			this.$el.append('<tr><td><label>Albums</label></td><td class="albums_column"></td></tr>');
+			this.$el.append('<tr><td><label><?php _e('Albums', 'nggallery'); ?></label></td><td class="albums_column"></td></tr>');
 			this.$el.find('.albums_column').append(album_select.render().el);
 			return this;
 		}

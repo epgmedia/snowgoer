@@ -1,7 +1,7 @@
 <div id="gallery_selection">
-    <label for="gallery_id">Gallery</label>
+    <label for="gallery_id"><?php _e('Gallery', 'nggallery'); ?></label>
     <select id="gallery_id">
-        <option value="0">Create a new gallery</option>
+        <option value="0"><?php _e('Create a new gallery', 'nggallery'); ?></option>
         <?php foreach ($galleries as $gallery): ?>
             <option value="<?php echo esc_attr($gallery->{$gallery->id_field}) ?>"><?php echo esc_attr($gallery->title) ?></option>
         <?php endforeach ?>
@@ -10,7 +10,7 @@
 </div>
 
 <div id="uploader">
-    <p>You browser doesn't have Flash, Silverlight, HTML5, or HTML4 support.</p>
+    <p><?php _e("You browser doesn't have Flash, Silverlight, HTML5, or HTML4 support.", 'nggallery'); ?></p>
 </div>
 <script type="text/javascript">
     // Listen for events emitted in other frames
@@ -70,6 +70,21 @@
                     var $gallery_selection = $('#gallery_selection').detach();
                     window.uploaded_image_ids = [];
 
+                    plupload.addFileFilter('xss_protection', function(enabled, file, cb){
+                        var retval = true;
+                        if (enabled) {
+                           if (file.name.match(/\<|\>/)) {
+                               retval = false;
+                               this.trigger("Error", {
+                                  code: plupload.SECURITY_ERROR,
+                                  message: plupload.translate('XSS attempt detected'),
+                                  file: file
+                               });
+                           }
+                        }
+                        cb(retval);
+                    });
+
                     // Override some final plupload options
                     plupload_options.url = photocrati_ajax.url;
                     plupload_options.preinit = {
@@ -96,7 +111,7 @@
                             });
 
                             // Change the text for the dragdrop
-                            $('.plupload_droptext').html("Drag image and ZIP files here or click <strong>Add Files</strong>");
+                            $('.plupload_droptext').html("<?php _e('Drag image and ZIP files here or click <strong>Add Files</strong>', 'nggallery'); ?>");
 
                             // Move the buttons
                             var buttons = $('.plupload_buttons').detach();
@@ -146,12 +161,13 @@
 
                             // Determine appropriate message to display
                             var upload_count = window.uploaded_image_ids.length;
-                            var msg = upload_count + " images were uploaded successfully";
+                            var msg = "<?php _e('%s images were uploaded successfully', 'nggallery'); ?>";
+                            msg = msg.replace('%s', upload_count);
                             if (upload_count == 1) {
-                                msg = "1 image was uploaded successfully";
+                                msg = "<?php _e('1 image was uploaded successfully', 'nggallery'); ?>";
                             }
                             else if (upload_count == 0) {
-                                msg = "0 images were uploaded";
+                                msg = "<?php _e('0 images were uploaded', 'nggallery'); ?>";
                             }
 
                             // Display message/notification
@@ -165,7 +181,7 @@
 								}
 								else {
 									$.gritter.add({
-										title: "Upload complete",
+										title: '<?php _e("Upload complete", 'nggallery'); ?>',
 										text: msg,
 										sticky: true
 									});
@@ -187,7 +203,7 @@
                                 catch (ex) {
                                     up.trigger('Error', {
                                         code: plupload.IO_ERROR,
-                                        msg:  "An unexpected error occured. This is most likely due to a server misconfiguration. Check your PHP error log or ask your hosting provider for assistance.",
+                                        msg: "<?php _e("An unexpected error occured. This is most likely due to a server misconfiguration. Check your PHP error log or ask your hosting provider for assistance.", 'nggallery'); ?>",
                                         details: response.replace(/<.*>/, '').trim(),
                                         file: file
                                     });

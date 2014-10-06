@@ -98,8 +98,8 @@ msgid "Configuration has been saved"
 msgstr "La configuration a &eacute;t&eacute; enregistr&eacute;e"
 
 #: ../js/tinymce/dialog.php:13
-msgid "Insert a slideshow"
-msgstr "Ins&eacute;rer un slideshow"
+msgid "Insert a Satellite slideshow"
+msgstr "Ins&eacute;rer un Satellite slideshow"
 
 #: ../js/tinymce/dialog.php:59
 msgid "Images From a Post"

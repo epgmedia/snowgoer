@@ -9,7 +9,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
 
     <?php if (!empty($slideshow_link)): ?>
 	<div class="slideshowlink">
-        <a href='<?php echo $slideshow_link ?>'><?php echo $slideshow_link_text ?></a>
+        <a href='<?php esc_attr_e($slideshow_link) ?>'><?php echo $slideshow_link_text ?></a>
 		
 	</div>
 	<?php endif ?>
@@ -17,7 +17,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
 	<?php if ($show_piclens_link): ?>
 	<!-- Piclense link -->
 	<div class="piclenselink">
-		<a class="piclenselink" href="<?php echo esc_attr($piclens_link) ?>">
+		<a class="piclenselink" href="<?php esc_attr_e($piclens_link) ?>">
 			<?php echo_h($piclens_link_text); ?>
 		</a>
 	</div>
@@ -80,7 +80,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
 
 			?>
 
-        <?php if ($number_of_columns > 0): ?>
+        <?php if ($number_of_columns > 0 && empty($show_all_in_lightbox)): ?>
             <?php if ((($i + 1) % $number_of_columns) == 0 ): ?>
                 <br style="clear: both" />
             <?php endif; ?>

@@ -436,8 +436,8 @@ msgstr "Настройки сохранены"
 #: ../tags/1.1/trunk/js/tinymce/dialog.php:13
 #: ../tags/slideshow-satellite/js/tinymce/dialog.php:13
 #: ../trunk/js/tinymce/dialog.php:20
-msgid "Insert a slideshow"
-msgstr "Вставить слайдшоу"
+msgid "Insert a Satellite slideshow"
+msgstr "Вставить Satellite слайдшоу"
 
 #: ../branches/1.1.2/js/tinymce/dialog.php:60
 #: ../branches/1.1.2/trunk/js/tinymce/dialog.php:60

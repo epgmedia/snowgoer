@@ -119,15 +119,16 @@
         ob_start();
         ?>
         	<tr>
-                    <th class="verttop"><label><strong><?php echo $r['name']; ?></strong></label></th>
-                    <td>
-                        
-                        <?php $checked = ($r['value']) ? "checked=\"checked\"" : ""; ?>
-                        <input type="checkbox" name="<?php echo $Html->field_name($name); ?>" id="<?php echo $r['id']; ?>" value="1" <?php echo $checked; ?> />
-                        <span class="howto"><?php echo($r['desc']); ?></span>
-                    </td>
-                    
-                </tr>
+              <th class="verttop"><label><strong><?php echo $r['name']; ?></strong></label></th>
+              <td>
+
+                  <?php $checked = ($r['value']) ? "checked=\"checked\"" : ""; ?>
+                  <input type="hidden" name="<?php echo $Html->field_name($name); ?>" value="0" />
+                  <input type="checkbox" name="<?php echo $Html->field_name($name); ?>" id="<?php echo $r['id']; ?>" value="1" <?php echo $checked; ?> />
+                  <span class="howto"><?php echo($r['desc']); ?></span>
+              </td>
+
+          </tr>
         <?php
         if ($error == true) {
             echo $Html->field_error($name);

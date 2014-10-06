@@ -238,6 +238,9 @@ class M_NextGen_XmlRpc extends C_Base_Module
 		$password   = strval($args[2]);
 		$data		= $args[3];
 		$gallery_id = isset($data['gallery_id']) ? $data['gallery_id'] : $data['gallery'];
+        if (!isset($data['override'])) $data['override'] = FALSE;
+        if (!isset($data['overwrite']))$data['overwrite']= FALSE;
+        $data['override'] = $data['overwrite'];
 
 		// Authenticate the user
 		if ($this->_login($username, $password, $blog_id)) {
@@ -251,7 +254,7 @@ class M_NextGen_XmlRpc extends C_Base_Module
 
 					// Upload the image
 					$storage	= C_Gallery_Storage::get_instance();
-					$image		= $storage->upload_base64_image($gallery, $data['bits'], $data['name'], $data['image_id']);
+                    $image		= $storage->upload_base64_image($gallery, $data['bits'], $data['name'], $data['image_id'], $data['override']);
 					if ($image) {
 						$storage = C_Gallery_Storage::get_instance();
 						$image->imageURL	= $storage->get_image_url($image);
@@ -368,7 +371,7 @@ class M_NextGen_XmlRpc extends C_Base_Module
 		$title		= strval($args[5]);
 		$galdesc    = strval($args[6]);
 		$image_id	= intval($args[7]);
-		$properties = isset($args[8]) ? (array) $args[7] : array();
+		$properties = isset($args[8]) ? (array) $args[8] : array();
 
 		// Authenticate the user
 		if ($this->_login($username, $password, $blog_id)) {

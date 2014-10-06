@@ -10,9 +10,9 @@ class C_Lightbox_Installer
     }
 
 
-    function set_attr(&$obj, $key, $val)
+    function set_attr(&$obj, $key, $val, $force=FALSE)
     {
-        if (!isset($obj->$key))
+        if (!isset($obj->$key) OR $force)
             $obj->$key = $val;
     }
 
@@ -24,7 +24,7 @@ class C_Lightbox_Installer
      * @param array $script_paths
      * @param array $values
      */
-    function install_lightbox($name, $title, $code, $stylesheet_paths=array(), $script_paths=array(), $values=array())
+    function install_lightbox($name, $title, $code, $stylesheet_paths=array(), $script_paths=array(), $values=array(), $i18n=array())
     {
         // Try to find the existing lightbox. If we can't find it, we'll create
         $lightbox		= $this->mapper->find_by_name($name);
@@ -33,13 +33,24 @@ class C_Lightbox_Installer
 
         // Set properties
         $lightbox->name	= $name;
-        $this->set_attr($lightbox, 'title', $title);
-        $this->set_attr($lightbox, 'code', $code);
+        $this->set_attr($lightbox, 'title',  $title, TRUE);
+        $this->set_attr($lightbox, 'code',   $code);
         $this->set_attr($lightbox, 'values', $values);
-        $this->set_attr($lightbox, 'styles', implode("\n", $stylesheet_paths));
-        $this->set_attr($lightbox, 'scripts', implode("\n", $script_paths));
+        $this->set_attr($lightbox, 'i18n',   $i18n);
+
+        // Overrides styles and scripts if localhost is used
+        if (isset($lightbox->styles) && strpos($lightbox->styles, 'localhost') !== FALSE)
+            $this->set_attr($lightbox, 'styles', implode("\n", $stylesheet_paths), TRUE);
+        else
+            $this->set_attr($lightbox, 'styles', implode("\n", $stylesheet_paths));
+
+        if (isset($lightbox->scripts) && strpos($lightbox->scripts, 'localhost') !== FALSE)
+            $this->set_attr($lightbox, 'scripts', implode("\n", $script_paths), TRUE);
+        else
+            $this->set_attr($lightbox, 'scripts', implode("\n", $script_paths));
 
         // Save the lightbox
+        // Note: the validation method will convert absolute urls to relative urls if needed
         $this->mapper->save($lightbox);
     }
 
@@ -55,41 +66,10 @@ class C_Lightbox_Installer
     }
 
     /**
-     * Given a newline separated list this turns absolute URL relative *if* they match includes_url()
-     *
-     * @param string $urls
-     * @return string $urls
-     */
-    function _convert_urls($urls)
-    {
-        $urls = explode("\n", $urls);
-        $site_url = site_url();
-        foreach ($urls as &$url) {
-            if (0 === strpos($url, includes_url()))
-            {
-                $count = 1;
-                $url = str_replace($site_url, '', $url, $count);
-            }
-        }
-
-        return implode("\n", $urls);
-    }
-
-    /**
      * Installs all of the lightbox provided by this module
      */
     function install()
     {
-        // scan existing libraries and replace absolute HTTP paths with relative paths
-        foreach ($this->mapper->find_all(TRUE) as $lightbox) {
-            if (!empty($lightbox->css_stylesheets))
-            {
-                $lightbox->styles = $this->_convert_urls($lightbox->css_stylesheets);
-                $lightbox->scripts = $this->_convert_urls($lightbox->scripts);
-            }
-            $lightbox->save();
-        }
-
         // Install "None" option
         $this->install_lightbox(
             'none',
@@ -123,10 +103,9 @@ class C_Lightbox_Installer
             'Fancybox',
             'class="ngg-fancybox" rel="%GALLERY_NAME%"',
             array('photocrati-lightbox#fancybox/jquery.fancybox-1.3.4.css'),
-            array(
-                'photocrati-lightbox#fancybox/jquery.easing-1.3.pack.js',
-                'photocrati-lightbox#fancybox/jquery.fancybox-1.3.4.pack.js',
-                'photocrati-lightbox#fancybox/nextgen_fancybox_init.js'
+            array('photocrati-lightbox#fancybox/jquery.easing-1.3.pack.js',
+                 'photocrati-lightbox#fancybox/jquery.fancybox-1.3.4.pack.js',
+                 'photocrati-lightbox#fancybox/nextgen_fancybox_init.js'
             )
         );
 
@@ -137,8 +116,33 @@ class C_Lightbox_Installer
             'class="highslide" onclick="return hs.expand(this, {slideshowGroup: ' . "'%GALLERY_NAME%'" . '});"',
             array('photocrati-lightbox#highslide/highslide.css'),
             array('photocrati-lightbox#highslide/highslide-full.packed.js',
-                'photocrati-lightbox#highslide/nextgen_highslide_init.js'),
-            array('nextgen_highslide_graphics_dir' => 'photocrati-lightbox#highslide/graphics')
+                  'photocrati-lightbox#highslide/nextgen_highslide_init.js'),
+            array('nextgen_highslide_graphics_dir' => 'photocrati-lightbox#highslide/graphics'),
+            array(
+                'cssDirection'    => __('ltr',         'nggallery'),
+                'loadingText'     => __('Loading...',  'nggallery'),
+                'previousText'    => __('Previous',    'nggallery'),
+                'nextText'        => __('Next',        'nggallery'),
+                'moveText'        => __('Move',        'nggallery'),
+                'closeText'       => __('Close',       'nggallery'),
+                'resizeTitle'     => __('Resize',      'nggallery'),
+                'playText'        => __('Play',        'nggallery'),
+                'pauseText'       => __('Pause',       'nggallery'),
+                'moveTitle'       => __('Move',        'nggallery'),
+                'fullExpandText'  => __('1:1',         'nggallery'),
+                'closeTitle'      => __('Close (esc)', 'nggallery'),
+                'pauseTitle'      => __('Pause slideshow (spacebar)', 'nggallery'),
+                'loadingTitle'    => __('Click to cancel',            'nggallery'),
+                'focusTitle'      => __('Click to bring to front',    'nggallery'),
+                'fullExpandTitle' => __('Expand to actual size (f)',  'nggallery'),
+                'creditsText'     => __('Powered by Highslide JS',    'nggallery'),
+                'playTitle'       => __('Play slideshow (spacebar)',  'nggallery'),
+                'previousTitle'   => __('Previous (arrow left)',      'nggallery'),
+                'nextTitle'       => __('Next (arrow right)',         'nggallery'),
+                'number'          => __('Image %1 of %2',             'nggallery'),
+                'creditsTitle'    => __('Go to the Highslide JS homepage', 'nggallery'),
+                'restoreTitle'    => __('Click to close image, click and drag to move. Use arrow keys for next and previous.', 'nggallery')
+            )
         );
 
         // Install Shutter
@@ -148,10 +152,11 @@ class C_Lightbox_Installer
             'class="shutterset_%GALLERY_NAME%"',
             array('photocrati-lightbox#shutter/shutter.css'),
             array('photocrati-lightbox#shutter/shutter.js',
-                'photocrati-lightbox#shutter/nextgen_shutter.js'),
+                  'photocrati-lightbox#shutter/nextgen_shutter.js'),
+            array(),
             array(
-                'msgLoading'	=>	'L O A D I N G',
-                'msgClose'		=>	'Click to Close',
+                'msgLoading' => __('L O A D I N G', 'nggallery'),
+                'msgClose'   => __('Click to Close', 'nggallery')
             )
         );
 
@@ -162,7 +167,18 @@ class C_Lightbox_Installer
             'class="shutterset_%GALLERY_NAME%"',
             array('photocrati-lightbox#shutter_reloaded/shutter.css'),
             array('photocrati-lightbox#shutter_reloaded/shutter.js',
-                'photocrati-lightbox#shutter_reloaded/nextgen_shutter_reloaded.js')
+                  'photocrati-lightbox#shutter_reloaded/nextgen_shutter_reloaded.js'),
+            array(),
+            array(
+                __('Previous',      'nggallery'),
+                __('Next',          'nggallery'),
+                __('Close',         'nggallery'),
+                __('Full Size',     'nggallery'),
+                __('Fit to Screen', 'nggallery'),
+                __('Image',         'nggallery'),
+                __('of',            'nggallery'),
+                __('Loading...',    'nggallery')
+            )
         );
 
         // Install Thickbox
@@ -172,7 +188,16 @@ class C_Lightbox_Installer
             "class='thickbox' rel='%GALLERY_NAME%'",
             array('wordpress#thickbox'),
             array('photocrati-lightbox#thickbox/nextgen_thickbox_init.js',
-                'wordpress#thickbox')
+                  'wordpress#thickbox'),
+            array(),
+            array(
+                'next'  => __('Next &gt;', 'nggallery'),
+                'prev'  => __('&lt; Prev', 'nggallery'),
+                'image' => __('Image',     'nggallery'),
+                'of'    => __('of',        'nggallery'),
+                'close' => __('Close',     'nggallery'),
+                'noiframes' => __('This feature requires inline frames. You have iframes disabled or your browser does not support them.', 'nggallery')
+            )
         );
     }
 

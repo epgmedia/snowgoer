@@ -2,8 +2,8 @@
 Contributors: Kimili, kitchin
 Tags: flash, flex, swf, swfobject, javascript
 Requires at least: 2.8
-Tested up to: 3.8.1
-Stable tag: 2.4
+Tested up to: 3.9.1
+Stable tag: 2.4.1
 Donate Link: http://kimili.com/donate
 
 Provides a WordPress interface for SWFObject 2, the best way to embed Flash content on any site.
@@ -17,6 +17,7 @@ Kimili Flash Embed utilizes SWFObject 2.2, is fully compatible with Wordpress 2.
 For non-english users, Kimili Flash Embed has been localized to the following languages:
 
 * Belorussian
+* Bulgarian
 * Dutch
 * German
 * Hindi
@@ -26,6 +27,7 @@ For non-english users, Kimili Flash Embed has been localized to the following la
 * Russian
 * Serbo-Croatian
 * Spanish
+* Ukranian
 
 == Installation ==
 
@@ -57,6 +59,9 @@ The path and file name of the Flash movie you want to display.
 
 **ALLOWFULLSCREEN**
 (`true`|`false`) Enables full-screen mode. The default value is false if this attribute is omitted. You must have version 9,0,28,0 or greater of Flash Player installed to use full-screen mode.
+
+**ALLOWFULLSCREENINTERACTIVE**
+(`true`|`false`) Enables full-screen interactive mode, in which content running in Flash Player can fill the entire screen *and accept text input*. The default value is false if this attribute is omitted. You must have version 11,3,0 or greater of Flash Player installed to use full-screen interactive mode. See [Adobe's developer guide](http://help.adobe.com/en_US/as3/dev/WS58a13becbbb904c7-28cf6d32136e60de784-8000.html) for more info.
 
 **ALLOWNETWORKING**
 (`all`|`internal`|`none`) Controls a SWF file's access to network functionality. The default value is 'all' if this attribute is omitted.
@@ -259,6 +264,9 @@ Specifies whether users are allowed to use the Tab key to move keyboard focus ou
 **allowfullscreen**
 Enables full-screen mode. The default value is false if this attribute is omitted. You must have version 9.0.28.0 or greater of Flash Player installed to use full-screen mode.
 
+**allowfullscreeninteractive**
+Enables full-screen interactive mode, in which content running in Flash Player can fill the entire screen *and accept text input*. The default value is false if this attribute is omitted. You must have version 11.3.0 or greater of Flash Player installed to use full-screen interactive mode. See [Adobe's developer guide](http://help.adobe.com/en_US/as3/dev/WS58a13becbbb904c7-28cf6d32136e60de784-8000.html) for more info.
+
 **allowscriptaccess**
 Controls the ability to perform outbound scripting from within a Flash SWF. If omitted, the default value is "sameDomain" in most situations, except if the user's Flash Player version is lower than 9.0.115.0 and the Flash movie is published for FP7 or earlier. In that case, the default will be "always".
 
@@ -311,6 +319,12 @@ So I can maintain them in one place, please see the Kimili Flash Embed FAQs at t
 == Changelog ==
 
 > **Note:** Because this plugin has been around for a while and numerous older versions exist, yet version 1.4 is the first version to actually be included in the Wordpress Plugin Repository, any older versions are NOT available here.  If you'd like to download an older version, you can do so at the [Kimili Flash Embed for Wordpress Home Page](http://kimili.com/plugins/kml_flashembed/wp).
+
+= Version 2.4.1 =
+
+* Added Bulgarian localization (Thanks to [Ajoft Software](http://www.ajoft.com)).
+* Added Ukranian localization (Thanks to [Michael Yunat](http://www.iphostmonitor.com)).
+* Tested up to Wordpress 3.9.1
 
 = Version 2.4 =
 
