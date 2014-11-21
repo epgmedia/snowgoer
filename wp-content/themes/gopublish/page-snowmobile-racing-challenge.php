@@ -9,7 +9,7 @@ get_header();
 
 <div id="content">
 
-    <img src="http://www.snowgoer.com/wp-content/uploads/2014/11/racing-challenge-Top-Graphic-2015.jpg" style="width:95%; margin: auto;">
+    <img src="http://www.snowgoer.com/wp-content/uploads/2014/11/racing-challenge-Top-Graphic-2015.jpg" style="width:100%; margin: auto;">
 
     <div class="postarearacingchallenge">
 
