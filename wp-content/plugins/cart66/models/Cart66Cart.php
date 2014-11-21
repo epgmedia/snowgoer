@@ -72,6 +72,7 @@ class Cart66Cart {
     if(Cart66Product::confirmInventory($itemId, $options)) {
       if($ajax) {
         Cart66Common::log('[' . basename(__FILE__) . ' - line ' . __LINE__ . "] yes, ajax here");
+        Cart66Session::set('Cart66LastPage', $productUrl);
         return $this->addItem($itemId, $itemQuantity, $options, null, $productUrl, $ajax, false, $optionResult);
       }
       $this->addItem($itemId, $itemQuantity, $options, null, $productUrl);
@@ -1362,6 +1363,10 @@ class Cart66Cart {
    */
   protected function _processOptionInfo($product, $optionInfo) {
     $valid_options = array();
+    if($product->isSubscription()){
+      // ignore options for subscription - subs can have price changes so it doesnt matter
+      return true;
+    }
     if($product->isGravityProduct()) {
       $valid_options = Cart66GravityReader::getFormValuesArray($product->gravity_form_id);
     }
@@ -1446,7 +1451,9 @@ class Cart66Cart {
   
   private function _validate_option(&$valid_options, $choice, $is_gravity_form=false) {
     $found = false;
-    
+    if(empty($valid_options)){
+      return true;
+    }
     foreach($valid_options as $key => $option_group) {
       foreach($option_group as $option) {
         $choice = preg_replace('[\W]', '', $choice);

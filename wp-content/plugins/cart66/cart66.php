@@ -3,7 +3,7 @@
 Plugin Name: Cart66 Professional
 Plugin URI: http://www.cart66.com
 Description: Wordpress Shopping Cart
-Version: 1.5.1.19
+Version: 1.5.2
 Author: Reality 66
 Author URI: http://www.Reality66.com
 Text Domain: cart66

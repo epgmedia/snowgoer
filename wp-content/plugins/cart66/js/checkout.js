@@ -222,6 +222,7 @@
         initStateField(frm, 'billing', C66.billing_country);
       });
       
+			if(C66.shipping_country == ""){ C66.shipping_country = C66.billing_country; }
 			$('#shipping-country').val(C66.shipping_country);
       $('.shipping_countries').each(function(index) {
         var frm = $(this).closest('form').attr('id');
