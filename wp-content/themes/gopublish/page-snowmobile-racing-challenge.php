@@ -9,7 +9,7 @@ get_header();
 
 <div id="content">
 
-    <img src="http://www.snowgoer.com/wp-content/uploads/2012/10/Top-Graphic-2014.jpg">
+    <img src="http://www.snowgoer.com/wp-content/uploads/2014/11/racing-challenge-Top-Graphic-2015.jpg" style="width:95%; margin: auto;">
 
     <div class="postarearacingchallenge">
 
@@ -49,27 +49,29 @@ get_header();
             <h3>The Rules:</h3>
 
             <p>
-                There will be three different series in the 2013-14 <i>Snow Goer</i>
-                Snowmobile Racing Challenge: One 9-round series dedicated to the Pro Open
-                class on national snocross racing scene (8 ISOC races plus the X Games
-                Aspen) and one five-series dedicated to Upper Midwestern Oval Sprint
-                Racing in the Champ 440 class and one four-round series dedicated to
-                cross-country racing in the pro 660 class.
+	            The <em>Snow Goer</em> Snowmobile Racing Challenge game is back for the 2014-15
+	            racing season. It’s easy to understand, easy to play and it is free – the only
+	            thing it costs you is a few minutes to make your predictions, and you can win
+	            prizes and bragging rights.
             </p>
-
-            <p>
-                For each race, players will select the top six finishing order, based
-                on a pull-down window that lists the names of the racers who race in
-                that are expected to compete in the chosen race. Players will select
-                a winner as well as each of the next five finishing positions.
-            </p>
-
-            <p>
-                If a player correctly selects the position of a racer (whether correctly
-                selecting a given racer to finish first, third or sixth, for example) he
-                or she will gain 20 points for that selection. If a racer finishes close
-                to the predicted finishing position, the player will earn a varying amount
-                of points based on this formula:
+	        <p>
+	            The plan is to again have several different rounds of competition, based on
+	            various forms of snowmobile racing – Snocross, Cross-Country and Ovals.
+	            Separate points will be kept in each form of racing, and there will be a
+	            champion for each – play one, or play them all.
+	        </p>
+	        <p>
+	            For each race, players will select the top six finishing order, based on a
+	            pull-down window that lists the names of the racers who race in that are
+	            expected to compete in the chosen race. Players will select a winner as well
+	            as each of the next five finishing positions.
+	        </p>
+	        <p>
+	            If a player correctly selects the position of a racer (whether correctly
+	            selecting a given racer to finish first, third or sixth, for example) he or
+	            she will gain 20 points for that selection. If a racer finishes close to the
+	            predicted finishing position, the player will earn a varying amount of points
+	            based on this formula:
             </p>
 
             <ul>
@@ -83,9 +85,9 @@ get_header();
             </ul>
 
             <p>
-                Players only receive points for racers who finish in the Top 6 at the
-                event, and once a player’s picks for a given round are made, they are
-                final; the player cannot go back in and change them.
+	            Players only receive points for racers who finish in the Top 6 at the event,
+	            and once a player’s picks for a given round are made, they are final; the
+	            player cannot go back in and change them.
             </p>
 
             <hr />
@@ -111,26 +113,21 @@ get_header();
             <h4>Snocross</h4>
 
             <ul>
-                <li> Dec. 1, Duluth, Minnesota</li>
-                <li>Dec. 7, Bessemer, Michigan</li>
-                <li>Jan. 4, Shakopee, Minnesota</li>
-                <li>Jan. 25, X Games Aspen</li>
-                <li>Feb. 1, Deadwood, South Dakota</li>
-                <li>Feb. 8, Salamanca, New York</li>
-                <li>Feb. 22, Mt. Pleasant, Michigan</li>
-                <li>March 9, Fargo, North Dakota</li>
-                <li>March 15, Lake Geneva, Wisconsin</li>
+                <li>Nov. 30, Duluth, Minnesota</li>
+	            <li>Dec. 13, Fargo, North Dakota</li>
+	            <li>Jan. 10, Shakopee, Minnesota</li>
+	            <li>Jan. 23, X Games Aspen</li>
+	            <li>Jan. 31, Deadwood, South Dakota</li>
+	            <li>Feb. 7, Salamanca, New York</li>
+	            <li>Feb. 21, Chicago, Illinois</li>
+	            <li>Feb. 28, Mt. Pleasant, Michigan</li>
+	            <li>March 15, Lake Geneva, Wisconsin</li>
             </ul>
 
             <h4>Ovals</h4>
 
             <ul>
-                <li>Dec. 8, Beausejour, Manitoba</li>
-                <li>Jan. 11, Ironwood, Michigan</li>
-                <li>Jan. 19, Eagle River, Wisconsin</li>
-                <li>Jan. 26, Wausau, Wisconsin</li>
-                <li>Feb. 1, Alexandria, Minnesota</li>
-                <li>Feb. 16, Valcourt, Quebec</li>
+                <li>TBD</li>
             </ul>
 
         </div>
@@ -138,18 +135,16 @@ get_header();
         <div style="clear: both">
 
             <p>
-                <i>Snow Goer</i> will recognize weekly winners as well as champions
-                for the seven snocross races combined, the four oval/enduro races
-                combined and an overall high points season champion. These people will
-                get a small prize package, as will winners of select individual rounds,
-                including the Duluth Snocross opener, both I-500 races (cross-country
-                and enduro) and the Eagle River World Championship.
+	            <em>Snow Goer</em> will recognize weekly winners as well as champions for the
+                nine snocross races combined, the various oval/enduro races combined and an
+                overall high points season champion. There will be occasional prize packages
+                available during the season, depending on program sponsorship.
             </p>
 
-            <p align="left">
+            <p>
                 <strong>PLEASE NOTE: When you sign up each week to make your predictions,
-                always make sure to use the same sign-in name and email address so your
-                points can be added to your season total.</strong>
+                        always make sure to use the same sign-in name and email address so
+                        your points can be added to your season total.</strong>
             </p>
 
         </div>
