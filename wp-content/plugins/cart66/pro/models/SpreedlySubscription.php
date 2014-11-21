@@ -87,7 +87,8 @@ class SpreedlySubscription extends SpreedlyXmlObject {
         self::$_subscriptionPlans = $subscriptions;
       }
       else {
-        throw new SpreedlyException('Spreedly Subscription: Unable to retrieve remote list of subscriptions', 66003);
+        Cart66Common::log('[' . basename(__FILE__) . ' - line ' . __LINE__ . "] Spreedly Subscription: Unable to retrieve remote list of subscriptions ");
+        //throw new SpreedlyException('Spreedly Subscription: Unable to retrieve remote list of subscriptions', 66003);
       }
     }
     return self::$_subscriptionPlans;

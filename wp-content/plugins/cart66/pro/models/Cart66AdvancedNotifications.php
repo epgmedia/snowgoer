@@ -8,7 +8,7 @@ class Cart66AdvancedNotifications extends Cart66Notifications {
   public static function buildEmailHeader($from_name, $from_email) {
     $mime_boundary = 'Multipart_Boundary_x'.md5(time()).'x';
     $headers = '';
-    if(!CART66_WPMAIL) {
+    if(!CART66_WPMAIL || false) {
       $headers .= "MIME-Version: 1.0\r\n";
       $headers .= "Content-Type: multipart/alternative; boundary=\"$mime_boundary\"\r\n";
       $headers .= "Content-Transfer-Encoding: 7bit\r\n";
@@ -26,27 +26,36 @@ class Cart66AdvancedNotifications extends Cart66Notifications {
   }
   
   public static function buildEmailBody($plain_content, $html_content, $mime_boundary, $sendHtml) {
-    $body = "\n\n";
+    $body = "\r\n";
+    $no_plain = true;
     
-    // Add in plain text version
-    $body .= "--$mime_boundary\n";
-    $body .= "Content-Type: text/plain; charset=\"charset=us-ascii\"\n";
-    $body .= "Content-Transfer-Encoding: 7bit\n\n";
-    $body .= "$plain_content";
-    $body .= "\n\n";
-    if($sendHtml == true) {
-      // Add in HTML version
-      $body .= "--$mime_boundary\n";
-      $body .= "Content-Type: text/html; charset=\"UTF-8\"\n";
-      $body .= "Content-Transfer-Encoding: 7bit\n\n";
-      $body .= $html_content;
+    if(!$no_plain || $sendHtml == false){
+      $body .= "--$mime_boundary\r\n";
+      $body .= "Content-Type: text/plain; charset=\"charset=us-ascii\"\r\n";
+      $body .= "Content-Transfer-Encoding: 7bit\r\n";
+      $body .= "$plain_content";
       $body .= "\n\n";
     }
+    
+     
+    if($sendHtml == true) {
+      // Add in HTML version    
+      /*    
+      $body .= "--$mime_boundary\r\n";
+      $body .= "Content-Type: text/html; charset=\"UTF-8\"\r\n";
+      $body .= "Content-Transfer-Encoding: 7bit\r\n";
+      */
+      $body .= $html_content;
+      $body .= "\n\n";
+    }    
     
     // Attachments would go here
     
   // End email
-    $body .= "--$mime_boundary--\n";
+    if(!$no_plain){
+      $body .= "--$mime_boundary--\r\n";
+    }
+    
     return $body;
   }
   

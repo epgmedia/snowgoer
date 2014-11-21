@@ -1251,7 +1251,13 @@ class Cart66Common {
 
     // close the curl resource, and free system resources
     curl_close($ch);
-
+    
+    // wp remote fallback
+    if(empty($output)){
+      $output = wp_remote_get($url);
+      $output = $output['body'];
+    }
+    
     return $output;
   }
   
