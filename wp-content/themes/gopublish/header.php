@@ -176,7 +176,7 @@ googletag.defineSlot('/35190362/SNG_ROS_middle468', [468, 60], 'div-gpt-ad-13758
 googletag.defineSlot('/35190362/SNG_ROS_middle468_2', [468, 60], 'div-gpt-ad-1375829763909-14').addService(googletag.pubads());
 googletag.defineSlot('/35190362/SNG_ROS_Wallpaper', [1, 1], 'div-gpt-ad-1392153511566-0').addService(googletag.pubads());
 googletag.defineOutOfPageSlot('/35190362/SNG_ROS_Wallpaper', 'div-gpt-ad-1392153511566-0-oop').addService(googletag.pubads());
-googletag.pubads().collapseEmptyDivs();
+googletag.pubads().collapseEmptyDivs(true);
 googletag.enableServices();
 });
 </script>
