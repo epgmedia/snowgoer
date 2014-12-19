@@ -4,7 +4,7 @@
 Plugin Name: Kimili Flash Embed
 Plugin URI: http://www.kimili.com/plugins/flash-embed
 Description: Provides a full Wordpress interface for <a href="http://code.google.com/p/swfobject/">SWFObject</a> - the best way to embed Flash on your site.
-Version: 2.4.1
+Version: 2.5.1
 Author: Michael Bester
 Author URI: http://www.kimili.com
 Update: http://www.kimili.com/plugins/flash-embed/wp
@@ -14,7 +14,7 @@ Update: http://www.kimili.com/plugins/flash-embed/wp
 *
 *	KIMILI FLASH EMBED
 *
-*	Copyright 2010-2013 Michael Bester (http://www.kimili.com)
+*	Copyright 2006-2015 Michael Bester (http://www.kimili.com)
 *	Released under the GNU General Public License (http://www.gnu.org/licenses/gpl.html)
 *
 */
@@ -22,10 +22,11 @@ Update: http://www.kimili.com/plugins/flash-embed/wp
 /**
 *
 */
+
 class KimiliFlashEmbed
 {
 
-	var $version = '2.4.1';
+	var $version = '2.5.1';
 	var $staticSwfs = array();
 	var $dynamicSwfs = array();
 
@@ -66,16 +67,15 @@ class KimiliFlashEmbed
 
 		} else {
 			// Front-end
-			if ($this->is_feed()) {
-				$this->doObStart();
-			} else {
-				add_action('wp_head', array(&$this, 'disableAutohide'), 9);
-				add_action('wp_head', array(&$this, 'doObStart'));
-				add_action('wp_head', array(&$this, 'addScriptPlaceholder'));
-				add_action('wp_footer', array(&$this, 'doObEnd'));
-			}
-
+			add_filter( 'no_texturize_shortcodes', array(&$this, 'shortcodes_to_exempt_from_wptexturize'));
+			add_shortcode('kml_flashembed', array(&$this, 'processShortcode'));
+			add_shortcode('kml_swfembed', array(&$this, 'processShortcode'));
+			add_action('wp_head', array(&$this, 'disableAutohide'), 9);
+			add_action('wp_footer', array(&$this, 'scriptSwfs'), 101);
 		}
+
+		add_filter( 'no_texturize_shortcodes', array(&$this, 'shortcodes_to_exempt_from_wptexturize'));
+		add_shortcode('kml_flashembed', array(&$this, 'process_shortcode'));
 
 		// Queue SWFObject
 		add_action( 'wp_enqueue_scripts', array(&$this, 'enqueueSWFObjectJavaScript'));
@@ -113,23 +113,16 @@ class KimiliFlashEmbed
 		return (version_compare($wp_version, $minimum_version) >= 0);
 	}
 
-	function parseShortcodes($content)
-	{
-		$pattern = '/(<p>[\s\n\r]*)?\[(kml_(flash|swf)embed)\b(.*?)(?:(\/))?\](?:(.+?)\[\/\2\])?([\s\n\r]*<\/p>)?/s';
-		$temp 	= preg_replace_callback($pattern, array(&$this, 'processShortcode'), $content);
-		$result = preg_replace_callback('/KML_FLASHEMBED_PROCESS_SCRIPT_CALLS/s', array(&$this, 'scriptSwfs'), $temp);
-		return $result;
+	function shortcodes_to_exempt_from_wptexturize($shortcodes) {
+		$shortcodes[] = 'kml_flashembed';
+		$shortcodes[] = 'kml_swfembed';
+		return $shortcodes;
 	}
 
 	// Thanks to WP shortcode API Code
-	function processShortcode($code)
+	function processShortcode($atts, $altContent = null)
 	{
 		$r	= "";
-
-		$atts = $this->parseAtts($code[4]);
-		$altContent = isset($code[6]) ? $code[6] : '';
-
-		$attpairs	= preg_split('/\|/', $elements, -1, PREG_SPLIT_NO_EMPTY);
 
 		if (isset($atts['movie'])) {
 
@@ -195,31 +188,6 @@ class KimiliFlashEmbed
 	 	return $r;
 	}
 
-	// Thanks to WP shortcode API Code
-	function parseAtts($text)
-	{
-		$atts = array();
-		$pattern = '/(\w+)\s*=\s*"([^"]*)"(?:\s|$)|(\w+)\s*=\s*\'([^\']*)\'(?:\s|$)|(\w+)\s*=\s*([^\s\'"]+)(?:\s|$)|"([^"]*)"(?:\s|$)|(\S+)(?:\s|$)/';
-		$text = preg_replace("/[\x{00a0}\x{200b}]+/u", " ", $text);
-		if ( preg_match_all($pattern, $text, $match, PREG_SET_ORDER) ) {
-			foreach ($match as $m) {
-				if (!empty($m[1]))
-					$atts[strtolower($m[1])] = stripcslashes($m[2]);
-				elseif (!empty($m[3]))
-					$atts[strtolower($m[3])] = stripcslashes($m[4]);
-				elseif (!empty($m[5]))
-					$atts[strtolower($m[5])] = stripcslashes($m[6]);
-				elseif (isset($m[7]) and strlen($m[7]))
-					$atts[] = stripcslashes($m[7]);
-				elseif (isset($m[8]))
-					$atts[] = stripcslashes($m[8]);
-			}
-		} else {
-			$atts = ltrim($text);
-		}
-		return $atts;
-	}
-
 	function publishStatic($atts)
 	{
 		if (is_array($atts)) {
@@ -249,11 +217,6 @@ class KimiliFlashEmbed
 		$out[]		= '<div id="' . $target . '" class="' . $targetclass . '">'.$alttext.'</div>';
 
 		return join("\n", $out);
-	}
-
-	function addScriptPlaceholder()
-	{
-		echo 'KML_FLASHEMBED_PROCESS_SCRIPT_CALLS';
 	}
 
 	function disableAutohide()
@@ -362,7 +325,7 @@ class KimiliFlashEmbed
 		$out[]		= '</script>';
 		$out[]		= '';
 
-		return join("\n", $out);
+		echo join("\n", $out);
 	}
 
 	function buildObjectTag($atts)
@@ -373,7 +336,7 @@ class KimiliFlashEmbed
 		}
 
 		// Build a query string based on the $fvars attribute
-		$querystring = join("&amp;", $this->parseFvars($fvars));
+		$querystring = isset($fvars) ? join("&amp;", $this->parseFvars($fvars)) : '';
 
 										        $out[] = '';
 										        $out[] = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"';
@@ -383,7 +346,7 @@ class KimiliFlashEmbed
 										        $out[] = '			width="'.$width.'"';
 										        $out[] = '			height="'.$height.'">';
 										        $out[] = '	<param name="movie" value="' . $movie . '" />';
-		if (count($fvars) > 0)			        $out[] = '	<param name="flashvars" value="' . $querystring . '" />';
+		if (isset($fvars) && count($fvars) > 0)	$out[] = '	<param name="flashvars" value="' . $querystring . '" />';
 		if (isset($play))				        $out[] = '	<param name="play" value="' . $play . '" />';
 		if (isset($loop))				        $out[] = '	<param name="loop" value="' . $loop . '" />';
 		if (isset($menu)) 				        $out[] = '	<param name="menu" value="' . $menu . '" />';
@@ -407,7 +370,7 @@ class KimiliFlashEmbed
 		if (isset($align)) 				        $out[] = '			align="'.$align.'"';
 										        $out[] = '			width="'.$width.'"';
 										        $out[] = '			height="'.$height.'">';
-		if (count($fvars) > 0)			        $out[] = '		<param name="flashvars" value="' . $querystring . '" />';
+		if (isset($fvars) && count($fvars) > 0) $out[] = '		<param name="flashvars" value="' . $querystring . '" />';
 		if (isset($play))				        $out[] = '		<param name="play" value="' . $play . '" />';
 		if (isset($loop))				        $out[] = '		<param name="loop" value="' . $loop . '" />';
 		if (isset($menu)) 				        $out[] = '		<param name="menu" value="' . $menu . '" />';
@@ -431,8 +394,7 @@ class KimiliFlashEmbed
 										        $out[] = '	<!--<![endif]-->';
 		 								        $out[] = '</object>';
 
-		$ret .= join("\n", $out);
-		return $ret;
+		return join("\n", $out);
 	}
 
 	function parseFvars($fvars, $format='string')
@@ -471,26 +433,6 @@ class KimiliFlashEmbed
 
 		return $ret;
 
-	}
-
-	function doObStart()
-	{
-		ob_start(array(&$this, 'parseShortcodes'));
-	}
-
-	function doObEnd()
-	{
-		// Check the output buffer
-		if (function_exists('ob_list_handlers')) {
-			$active_handlers = ob_list_handlers();
-		} else {
-			$active_handlers = array();
-		}
-		if (sizeof($active_handlers) > 0 &&
-			strtolower($active_handlers[sizeof($active_handlers) - 1]) ==
-			strtolower('KimiliFlashEmbed::parseShortcodes')) {
-			ob_end_flush();
-		}
 	}
 
 	function is_feed()

@@ -27,12 +27,15 @@ class Cart66AdvancedNotifications extends Cart66Notifications {
   
   public static function buildEmailBody($plain_content, $html_content, $mime_boundary, $sendHtml) {
     $body = "\r\n";
-    $no_plain = true;
+    $no_plain = Cart66Setting::getValue('disable_plain_email');
+    $include_mime_boundary = Cart66Setting::getValue('include_mime_boundary');
     
     if(!$no_plain || $sendHtml == false){
-      $body .= "--$mime_boundary\r\n";
-      $body .= "Content-Type: text/plain; charset=\"charset=us-ascii\"\r\n";
-      $body .= "Content-Transfer-Encoding: 7bit\r\n";
+      if($include_mime_boundary){
+        $body .= "--$mime_boundary\r\n";
+        $body .= "Content-Type: text/plain; charset=\"charset=us-ascii\"\r\n";
+        $body .= "Content-Transfer-Encoding: 7bit\r\n";
+      }
       $body .= "$plain_content";
       $body .= "\n\n";
     }
@@ -40,11 +43,11 @@ class Cart66AdvancedNotifications extends Cart66Notifications {
      
     if($sendHtml == true) {
       // Add in HTML version    
-      /*    
-      $body .= "--$mime_boundary\r\n";
-      $body .= "Content-Type: text/html; charset=\"UTF-8\"\r\n";
-      $body .= "Content-Transfer-Encoding: 7bit\r\n";
-      */
+      if($include_mime_boundary){
+        $body .= "--$mime_boundary\r\n";
+        $body .= "Content-Type: text/html; charset=\"UTF-8\"\r\n";
+        $body .= "Content-Transfer-Encoding: 7bit\r\n";
+      }
       $body .= $html_content;
       $body .= "\n\n";
     }    
@@ -274,7 +277,7 @@ class Cart66AdvancedNotifications extends Cart66Notifications {
       'log' => 'test_emails',
       'status' => 'test'
     );
-  	
+    
     $isSent = $notify->sendEmail($email_data);
     
     return $isSent;
