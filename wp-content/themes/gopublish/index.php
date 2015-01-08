@@ -65,7 +65,7 @@ get_header();
 						echo do_shortcode( $showalbum );
 					} ?>
 
-					<?php if ( isset( $slideshowcredit ) ) { ?>
+					<?php if ( isset( $slideshowcredit ) && strlen($slideshowcredit) >= 1 ) { ?>
 						<p class="photocredit">
 							Credit: <?php echo $slideshowcredit; ?>
 						</p>
@@ -77,7 +77,7 @@ get_header();
 							the_post_thumbnail( 'permalink', array( 'class' => 'permalinkimage' ) );
 						}
 
-						if ( $photographer ) { ?>
+						if ( isset($photographer) && strlen($photographer) >= 1 ) { ?>
 							<p class="photocredit">
 								Photo Credit: <?php echo $photographer; ?>
 							</p>
