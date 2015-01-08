@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'version' => '0.9.4',
+	'version' => '0.9.4.1',
 	'browsercache.configuration_sealed' => false,
 	'cdn.configuration_sealed' => false,
 	'common.install' => 1404246706,
@@ -28,5 +28,5 @@ return array(
 	'notes.remove_w3tc' => false,
 	'notes.hide_extensions' => array(
 	),
-	'evaluation.reminder' => 1415045930,
+	'evaluation.reminder' => 1427064526,
 );

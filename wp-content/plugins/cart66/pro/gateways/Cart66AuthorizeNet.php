@@ -94,16 +94,6 @@ class Cart66AuthorizeNet extends Cart66GatewayAbstract {
     $this->addField('x_phone', $p['phone']);
     $this->addField('x_email', $p['email']);
     $this->addField('x_amount', $total);
-    
-    $tax_amount = $this->getTaxAmount(); 
-    $this->addField('x_tax', "Tax<|>regional tax<|>{$tax_amount}"); 
-    Cart66Common::log('[' . basename(__FILE__) . ' - line ' . __LINE__ . "] x_tax={$tax_amount}");
-
-    $shipping_amount = Cart66Session::get('Cart66Cart')->getShippingCost(); 
-    $shipping_method = Cart66Session::get('Cart66Cart')->getShippingMethodName();
-    $this->addField('x_freight', "Shipping<|>" . $shipping_method . "<|>{$shipping_amount}"); 
-    Cart66Common::log('[' . basename(__FILE__) . ' - line ' . __LINE__ . "] x_freight={$shipping_amount}");
-    
   }
 
    function doSale() {
