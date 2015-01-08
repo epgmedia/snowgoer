@@ -10,6 +10,10 @@ include(TEMPLATEPATH."/tools/categorywidget.php");
 include(TEMPLATEPATH."/tools/productshowcase.php");
 include(TEMPLATEPATH."/tools/pagewidget.php");
 
+/** Ad Code is now managed in a seperate file */
+include ( get_template_directory() . '/tools/google-ads.php');
+
+
 add_option("home_left_column", '280', '', 'yes');
 add_option("home_center_column", '280', '', 'yes');
 add_option("home_right_column", '300', '', 'yes');
