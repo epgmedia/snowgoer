@@ -130,11 +130,9 @@ sfHover = function() {
 	}
 	//
 
-}
+};
 if (window.attachEvent) window.attachEvent("onload", sfHover);
 //--><!]]></script>
-
-
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascript/togglemenu.js"></script>
 
