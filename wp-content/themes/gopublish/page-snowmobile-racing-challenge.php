@@ -14,13 +14,8 @@ get_header();
     <div class="postarearacingchallenge">
 
         <?php
-        //start widgetized-page code
-
         if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("racing-challenge-ads") ) :
-
         endif;
-
-        //end widgetized-page code
         ?>
 
     </div>
@@ -117,7 +112,11 @@ get_header();
             </ul>
             <h4>Ovals</h4>
             <ul>
-                <li>TBD</li>
+                <li>Jan. 18, Eagle River, Wisconsin</li>
+                <li>Jan. 25, Wausau, Wisconsin</li>
+                <li>Jan. 31, Alexandria, Minnesota</li>
+                <li>Feb. 8, Francis Creek, Wisconsin</li>
+                <li>Feb. 15, Weyauwega, Wisconsin</li>
             </ul>
 
         </div>
