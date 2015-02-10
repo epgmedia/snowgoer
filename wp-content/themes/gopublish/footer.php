@@ -1,75 +1,93 @@
-</div><!--innerwrap-->
+    </div><!--innerwrap-->
 
+    </div><!--wrap-->
 
+    <div style="clear:both;"></div>
 
+    <form method="post" action="https://w1.buysub.com/servlet/PrePopGateway?cds_mag_code=SNG&cds_page_id=71025&cds_response_key=TGG5DEMB">
 
+        <table width="960" height="260" align="left" background="/wp-content/uploads/2014/01/00114I-SGSUBFORMGOLD.jpg" no-repeat>
+            <tr>
+                <td width="618" height="35"></td>
+            </tr>
+            <tr>
+                <td width="618" height="35"></td>
+            </tr>
+            <tr>
+                <td width="618"></td>
+                <td height="25">
+                    <div align="right">
+                        <p><label for="cds_name">Name:</label</p>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div align="left">
+                        <input type="text" value="" name="cds_name" id="cds_name" size="40" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="618"></td>
+                <td height="25">
+                    <div align="right">
+                        <p><label for="cds_address_1">Address:</label</p>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div align="left">
+                        <input type="text" value="" name="cds_address_1" id="cds_address_1" size="40" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="618"></td>
+                <td height="25">
+                    <div align="right">
+                        <p><label for="cds_city">City:</label></p>
+                    </div>
+                </td>
+                <td colspan=3>
+                    <div align="left">
+                        <input type="text" value="" name="cds_city" id="cds_city" size="40"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="618"></td>
+                <td height="25">
+                    <div align="right">
+                        <p><label for="cds_state">State:</label></p>
+                    </div>
+                </td>
+                <td width="23">
+                    <div align="left">
+                        <input type="text" name="cds_state" id="cds_state" size="3" maxlength="2" />
+                    </div>
+                </td>
+                <td width="80" height="25">
+                    <div align="right">
+                        <p><label for="cds_zip">ZIP:</label></p>
+                    </div>
+                </td>
+                <td width="214">
+                    <div align="left">
+                        <input type="text" name="cds_zip" id="cds_zip" size="10" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="500"></td>
+                <td colspan="4" height="25" align="center">
+                  <input type="submit" value="Subscribe Now!" name="send" />
+                </td>
+            </tr>
+            <tr>
+                <td width="537"></td>
+                <td colspan="4" height="25"></td>
+            </tr>
+        </table>
 
-</div><!--wrap-->
-<div style="clear:both;"></div>
-
-<form method="post" action="https://w1.buysub.com/servlet/PrePopGateway?cds_mag_code=SNG&cds_page_id=71025&cds_response_key=TGG4DEMB">
-  <table width="960" height="260" align="left" background="/wp-content/uploads/2014/01/00114I-SGSUBFORMGOLD.jpg" no-repeat>
-    <tr>
-      <td width="618" height="35"></td>
-    </tr>
-    <tr>
-      <td width="618" height="35"></td>
-    </tr>
-
-    
-    <tr>
-      <td width="618"></td>
-      <td height="25"><div align="right">
-        <p><font color="#000">Name:</font></p>
-      </div></td>
-      <td colspan="3"><div align="left">
-        <input type="text" value="" name="cds_name" size="40"/>
-      </div></td>
-    </tr>
-    <tr>
-      <td width="618"></td>
-      <td height="25"><div align="right">
-        <p><font color="#000">Address:</font></p>
-      </div></td>
-      <td colspan="3"><div align="left">
-        <input type="text" value="" name="cds_address_1" size="40" />
-      </div></td>
-    </tr>
-    <tr>
-      <td width="618"></td>
-      <td height="25"><div align="right">
-        <p><font color="#000">City:</font></p>
-      </div></td>
-      <td colspan=3><div align="left">
-        <input type="text" value="" name="cds_city" size="40"/>
-      </div></td>
-    </tr>
-    <tr>
-      <td width="618"></td>
-      <td height="25"><div align="right">
-        <p><font color="#000">State:</font></p>
-      </div></td>
-      <td width="23"><div align="left">
-        <input type="text" name="cds_state" size="3" maxlength="2" /> 
-      </div></td>
-      <td width="80" height="25"><div align="right">
-        <p><font color="#000">ZIP:</font></p>
-      </div></td>
-      <td width="214"><div align="left">
-        <input type="text" name="cds_zip" size="10" /> 
-      </div></td>
-    </tr>
-        <tr>
-      <td width="537"></td>
-      <td colspan="4" height="25" align="center"><input type="submit" value="Subscribe Now!" name="send"></input></td>
-         </tr>
-             </tr>
-        <tr>
-      <td width="537"></td>
-      <td colspan="4" height="25"></td>
-         </tr>
-         
-</table></form>
+    </form>
 
 <div style="clear:both"></div>
 
