@@ -118,6 +118,14 @@ get_header();
                 <li>Feb. 8, Francis Creek, Wisconsin</li>
                 <li>Feb. 15, Weyauwega, Wisconsin</li>
             </ul>
+            <h4>Cross-Country</h4>
+            <ul>
+                <li>Jan. 17, Grafton, ND</li>
+                <li>Feb. 1, Park Rapids, MN</li>
+                <li>Feb. 11, I-500 Winnipeg to Willmar</li>
+                <li>Feb. 28, Thief River Falls, MN</li>
+                <li>March 7, Warroad, MN</li>
+            </ul>
 
         </div>
 
