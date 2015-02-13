@@ -160,7 +160,14 @@ Class DFP_Ad_Positions {
 			'position_tag' => 'div-gpt-ad-1385159664501-0',
 			'sizes' => [[728, 90], [970, 90]],
 			'out_of_page' => false
+		),
+		array(
+			'ad_name' => 'SNG_ROS_HeaderButton',
+			'position_tag' => 'div-gpt-ad-1423865222092-0',
+			'sizes' => [220, 90],
+			'out_of_page' => false
 		)
+
 	);
 
 

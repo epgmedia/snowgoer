@@ -2,9 +2,12 @@
 
 	<div id="leaderboard">
 	
-	<div style="float: left;"><?php if (get_theme_mod('leaderad-type')=="Static Image") { 
+	<div style="float: left;">
+		<?php
+		if ( get_theme_mod('leaderad-type') == "Static Image") {
 	
-		 $leaderurl=get_theme_mod('leader-url'); $leaderimage=get_theme_mod('leader-image'); 
+		    $leaderurl = get_theme_mod('leader-url');
+			$leaderimage = get_theme_mod('leader-image');
 		 if ($leaderurl) echo '<a target="_blank" href="'.$leaderurl.'">'; if ($leaderimage) echo '<img src="'.$leaderimage.'" class="leaderimage" />'; if ($leaderurl) echo '</a>'; 
 
 	 } else if (get_theme_mod('leaderad-type')=="Ad Tag") { 		
@@ -15,11 +18,12 @@
 
 	<div id="leaderboardright">
 
-
-<?php $leaderurlsmall=get_theme_mod('leader-url-small'); $leaderimagesmall=get_theme_mod('leader-image-small'); 
-		 if ($leaderurlsmall) echo '<a target="_blank" href="'.$leaderurlsmall.'">'; if ($leaderimagesmall) echo '<img src="'.$leaderimagesmall.'" class="leaderimageright" />'; if ($leaderurlsmall) echo '</a>'; ?>
-
-
+		<!-- SNG_ROS_HeaderButton -->
+		<div id='div-gpt-ad-1423865222092-0' style='width:220px; height:90px;'>
+			<script type='text/javascript'>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423865222092-0'); });
+			</script>
+		</div>
 
 	</div>
 
