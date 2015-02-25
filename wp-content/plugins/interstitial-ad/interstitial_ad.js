@@ -13,17 +13,16 @@ googletag.cmd = googletag.cmd || [];
     node.parentNode.insertBefore(gads, node);
 })();
 
-
 /** Interstitial Ad Javascript **/
 
 googletag.cmd.push( function() {
-    googletag.defineSlot( ad_data.ad_position, [1, 1], ad_data.position_tag ).addService( googletag.pubads() );
-    googletag.defineOutOfPageSlot( ad_data.ad_position, ad_data.position_tag + '-oop' ).addService( googletag.pubads() );
+    googletag.defineSlot( popunder_ad_data.ad_position, [1, 1], popunder_ad_data.position_tag ).addService( googletag.pubads() );
+    googletag.defineOutOfPageSlot( popunder_ad_data.ad_position, popunder_ad_data.position_tag + '-oop' ).addService( googletag.pubads() );
 
     googletag.pubads().addEventListener('slotRenderEnded', function(event) {
         var f_slot = event.slot.j;
         console.log(event.slot);
-        if ( ( f_slot === ad_data.ad_position) && !event.isEmpty ) {
+        if ( ( f_slot === popunder_ad_data.ad_position) && !event.isEmpty ) {
             jQuery( '.interstitialAd' ).show();
         }
     });
@@ -36,15 +35,15 @@ jQuery('body').ready( function( $ ) {
         '<div class="interstitialAd">' +
             '<div class="close-interstitial">X</div>' +
             '<!-- Roadblock -->' +
-            '<div id=' + ad_data.position_tag + '>' +
+            '<div id=' + popunder_ad_data.position_tag + '>' +
                 '<script type="text/javascript">' +
-                    'googletag.cmd.push(function() { googletag.display("' + ad_data.position_tag + '"); });' +
+                    'googletag.cmd.push(function() { googletag.display("' + popunder_ad_data.position_tag + '"); });' +
                 '</script>' +
             '</div>' +
             '<!-- Roadblock out-of-page -->' +
-            '<div id="' + ad_data.position_tag + '-oop">' +
+            '<div id="' + popunder_ad_data.position_tag + '-oop">' +
                 '<script type="text/javascript">' +
-                    'googletag.cmd.push(function() { googletag.display("' + ad_data.position_tag + '-oop"); });' +
+                    'googletag.cmd.push(function() { googletag.display("' + popunder_ad_data.position_tag + '-oop"); });' +
                 '</script>' +
             '</div>' +
         '</div>');
