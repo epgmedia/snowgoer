@@ -2,8 +2,6 @@
  * Ad Positions
  */
 
-    console.log(ad_data);
-
     var googletag = googletag || {};
     googletag.cmd = googletag.cmd || [];
     (function() {
