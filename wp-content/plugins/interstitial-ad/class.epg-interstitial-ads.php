@@ -20,10 +20,13 @@ class epg_interstitial_ads {
      * Constructor
      */
     public function __construct() {
-
-	    $this->page_code_id = get_option('epg-ad-code-id');
+	    // Plugin URI
 	    $this->dir_uri      = plugins_url( null, __FILE__ );
 
+	    // Ad Code ID
+	    $this->page_code_id = get_option('epg-ad-code-id');
+
+	    // Ad Position to Enqueue
 	    $this->data['ad_position'] = '/35190362/' . $this->page_code_id;
 	    $this->data['position_tag'] = 'gpt-tag-roadblock-1111';
 
@@ -44,7 +47,7 @@ class epg_interstitial_ads {
 			false
 		);
 
-		wp_localize_script( 'epg_interstitial_ad', 'ad_data', $this->data );
+		wp_localize_script( 'epg_interstitial_ad', 'popunder_ad_data', $this->data );
 		wp_enqueue_script( 'epg_interstitial_ad' );
 
 	}
