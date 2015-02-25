@@ -1,4 +1,7 @@
 
+
+console.log(popunder_ad_data);
+
 // Ad Scripts
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -16,9 +19,11 @@ googletag.cmd = googletag.cmd || [];
 /** Interstitial Ad Javascript **/
 
 googletag.cmd.push( function() {
+    // Basic define for ad position
     googletag.defineSlot( popunder_ad_data.ad_position, [1, 1], popunder_ad_data.position_tag ).addService( googletag.pubads() );
     googletag.defineOutOfPageSlot( popunder_ad_data.ad_position, popunder_ad_data.position_tag + '-oop' ).addService( googletag.pubads() );
 
+    // Adds event listener to log the name of the slot.
     googletag.pubads().addEventListener('slotRenderEnded', function(event) {
         var f_slot = event.slot.i;
         console.log(event.slot);
