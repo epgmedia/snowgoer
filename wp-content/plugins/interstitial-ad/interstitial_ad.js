@@ -20,7 +20,7 @@ googletag.cmd.push( function() {
     googletag.defineOutOfPageSlot( popunder_ad_data.ad_position, popunder_ad_data.position_tag + '-oop' ).addService( googletag.pubads() );
 
     googletag.pubads().addEventListener('slotRenderEnded', function(event) {
-        var f_slot = event.slot.j;
+        var f_slot = event.slot.i;
         console.log(event.slot);
         if ( ( f_slot === popunder_ad_data.ad_position) && !event.isEmpty ) {
             jQuery( '.interstitialAd' ).show();
