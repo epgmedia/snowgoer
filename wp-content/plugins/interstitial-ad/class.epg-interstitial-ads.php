@@ -49,25 +49,27 @@ class epg_interstitial_ads {
 	public function scripts_and_styles() {
 		// Preps the script
 		wp_register_script(
-			'epg_interstitial_ad',
-			$this->dir_uri . '/interstitial_ad.js',
+			'epg_dfp_ads',
+			$this->dir_uri . '/epg_dfp_ads.js',
 			array( 'jquery' ),
 			false,
 			false
 		);
 
+		// Popunder Position
+		$this->data['ad_name']      = $this->page_code_id;
+		$this->data['position_tag'] = 'gpt-tag-roadblock-1001';
+
 		// Prep the data
 		$this->positions = new stdClass;
 		$this->positions->roadblock_id = $this->page_code_id;
-		$this->data['ad_name']      = $this->page_code_id;
-		$this->data['position_tag'] = 'gpt-tag-roadblock-1001';
 		$this->positions->positions[]  = $this->data;
 
 		// Get all the ad positions
 		$ad_positions = apply_filters('epg_ad_positions', $this->positions);
 		// Send data to front end.
-		wp_localize_script( 'epg_interstitial_ad', 'ad_positions', array($ad_positions) );
-		wp_enqueue_script( 'epg_interstitial_ad' );
+		wp_localize_script( 'epg_dfp_ads', 'epg_ad_positions', array($ad_positions) );
+		wp_enqueue_script( 'epg_dfp_ads' );
 	}
 
 	/**
