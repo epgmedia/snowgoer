@@ -5,25 +5,21 @@
 
 include( 'ads/class.dfp_ad_positions.php');
 
-add_action( 'wp_enqueue_scripts', 'dfp_enqueue_scripts' );
+add_filter( 'epg_ad_positions', 'epg_dfp_theme_ads', 40, 1 );
 
-function dfp_enqueue_scripts() {
+function epg_dfp_theme_ads($ad_data) {
+	// Get the current positions
+	$ad_position = new DFP_Ad_Positions();
+	// Account ID
+	$ad_data->account_id = $ad_position->account_id;
+	// Position ID
+	$ad_data->div_id = $ad_position->div_id;
+	// Add in all the current positions
+	foreach ( $ad_position->ad_positions as $position ) {
+		$ad_data->positions[] = $position;
+	}
 
-	$script_name = 'dfp-ads';
-
-	// Register Script
-	wp_register_script(
-		$script_name,
-		get_template_directory_uri() . '/tools/ads/dfp.js'
-	);
-
-	$data = new DFP_Ad_Positions();
-
-	// Localize Data
-	wp_localize_script( $script_name, 'ad_data', $data->ad_positions );
-
-	// Enqueue Script
-	wp_enqueue_script( $script_name );
-
+	// Send it back
+	return $ad_data;
 }
 
