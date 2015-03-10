@@ -4,7 +4,7 @@ Class DFP_Ad_Positions {
 
 	public $div_id = 'div-gpt-ad-1375829763909';
 
-	protected $account_id = '/35190362/';
+	public $account_id = '/35190362/';
 
 	public $ad_positions = array(
 		array(
