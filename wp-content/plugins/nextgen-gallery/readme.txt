@@ -3,16 +3,16 @@ Contributors: photocrati
 Tags: nextgen, nextgen gallery, gallery, galleries, image, images, image gallery, photo, photos, photo gallery, picture, pictures, picture gallery, album, albums, photo albums, image album, media, media gallery, thumbnails, thumbnail gallery, thumbnail galleries, slideshow, slideshows, slideshow gallery, slideshow galleries, fancybox, lightbox, responsive, responsive gallery, responsive galleries, wordpress responsive gallery, nextcellent, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, best gallery plugin, free photo gallery, singlepic, image captions imagebrowser, watermarks, watermarking, photography, photographer
 Requires at least: 3.6.1
 Tested up to: 4.1.1
-Stable tag: 2.0.74
+Stable tag: 2.0.79
 License: GPLv2
 
-The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 11 million downloads.
+The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 12 million downloads.
 
 == Description ==
 
 = WordPress Gallery Plugin =
 
-NextGEN Gallery is the most popular **WordPress gallery plugin**, and one of the most popular WordPress plugins of all time, with over 11 million downloads.
+NextGEN Gallery is the most popular **WordPress gallery plugin**, and one of the most popular WordPress plugins of all time, with over 12 million downloads.
 
 It provides a powerful engine for uploading and managing galleries of images, with the ability to batch upload, import meta data, add/delete/rearrange/sort images, edit thumbnails, group galleries into albums, and more. It also provides two front-end display styles (slideshows and thumbnail galleries), both of which come with a wide array of options for controlling size, style, timing, transitions, controls, lightbox effects, and more.
 
@@ -198,6 +198,41 @@ For more information, feel free to visit the official website for the NextGEN Ga
 
 
 == Changelog ==
+
+= V2.0.79 - 03.20.2015 =
+* Secured: Usage of find_in_set() mysql function
+
+= V2.0.77.3 - 03.12.2015 =
+* Secured: Upload images and importing galleries from folders
+* Fixed:   When importing galleries from folders, allow symlinks
+* Fixed:   Use of C_Gallery_Mapper in C_Image_Wrapper
+* Fixed:   Properly handle themes that don't call wp_footer() or wp_print_footer_scripts()
+* Fixed:   Warning about missing style.php file on Network Admin -> Gallery page
+
+= V2.0.77 - 03.05.2015 =
+* NEW:     Added "ngg_get_image_url" filter
+* Changed: Use a more reliable means of excluding Pro/Plus modules from using minified static resources
+* Fixed:   Imagebrowser pagination with custom templates
+* Fixed:   Custom CSS is enqueued late to ensure it's one of the last stylesheets loaded
+* Fixed:   Fixed watermarking PNG images
+* Fixed:   Using the "Import Metadata" bulk action overwrites existing data
+* Fixed:   Seconds were not retained from CaptureTime EXIF field
+* Fixed:   Conflicts created by our TinyMCE plugin
+* Fixed:   Image mapper setting gid to gallery name, not the unique ID
+* Fixed:   Restored nggdb->get_random_images(), nggdb->search_for_file, and nggdb->find_all_albums()
+* Fixed:   Allow gallery slug as parameter to nggdb::get_gallery()
+* Fixed:   Don't minify Plupload's i18n JavaScript
+* Fixed:   Custom template images not being given their full effect code attributes
+
+= V2.0.76 - 02.24.2015 =
+* Fixed:   Compatibility checks for very old versions of NextGEN Pro
+* Fixed:   Zero-byte downloads in WooCommerce and WPE-Commerce
+* Fixed:   Invalid URL being enqueued if a custom lightbox is selected with no URL provided
+* Fixed:   Restored a method to nggAdmin to fix compatibility with NextGen Public Uploader
+* Fixed:   Bug preventing source='recent' from displaying images in the correct order
+* Fixed:   Include more quotation symbols in our shortcode manager (foreign language shortcodes)
+* Fixed:   WPML/ATP compatibility issue
+* Fixed:   $nggdb->get_gallery() returning a different result than before
 
 = V2.0.74 - 02.20.2015 =
 * Changed: Removed jQuery Lightbox and Highslide due to incompatible licensing with GPL
