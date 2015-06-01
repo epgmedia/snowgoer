@@ -7,6 +7,8 @@
  * @since Twenty Thirteen 1.0
  */
 
+if ( !defined('ABSPATH') ) { die(); }
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
